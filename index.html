@@ -36,8 +36,10 @@ nav{background:rgba(250,246,238,.92);backdrop-filter:blur(12px);border-bottom:1p
 .lang{display:inline-flex;border:1px solid var(--line)}
 .lang button{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 12px;border:none;background:transparent;color:var(--bca-espresso);cursor:pointer;transition:.2s}
 .lang button.on{background:var(--bca-night);color:var(--bca-gold)}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--bca-green);color:var(--cream);text-decoration:none;padding:14px 30px;font-family:var(--ui);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bca-green);cursor:pointer;transition:.3s}
-.btn:hover{background:transparent;color:var(--bca-green);box-shadow:inset 0 0 0 1px var(--bca-green)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--bca-clay);color:var(--cream);text-decoration:none;padding:14px 30px;font-family:var(--ui);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bca-clay);cursor:pointer;transition:.3s}
+.btn:hover{background:transparent;color:var(--bca-clay);box-shadow:inset 0 0 0 1px var(--bca-clay)}
+.btn.green{background:var(--bca-green);border-color:var(--bca-green);color:var(--cream)}
+.btn.green:hover{background:transparent;color:var(--bca-green);box-shadow:inset 0 0 0 1px var(--bca-green)}
 .btn.gold{background:var(--bca-gold);border-color:var(--bca-gold);color:var(--bca-night)}
 .btn.gold:hover{background:transparent;color:var(--bca-gold);box-shadow:inset 0 0 0 1px var(--bca-gold)}
 .btn.ghost{background:transparent;color:var(--cream);border-color:rgba(250,246,238,.4)}
@@ -264,7 +266,7 @@ footer a:hover{color:var(--bca-gold)}
     <div class="edit-line" data-t="hero.edit">Better Decisions. Better Knowledge. Better Results.</div>
     <p class="lede" data-t="hero.lede">30+ certified coaches across 15+ African nations. Confidential peer rooms, ICF-certified executive coaching, and a continental network that has served 3,000+ leaders since 2017.</p>
     <div class="hero-ctas">
-      <button class="btn gold" onclick="openBooking()"><span data-t="hero.cta1">Book Your Leadership Consultation</span> <span class="arr">→</span></button>
+      <button class="btn" onclick="openBooking()"><span data-t="hero.cta1">Book Your Leadership Consultation</span> <span class="arr">→</span></button>
       <a class="btn ghost" href="membership.html" data-t="hero.cta2">Explore Membership</a>
     </div>
     <div class="mantra reveal" data-t="hero.mantra">
@@ -426,7 +428,7 @@ footer a:hover{color:var(--bca-gold)}
   <div class="inner">
     <h2 class="reveal" data-t="final.h2">Who got you here <span class="gild">won't get you there.</span></h2>
     <div class="edit-line reveal" data-t="final.edit">A 30-minute conversation will tell you if this is your room.</div>
-    <button class="btn gold reveal" onclick="openBooking()"><span data-t="hero.cta1">Book Your Leadership Consultation</span> <span class="arr">→</span></button>
+    <button class="btn reveal" onclick="openBooking()"><span data-t="hero.cta1">Book Your Leadership Consultation</span> <span class="arr">→</span></button>
   </div>
 </section>
 
