@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bench — BCA Leadership</title>
+<meta name="description" content="The BCA bench: 40+ certified coaches, senior consultants, and trainers across all five regions of Africa. Filter by discipline and region.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{--bca-green:#058D52;--bca-green-mid:#23A455;--bca-gold:#F7A61C;--bca-gold-2:#F9AF41;--bca-clay:#C14027;--bca-olive:#ABBB61;--bca-espresso:#452C23;--bca-night:#24170C;--bca-night-2:#211012;--bca-ink:#242424;--cream:#FAF6EE;--cream-2:#F2EBDD;--line:rgba(36,23,12,.14);--line-light:rgba(250,246,238,.16);--disp:"Marcellus",serif;--edit:"Cormorant Garamond",Georgia,serif;--ui:"Jost",Helvetica,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--ui);font-weight:300;background:var(--cream);color:var(--bca-ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bca-gold);color:var(--bca-night)}
+.brandstrip{height:8px;background:repeating-linear-gradient(90deg,var(--bca-green) 0 64px,var(--bca-gold) 64px 80px,var(--bca-clay) 80px 96px,var(--bca-olive) 96px 112px,var(--bca-espresso) 112px 128px,var(--bca-gold) 128px 144px,var(--bca-green-mid) 144px 208px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+nav{background:rgba(250,246,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:90}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
+.nav-logo img{height:52px;display:block}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--bca-ink);text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--bca-gold);transition:width .3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang{display:inline-flex;border:1px solid var(--line)}
+.lang button{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 12px;border:none;background:transparent;color:var(--bca-espresso);cursor:pointer}
+.lang button.on{background:var(--bca-night);color:var(--bca-gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--bca-clay);color:var(--cream);text-decoration:none;padding:14px 30px;font-family:var(--ui);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bca-clay);cursor:pointer;transition:.3s}
+.btn:hover{background:transparent;color:var(--bca-clay);box-shadow:inset 0 0 0 1px var(--bca-clay)}
+.btn.gold{background:var(--bca-gold);border-color:var(--bca-gold);color:var(--bca-night)}
+.btn.gold:hover{background:transparent;color:var(--bca-gold);box-shadow:inset 0 0 0 1px var(--bca-gold)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:rgba(250,246,238,.4)}
+.btn.ghost:hover{border-color:var(--bca-gold);color:var(--bca-gold)}
+.hero{background:var(--bca-night-2);color:var(--cream);padding:96px 0 76px;position:relative;overflow:hidden;background-image:radial-gradient(800px 420px at 80% -10%,rgba(247,166,28,.14),transparent 60%),radial-gradient(600px 420px at 0% 110%,rgba(5,141,82,.13),transparent 55%)}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--bca-gold);margin-bottom:26px}
+.hero .eyebrow::before{content:"";width:44px;height:1px;background:var(--bca-gold);opacity:.6}
+.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.06;color:var(--cream);max-width:18ch}
+.hero h1 .gild{color:var(--bca-gold)}
+.hero p{max-width:60ch;margin-top:24px;color:rgba(250,246,238,.74);font-size:18px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+section{padding:96px 0}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--bca-clay);margin-bottom:18px}
+.sec-eyebrow::before{content:"";width:38px;height:1px;background:var(--bca-clay)}
+h2{font-family:var(--disp);font-weight:400;font-size:clamp(30px,3.8vw,48px);color:var(--bca-night);line-height:1.1}
+h2 .gild{color:var(--bca-gold)}
+.head p{margin-top:14px;color:rgba(36,36,36,.7);max-width:60ch}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 40px}
+.chip{border:1px solid var(--line);background:#fff;padding:11px 20px;font-family:var(--ui);font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:rgba(36,36,36,.7);cursor:pointer;transition:.2s}
+.chip:hover{border-color:var(--bca-gold)}
+.chip.on{background:var(--bca-night);color:var(--cream);border-color:var(--bca-night)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.coach{border:1px solid var(--line);background:#fff;padding:32px 28px;transition:.35s;position:relative}
+.coach:hover{border-color:var(--bca-gold);transform:translateY(-6px);box-shadow:0 22px 44px rgba(36,23,12,.12)}
+.coach .photo{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center top;display:block;margin-bottom:18px;border:2px solid var(--bca-gold)}
+.coach .mono{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:26px;color:var(--cream);background:var(--bca-green-mid);margin-bottom:18px}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:2px;background:var(--bca-gold);color:var(--bca-night);margin-bottom:12px}
+.tag.consultant{background:var(--bca-green);color:var(--cream)}
+.tag.trainer{background:var(--bca-clay);color:var(--cream)}
+.coach h4{font-family:var(--disp);font-weight:400;font-size:19px;color:var(--bca-night)}
+.coach .where{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--bca-gold);margin:5px 0 0;font-weight:500}
+.coach .cred{font-size:13.5px;color:rgba(36,36,36,.66);margin-top:12px;line-height:1.5}
+.quoteband{background:var(--bca-night);color:var(--cream);padding:90px 0;text-align:center}
+.quoteband .mark{font-family:var(--edit);font-style:italic;font-size:96px;line-height:.3;color:var(--bca-gold);display:block;margin-bottom:30px}
+.quoteband blockquote{font-family:var(--edit);font-style:italic;font-weight:500;font-size:clamp(26px,3.6vw,44px);line-height:1.2;max-width:18ch;margin:0 auto}
+.cta-final{background:var(--bca-night-2);color:var(--cream);padding:110px 0;text-align:center}
+.cta-final h2{color:var(--cream)}
+.cta-final p{color:rgba(250,246,238,.7);margin:18px 0 34px}
+footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38px;font-size:14px}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;opacity:.6}
+footer a{color:rgba(250,246,238,.7);text-decoration:none}footer a:hover{color:var(--bca-gold)}
+.modal-veil{position:fixed;inset:0;background:rgba(33,16,18,.7);backdrop-filter:blur(6px);z-index:150;display:none;align-items:center;justify-content:center;padding:24px}
+.modal-veil.open{display:flex}
+.modal{background:var(--cream);max-width:560px;width:100%;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.modal .m-strip{height:6px;background:repeating-linear-gradient(90deg,var(--bca-green) 0 40px,var(--bca-gold) 40px 54px,var(--bca-clay) 54px 68px,var(--bca-olive) 68px 82px)}
+.modal .m-body{padding:42px 46px}
+.modal .x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:26px;cursor:pointer;opacity:.5}
+.modal h3{font-family:var(--disp);font-weight:400;font-size:26px;color:var(--bca-night)}
+.modal .m-sub{font-size:14.5px;color:rgba(36,36,36,.6);margin:8px 0 24px}
+.field{margin-bottom:16px}.field label{display:block;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--bca-espresso);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);background:#fff;font-family:var(--ui);font-size:15px;outline:none}
+.field input:focus,.field select:focus{border-color:var(--bca-green);box-shadow:0 0 0 3px rgba(5,141,82,.12)}
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.slot{padding:13px;border:1px solid var(--line);background:#fff;font-size:13.5px;cursor:pointer;text-align:center}
+.slot.on{border-color:var(--bca-green);background:rgba(5,141,82,.08)}
+.m-done{text-align:center;padding:14px 0}
+.m-done .ok{width:70px;height:70px;border-radius:50%;background:var(--bca-green);color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+@media(max-width:1080px){.nav-links{display:none}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="brandstrip"></div>
+<nav><div class="wrap nav-inner">
+  <a class="nav-logo" href="index.html"><img src="assets/logo-dark.png" alt="BCA Leadership"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-bench.html" class="active">The Bench</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="coaching-packages.html">Coaching</a></li>
+    <li><a href="index.html#suite">Services</a></li>
+    <li><a href="https://bca-online.mn.co/landing">BCAOnline</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang"><button class="on">EN</button><button onclick="location.href='index.html'">FR</button><button onclick="location.href='index.html'">ES</button><button onclick="location.href='index.html'">PT</button></div>
+    <button class="btn" onclick="openBooking()">Book a Consultation</button>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">The Bench</div>
+  <h1>Coaches, consultants, and trainers who have <span class="gild">led, not just advised.</span></h1>
+  <p>40+ world-class and award-winning coaches and consultants across all five regions of Africa. Every coach certified, every consultant a former operator, every engagement backed by the same bench.</p>
+  <div class="ctas"><button class="btn gold" onclick="openBooking()">Find your match →</button><a class="btn ghost" href="coaching-packages.html">See coaching packages</a></div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="head">
+    <div class="sec-eyebrow">Meet the bench</div>
+    <h2>One bench. Many disciplines. <span class="gild">Every region.</span></h2>
+    <p>Filter by discipline or region. The full bench numbers 40+ — a selection is shown here.</p>
+  </div>
+  <div class="filters" id="filters">
+    <button class="chip on" data-f="all">All</button>
+    <button class="chip" data-f="coach">Coaches</button>
+    <button class="chip" data-f="consultant">Consultants</button>
+    <button class="chip" data-f="trainer">Trainers</button>
+    <button class="chip" data-f="west">West Africa</button>
+    <button class="chip" data-f="north">North Africa</button>
+    <button class="chip" data-f="east">East Africa</button>
+    <button class="chip" data-f="southern">Southern Africa</button>
+  </div>
+  <div class="grid" id="grid">
+    <div class="coach" data-tags="coach west"><img class="photo" src="assets/coaches/fraser.jpg" alt="Hugh Kweku Fraser" onerror="this.outerHTML='<div class=mono>HF</div>'"><span class="tag">Coach</span><h4>Hugh Kweku Fraser</h4><div class="where">Sierra Leone · West</div><p class="cred">Chair, Bank of Sierra Leone Access to Finance Group. NED, Ecobank Sierra Leone.</p></div>
+    <div class="coach" data-tags="consultant west"><img class="photo" src="assets/coaches/catherine.jpg" alt="Catherine Engmann" onerror="this.outerHTML='<div class=mono>CE</div>'"><span class="tag consultant">Consultant</span><h4>Catherine Engmann</h4><div class="where">Ghana · West</div><p class="cred">Chartered Governance Institute. Certified John Maxwell coach and culture transformation consultant.</p></div>
+    <div class="coach" data-tags="consultant west"><img class="photo" src="assets/coaches/mbida.jpg" alt="Price Alan Mbida" onerror="this.outerHTML='<div class=mono>PM</div>'"><span class="tag consultant">Consultant</span><h4>Price Alan Mbida</h4><div class="where">Côte d’Ivoire · West</div><p class="cred">Founder, SEKHMET3.4.5 Coaching &amp; Consulting. Executive-committee retreats and team performance.</p></div>
+    <div class="coach" data-tags="coach north"><img class="photo" src="assets/coaches/amal.jpg" alt="Amal Hihi" onerror="this.outerHTML='<div class=mono>AH</div>'"><span class="tag">Coach</span><h4>Amal Hihi</h4><div class="where">Morocco · North</div><p class="cred">Executive coach — leadership performance and work-life balance.</p></div>
+    <div class="coach" data-tags="coach trainer east"><img class="photo" src="assets/coaches/norah.jpg" alt="Norah Bwaya" onerror="this.outerHTML='<div class=mono>NB</div>'"><span class="tag trainer">Coach · Trainer</span><h4>Norah Bwaya</h4><div class="where">Uganda · East</div><p class="cred">Certified executive coach, BCA cohort facilitator and leadership trainer.</p></div>
+    <div class="coach" data-tags="coach southern"><img class="photo" src="assets/coaches/sibongile.jpg" alt="Sibongile Muwamba" onerror="this.outerHTML='<div class=mono>SM</div>'"><span class="tag">Coach</span><h4>Sibongile Muwamba</h4><div class="where">Malawi · Southern</div><p class="cred">Board chair and trustee 12+ years. Has coached leaders across nine African nations.</p></div>
+    <div class="coach" data-tags="coach southern"><img class="photo" src="assets/coaches/nankhonde.jpg" alt="Nankhonde Kasonde van den Broek" onerror="this.outerHTML='<div class=mono>NK</div>'"><span class="tag">Coach</span><h4>Nankhonde Kasonde van den Broek</h4><div class="where">Zambia · Southern</div><p class="cred">Executive coach to senior leaders across Southern Africa.</p></div>
+    <div class="coach" data-tags="trainer"><div class="mono">+</div><span class="tag trainer">Trainers</span><h4>Facilitators &amp; Trainers</h4><div class="where">Continent-wide</div><p class="cred">Specialist trainers — not coaches — running workshops, retreats, and leadership programs across the network.</p></div>
+  </div>
+  <div style="text-align:center;margin-top:46px"><button class="btn" onclick="openBooking()">Request the full roster · Apply to the bench →</button></div>
+</div></section>
+
+<section class="quoteband"><div class="wrap">
+  <span class="mark">“</span>
+  <blockquote>Our connections are wide. Our footprint is massive. Africa is our country — and we know the terrain.</blockquote>
+</div></section>
+
+<section class="cta-final"><div class="wrap">
+  <h2>Find the coach who has <span class="gild">sat in your chair.</span></h2>
+  <p>A 30-minute conversation will match you to the right coach or consultant.</p>
+  <button class="btn gold" onclick="openBooking()">Book Your Leadership Consultation →</button>
+</div></section>
+
+<div class="brandstrip"></div>
+<footer><div class="wrap foot-bottom">
+  <span>© 2026 BCA Leadership. All rights reserved.</span>
+  <span>Website v3 — prepared by TechFides</span>
+</div></footer>
+
+<div class="modal-veil" id="booking"><div class="modal"><div class="m-strip"></div>
+  <button class="x" onclick="closeBooking()">×</button>
+  <div class="m-body">
+    <div id="b-flow">
+      <h3>Book your consultation</h3>
+      <p class="m-sub">We confirm by email and schedule 2–5 business days out so we can match you to the right person.</p>
+      <div class="field"><label>Full name</label><input type="text"></div>
+      <div class="field"><label>Work email</label><input type="email" placeholder="you@company.com"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="field"><label>Company</label><input type="text"></div><div class="field"><label>Role</label><input type="text"></div></div>
+      <div class="field"><label>Country</label><select data-countries></select></div>
+      <div class="field"><label>Choose a time (GMT)</label><div class="slots" id="b-slots"></div></div>
+      <button class="btn gold" style="width:100%;justify-content:center;margin-top:6px" onclick="finishBooking()">Confirm Booking</button>
+    </div>
+    <div class="m-done" id="b-done" style="display:none"><div class="ok">✓</div><h3>You’re booked.</h3><p class="m-sub" style="margin-top:10px">A calendar invitation is on its way. In production this submits to BCA’s CRM and notifies the matched coach.</p></div>
+  </div>
+</div></div>
+
+<script>
+const COUNTRIES=["Afghanistan","Albania","Algeria","Andorra","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belgium","Belize","Benin","Bhutan","Bolivia","Botswana","Brazil","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Comoros","Congo (Brazzaville)","Congo (DRC)","Costa Rica","Côte d’Ivoire","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti","Dominican Republic","Ecuador","Egypt","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kuwait","Latvia","Lebanon","Lesotho","Liberia","Libya","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Mongolia","Montenegro","Morocco","Mozambique","Namibia","Nepal","Netherlands","New Zealand","Niger","Nigeria","North Macedonia","Norway","Oman","Pakistan","Panama","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Rwanda","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Syria","Taiwan","Tanzania","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+document.querySelectorAll("select[data-countries]").forEach(function(sel){sel.innerHTML='<option value="" disabled selected>Select country</option>'+COUNTRIES.map(function(c){return "<option>"+c+"</option>";}).join("");});
+function bizSlots(){var out=[],cur=new Date(),biz=0,t=["09:00","11:30","14:00","16:00"];while(out.length<4){cur.setDate(cur.getDate()+1);var d=cur.getDay();if(d!==0&&d!==6){biz++;if(biz>=2)out.push(new Date(cur));}}return out.map(function(dt,i){return dt.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})+" · "+t[i];});}
+(function(){var g=document.getElementById("b-slots");g.innerHTML=bizSlots().map(function(s){return '<div class="slot" onclick="pickSlot(this)">'+s+'</div>';}).join("");})();
+function pickSlot(el){document.querySelectorAll(".slot").forEach(function(s){s.classList.remove("on")});el.classList.add("on");}
+const bv=document.getElementById("booking");
+function openBooking(){document.getElementById("b-flow").style.display="block";document.getElementById("b-done").style.display="none";bv.classList.add("open");document.body.style.overflow="hidden";}
+function closeBooking(){bv.classList.remove("open");document.body.style.overflow="";}
+bv.addEventListener("click",function(e){if(e.target===bv)closeBooking();});
+function finishBooking(){document.getElementById("b-flow").style.display="none";document.getElementById("b-done").style.display="block";}
+var chips=document.querySelectorAll("#filters .chip"),cards=document.querySelectorAll("#grid .coach");
+chips.forEach(function(c){c.onclick=function(){chips.forEach(function(x){x.classList.remove("on")});c.classList.add("on");var f=c.dataset.f;cards.forEach(function(card){card.style.display=(f==="all"||card.dataset.tags.indexOf(f)>-1)?"":"none";});};});
+</script>
+</body>
+</html>
