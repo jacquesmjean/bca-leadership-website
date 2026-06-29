@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaching Packages — BCA Leadership</title>
+<meta name="description" content="Private executive coaching packages with the BCA bench — 4, 6, or 12 sessions. Sign your contract on the spot.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{--bca-green:#058D52;--bca-green-mid:#23A455;--bca-gold:#F7A61C;--bca-gold-2:#F9AF41;--bca-clay:#C14027;--bca-olive:#ABBB61;--bca-espresso:#452C23;--bca-night:#24170C;--bca-night-2:#211012;--bca-ink:#242424;--cream:#FAF6EE;--cream-2:#F2EBDD;--line:rgba(36,23,12,.14);--line-light:rgba(250,246,238,.16);--disp:"Marcellus",serif;--edit:"Cormorant Garamond",Georgia,serif;--ui:"Jost",Helvetica,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--ui);font-weight:300;background:var(--cream);color:var(--bca-ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+::selection{background:var(--bca-gold);color:var(--bca-night)}
+.brandstrip{height:8px;background:repeating-linear-gradient(90deg,var(--bca-green) 0 64px,var(--bca-gold) 64px 80px,var(--bca-clay) 80px 96px,var(--bca-olive) 96px 112px,var(--bca-espresso) 112px 128px,var(--bca-gold) 128px 144px,var(--bca-green-mid) 144px 208px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+nav{background:rgba(250,246,238,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:90}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
+.nav-logo img{height:52px;display:block}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--bca-ink);text-decoration:none;font-size:14px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--bca-gold);transition:width .3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:18px}
+.lang{display:inline-flex;border:1px solid var(--line)}
+.lang button{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 12px;border:none;background:transparent;color:var(--bca-espresso);cursor:pointer}
+.lang button.on{background:var(--bca-night);color:var(--bca-gold)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--bca-clay);color:var(--cream);text-decoration:none;padding:14px 30px;font-family:var(--ui);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bca-clay);cursor:pointer;transition:.3s}
+.btn:hover{background:transparent;color:var(--bca-clay);box-shadow:inset 0 0 0 1px var(--bca-clay)}
+.btn.gold{background:var(--bca-gold);border-color:var(--bca-gold);color:var(--bca-night)}
+.btn.gold:hover{background:transparent;color:var(--bca-gold);box-shadow:inset 0 0 0 1px var(--bca-gold)}
+.btn.ghost{background:transparent;color:var(--cream);border-color:rgba(250,246,238,.4)}
+.btn.ghost:hover{border-color:var(--bca-gold);color:var(--bca-gold)}
+.btn.green{background:var(--bca-green);border-color:var(--bca-green);color:var(--cream)}
+.btn.green:hover{background:transparent;color:var(--bca-green);box-shadow:inset 0 0 0 1px var(--bca-green)}
+.hero{background:var(--bca-night-2);color:var(--cream);padding:96px 0 76px;position:relative;overflow:hidden;background-image:radial-gradient(800px 420px at 80% -10%,rgba(247,166,28,.14),transparent 60%),radial-gradient(600px 420px at 0% 110%,rgba(5,141,82,.13),transparent 55%)}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--bca-gold);margin-bottom:26px}
+.hero .eyebrow::before{content:"";width:44px;height:1px;background:var(--bca-gold);opacity:.6}
+.hero h1{font-family:var(--disp);font-weight:400;font-size:clamp(38px,5vw,68px);line-height:1.06;color:var(--cream);max-width:17ch}
+.hero h1 .gild{color:var(--bca-gold)}
+.hero p{max-width:58ch;margin-top:24px;color:rgba(250,246,238,.74);font-size:18px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:36px}
+section{padding:96px 0}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--bca-clay);margin-bottom:18px}
+.sec-eyebrow::before{content:"";width:38px;height:1px;background:var(--bca-clay)}
+.center{text-align:center}.center .sec-eyebrow{justify-content:center}
+h2{font-family:var(--disp);font-weight:400;font-size:clamp(30px,3.8vw,48px);color:var(--bca-night);line-height:1.1}
+h2 .gild{color:var(--bca-gold)}
+.lead{margin-top:14px;color:rgba(36,36,36,.7);max-width:60ch}
+.center .lead{margin-left:auto;margin-right:auto}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;margin-top:50px}
+.tier{background:#fff;border:1px solid var(--line);padding:44px 38px;display:flex;flex-direction:column;position:relative;transition:.35s}
+.tier:hover{transform:translateY(-8px);box-shadow:0 26px 52px rgba(36,23,12,.14)}
+.tier.feature{background:var(--bca-night-2);color:var(--cream);border-color:var(--bca-night-2)}
+.tier.feature::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,var(--bca-gold) 0 32px,var(--bca-clay) 32px 46px,var(--bca-olive) 46px 60px,var(--bca-green-mid) 60px 100px)}
+.tier .badge{position:absolute;top:-14px;left:38px;background:var(--bca-clay);color:var(--cream);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 16px}
+.tier h3{font-family:var(--disp);font-weight:400;font-size:25px;color:var(--bca-night)}
+.tier.feature h3{color:var(--bca-gold)}
+.tier .for{font-size:14px;margin-top:6px;opacity:.6}
+.price{font-family:var(--disp);font-size:50px;color:var(--bca-night);margin:24px 0 2px}
+.tier.feature .price{color:var(--cream)}
+.tier ul{list-style:none;margin:26px 0 34px;flex:1}
+.tier li{padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px;color:rgba(36,36,36,.75)}
+.tier.feature li{border-color:rgba(250,246,238,.16);color:rgba(250,246,238,.82)}
+.tier li::before{content:"◆  ";color:var(--bca-gold);font-size:10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-light);margin-top:50px}
+.step{padding:46px 38px;border-left:1px solid var(--line-light)}
+.step:first-child{border-left:none}
+.step .big{font-family:var(--edit);font-style:italic;font-size:72px;line-height:1;color:transparent;-webkit-text-stroke:1.4px var(--bca-gold)}
+.step h3{font-family:var(--disp);font-weight:400;font-size:22px;color:var(--cream);margin:18px 0 12px}
+.step p{font-size:15px;color:rgba(250,246,238,.7)}
+.how{background:var(--bca-night);color:var(--cream)}.how h2{color:var(--cream)}
+.quoteband{background:var(--bca-green);color:var(--cream);padding:84px 0;text-align:center}
+.quoteband blockquote{font-family:var(--edit);font-style:italic;font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.25;max-width:24ch;margin:0 auto 22px}
+.quoteband cite{font-style:normal;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--bca-night)}
+footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38px;font-size:14px}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;opacity:.6}
+footer a{color:rgba(250,246,238,.7);text-decoration:none}footer a:hover{color:var(--bca-gold)}
+.modal-veil{position:fixed;inset:0;background:rgba(33,16,18,.7);backdrop-filter:blur(6px);z-index:150;display:none;align-items:center;justify-content:center;padding:24px}
+.modal-veil.open{display:flex}
+.modal{background:var(--cream);max-width:560px;width:100%;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.modal .m-strip{height:6px;background:repeating-linear-gradient(90deg,var(--bca-green) 0 40px,var(--bca-gold) 40px 54px,var(--bca-clay) 54px 68px,var(--bca-olive) 68px 82px)}
+.modal .m-body{padding:42px 46px}
+.modal .x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:26px;cursor:pointer;opacity:.5}
+.modal h3{font-family:var(--disp);font-weight:400;font-size:26px;color:var(--bca-night)}
+.modal .m-sub{font-size:14.5px;color:rgba(36,36,36,.6);margin:8px 0 22px}
+.field{margin-bottom:16px}.field label{display:block;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--bca-espresso);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);background:#fff;font-family:var(--ui);font-size:15px;outline:none}
+.field input:focus,.field select:focus{border-color:var(--bca-green);box-shadow:0 0 0 3px rgba(5,141,82,.12)}
+.contract-box{background:#fff;border:1px solid var(--line);padding:20px 22px;font-size:13.5px;color:rgba(36,36,36,.78);max-height:220px;overflow:auto;line-height:1.55}
+.m-done{text-align:center;padding:14px 0}
+.m-done .ok{width:70px;height:70px;border-radius:50%;background:var(--bca-green);color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.m-done p{font-size:15px;color:rgba(36,36,36,.65);max-width:40ch;margin:0 auto}
+@media(max-width:1080px){.nav-links{display:none}.tiers,.steps{grid-template-columns:1fr}.step{border-left:none;border-top:1px solid var(--line-light)}}
+</style>
+</head>
+<body>
+<div class="brandstrip"></div>
+<nav><div class="wrap nav-inner">
+  <a class="nav-logo" href="index.html"><img src="assets/logo-dark.png" alt="BCA Leadership"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="the-bench.html">The Bench</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="coaching-packages.html" class="active">Coaching</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="https://bca-online.mn.co/landing">BCAOnline</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang"><button class="on">EN</button><button onclick="location.href='index.html'">FR</button><button onclick="location.href='index.html'">ES</button><button onclick="location.href='index.html'">PT</button></div>
+    <a class="btn" href="#packages">See packages</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Coaching Packages</div>
+  <h1>One coach. A run of sessions. <span class="gild">Decisions you actually make.</span></h1>
+  <p>Private executive coaching with a certified member of the BCA bench — separate from membership, no cohort required. Choose your run of sessions, sign on the spot, and start.</p>
+  <div class="ctas"><a class="btn gold" href="#packages">Choose a package →</a><a class="btn ghost" href="the-bench.html">Meet the coaches</a></div>
+</div></header>
+
+<section id="packages"><div class="wrap center">
+  <div class="sec-eyebrow">Pay per package</div>
+  <h2>Coaching, sold by the session — <span class="gild">not the membership.</span></h2>
+  <p class="lead">Each package ends in a contract you sign on the spot. We then issue your invoice with payment instructions.</p>
+  <div class="tiers" style="text-align:left">
+    <div class="tier">
+      <h3>Starter</h3><div class="for">Test the relationship</div>
+      <div class="price">$1,000</div>
+      <ul><li>4 private coaching sessions</li><li>Coach matched to your goal</li><li>In person, virtual, or by email</li><li>Confidential throughout</li></ul>
+      <button class="btn ghost" style="color:var(--bca-green);border-color:var(--bca-green)" onclick="startContract('Coaching — 4 Sessions','$1,000')">Choose 4 sessions</button>
+    </div>
+    <div class="tier feature"><div class="badge">Best Value</div>
+      <h3>Momentum</h3><div class="for" style="color:rgba(250,246,238,.6)">A season of accountability</div>
+      <div class="price">$2,500</div>
+      <ul><li>12 private coaching sessions</li><li>Choose your coach from the bench</li><li>A full year of momentum</li><li>Lowest per-session rate</li></ul>
+      <button class="btn gold" onclick="startContract('Coaching — 12 Sessions','$2,500')">Choose 12 sessions</button>
+    </div>
+    <div class="tier">
+      <h3>Focus</h3><div class="for">Work a specific goal</div>
+      <div class="price">$1,400</div>
+      <ul><li>6 private coaching sessions</li><li>Coach matched to your goal</li><li>In person, virtual, or by email</li><li>Better per-session value</li></ul>
+      <button class="btn ghost" style="color:var(--bca-green);border-color:var(--bca-green)" onclick="startContract('Coaching — 6 Sessions','$1,400')">Choose 6 sessions</button>
+    </div>
+  </div>
+  <p class="lead center" style="margin-top:32px;font-style:italic">Looking for the full network — peer rooms, conference, business matching? See <a href="membership.html" style="color:var(--bca-green);font-weight:500">Membership →</a></p>
+</div></section>
+
+<section class="quoteband"><div class="wrap">
+  <blockquote>My coach held me accountable to my own words. That’s the whole game.</blockquote>
+  <cite>Alvin Emerson-Thomas · BCA Coaching Client</cite>
+</div></section>
+
+<section class="how"><div class="wrap center">
+  <div class="sec-eyebrow" style="color:var(--bca-gold)">How it works</div>
+  <h2>Three steps to your <span class="gild">first session.</span></h2>
+  <div class="steps" style="text-align:left">
+    <div class="step"><div class="big">01</div><h3>Choose</h3><p>Pick the run of sessions that fits — 4, 6, or 12.</p></div>
+    <div class="step"><div class="big">02</div><h3>Sign</h3><p>We generate your contract from your details. Sign on the spot.</p></div>
+    <div class="step"><div class="big">03</div><h3>Start</h3><p>You receive your signed PDF and invoice, then we match your coach.</p></div>
+  </div>
+</div></section>
+
+<div class="brandstrip"></div>
+<footer><div class="wrap foot-bottom">
+  <span>© 2026 BCA Leadership. All rights reserved.</span>
+  <span>Website v3 — prepared by TechFides</span>
+</div></footer>
+
+<div class="modal-veil" id="contract"><div class="modal"><div class="m-strip"></div>
+  <button class="x" onclick="closeContract()">×</button>
+  <div class="m-body">
+    <div id="c-s1">
+      <h3>Secure your coaching</h3>
+      <p class="m-sub">Selected: <strong id="c-pkg">—</strong> · <strong id="c-price">—</strong>. Enter your details and we’ll generate your contract to sign.</p>
+      <div class="field"><label>Full name</label><input id="c-name" type="text"></div>
+      <div class="field"><label>Company (optional)</label><input id="c-company" type="text"></div>
+      <div class="field"><label>Country</label><select id="c-country" data-countries></select></div>
+      <div class="field"><label>Billing address</label><input id="c-addr" type="text" placeholder="Street, city, postal code"></div>
+      <button class="btn gold" style="width:100%;justify-content:center" onclick="buildContract()">Generate my contract →</button>
+    </div>
+    <div id="c-s2" style="display:none">
+      <h3>Review &amp; sign</h3>
+      <p class="m-sub">Read the agreement, then sign on the spot.</p>
+      <div class="contract-box" id="c-body"></div>
+      <div class="field" style="margin-top:16px"><label>Sign — type your full name</label><input id="c-sign" type="text" style="font-family:var(--edit);font-style:italic;font-size:22px"></div>
+      <button class="btn gold" style="width:100%;justify-content:center" onclick="signContract()">Sign &amp; submit</button>
+      <p style="font-size:12px;opacity:.6;margin-top:10px">Legally binding e-signature. Timestamped and recorded.</p>
+    </div>
+    <div class="m-done" id="c-done" style="display:none">
+      <div class="ok">✓</div>
+      <h3>Congratulations!</h3>
+      <p>Your signed contract (PDF) and an invoice with payment instructions are on the way to your inbox shortly.</p>
+      <p style="margin-top:16px;font-size:12.5px;opacity:.55">This notifies BCA internally to authorize and issue your invoice. Payment is through secure branded checkout.</p>
+    </div>
+  </div>
+</div></div>
+
+<script>
+const COUNTRIES=["Afghanistan","Albania","Algeria","Angola","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belgium","Benin","Bolivia","Botswana","Brazil","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Comoros","Congo (Brazzaville)","Congo (DRC)","Costa Rica","Côte d’Ivoire","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti","Dominican Republic","Ecuador","Egypt","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Guinea","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kuwait","Lebanon","Lesotho","Liberia","Libya","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Mongolia","Morocco","Mozambique","Namibia","Nepal","Netherlands","New Zealand","Niger","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Rwanda","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Syria","Tanzania","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+document.querySelectorAll("select[data-countries]").forEach(function(sel){sel.innerHTML='<option value="" disabled selected>Select country</option>'+COUNTRIES.map(function(c){return "<option>"+c+"</option>";}).join("");});
+const cv=document.getElementById("contract");
+function val(id){var e=document.getElementById(id);return e&&e.value?e.value.trim():"";}
+function startContract(pkg,price){document.getElementById("c-pkg").textContent=pkg;document.getElementById("c-price").textContent=price;cv.dataset.pkg=pkg;cv.dataset.price=price;document.getElementById("c-s1").style.display="block";document.getElementById("c-s2").style.display="none";document.getElementById("c-done").style.display="none";cv.classList.add("open");document.body.style.overflow="hidden";}
+function closeContract(){cv.classList.remove("open");document.body.style.overflow="";}
+cv.addEventListener("click",function(e){if(e.target===cv)closeContract();});
+function buildContract(){var name=val("c-name")||"__________",company=val("c-company"),country=val("c-country")||"__________",addr=val("c-addr")||"__________",pkg=cv.dataset.pkg,price=cv.dataset.price;
+document.getElementById("c-body").innerHTML='<h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">BCA Leadership — Coaching Agreement</h4>'+
+'<p>This Agreement is entered into between <b>BCA Leadership</b> and <b>'+name+'</b>'+(company?", "+company:"")+", of "+country+".</p>"+
+"<p><b>Billing address:</b> "+addr+"</p>"+
+"<p><b>Selected package:</b> "+pkg+" — <b>"+price+"</b>.</p>"+
+"<p>BCA Leadership will deliver the coaching sessions of the selected package with a certified member of the BCA bench. Coaching is confidential. Payment is due per the invoice issued on countersignature.</p>"+
+"<p>By signing below, the Client accepts these terms and authorizes BCA Leadership to issue an invoice for the amount stated.</p>";
+document.getElementById("c-s1").style.display="none";document.getElementById("c-s2").style.display="block";}
+function signContract(){var sig=val("c-sign");if(!sig){document.getElementById("c-sign").focus();return;}/* TODO: persist signed PDF to CRM, email client, fire internal "authorize invoice" alert */document.getElementById("c-s2").style.display="none";document.getElementById("c-done").style.display="block";}
+</script>
+</body>
+</html>
