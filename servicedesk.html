@@ -91,6 +91,9 @@ table.ctr td{padding:11px 12px;border-bottom:1px solid var(--cream-2);font-varia
 .mod{background:var(--cream-2);border:1px dashed var(--line);padding:18px;font-size:13.5px;color:var(--text-secondary)}
 .mod b{display:block;color:var(--text-primary);font-weight:600;font-size:14px;margin-bottom:4px}
 .mod .soon{display:block;margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bca-green);font-weight:600}
+.mod.live-mod{cursor:pointer;border:1px solid var(--bca-green);background:#fff;transition:.2s}
+.mod.live-mod:hover{box-shadow:0 8px 22px rgba(5,141,82,.16);transform:translateY(-2px)}
+.card.flash{outline:2px solid var(--bca-green);outline-offset:3px;transition:outline .3s}
 
 footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-muted);font-size:13px;margin-top:20px}
 
@@ -164,7 +167,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
       <svg id="bycountry" viewBox="0 0 640 380" width="100%" role="img" aria-label="ARR by country"></svg>
     </div>
     <!-- live contracts -->
-    <div class="card">
+    <div class="card" id="contracts">
       <h3 data-t="c4.h">Membership agreements signed on the website</h3>
       <div class="hint" data-t="c4.hint">Live · invoice alerts go to admin@bcaleadership.com, authorized by Nii Lokko</div>
       <table class="ctr">
@@ -178,7 +181,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
   <h3 style="font-family:var(--disp);font-weight:400;font-size:20px;margin-top:26px" data-t="m.h">ServiceDesk modules</h3>
   <div class="hint" style="font-size:13px;color:var(--text-muted);margin:2px 0 12px" data-t="m.hint">Phased build. Each module goes live here as it ships.</div>
   <div class="mods">
-    <div class="mod"><b data-t="m1.b">Contract management</b><span data-t="m1.p">Membership and coaching agreements, versions, and status.</span><span class="soon" data-t="m.live">Live · phase 1</span></div>
+    <div class="mod live-mod" onclick="document.getElementById('contracts').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('contracts').classList.add('flash');setTimeout(()=>document.getElementById('contracts').classList.remove('flash'),1600)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')this.click()"><b data-t="m1.b">Contract management</b><span data-t="m1.p">Membership and coaching agreements, versions, and status.</span><span class="soon" data-t="m.live">Live · phase 1 · View signed agreements ↑</span></div>
     <div class="mod"><b data-t="m2.b">Onboarding</b><span data-t="m2.p">Coaches, members, staff, consultants, vendors, partners, clients.</span><span class="soon" data-t="m.soon">Coming</span></div>
     <div class="mod"><b data-t="m3.b">Lead generation</b><span data-t="m3.p">Prospecting agent, outreach, and response tracking.</span><span class="soon" data-t="m.soon2">Coming</span></div>
     <div class="mod"><b data-t="m4.b">Social media</b><span data-t="m4.p">Content planning, scheduling, and performance.</span><span class="soon" data-t="m.soon3">Coming</span></div>
