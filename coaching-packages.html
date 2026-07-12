@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Coaching Packages | BCA Leadership</title>
+<script src="assets/contract-config.js" defer></script>
 <meta name="description" content="Private executive coaching packages with the BCA bench: 4, 6, or 12 sessions. Sign your contract on the spot.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -179,6 +180,7 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none}footer a:hover{color:va
       <h3>Secure your coaching</h3>
       <p class="m-sub">Selected: <strong id="c-pkg">…</strong> · <strong id="c-price">…</strong>. Enter your details and we’ll generate your contract to sign.</p>
       <div class="field"><label>Full name</label><input id="c-name" type="text"></div>
+      <div class="field"><label>Email</label><input id="c-email" type="email"></div>
       <div class="field"><label>Company (optional)</label><input id="c-company" type="text"></div>
       <div class="field"><label>Country</label><select id="c-country" data-countries></select></div>
       <div class="field"><label>Billing address</label><input id="c-addr" type="text" placeholder="Street, city, postal code"></div>
@@ -217,7 +219,31 @@ document.getElementById("c-body").innerHTML='<h4 style="font-family:var(--disp);
 "<p>BCA Leadership will deliver the coaching sessions of the selected package with a certified member of the BCA bench. Coaching is confidential. Payment is due per the invoice issued on countersignature.</p>"+
 "<p>By signing below, the Client accepts these terms and authorizes BCA Leadership to issue an invoice for the amount stated.</p>";
 document.getElementById("c-s1").style.display="none";document.getElementById("c-s2").style.display="block";}
-function signContract(){var sig=val("c-sign");if(!sig){document.getElementById("c-sign").focus();return;}/* TODO: persist signed PDF to CRM, email client, fire internal "authorize invoice" alert */document.getElementById("c-s2").style.display="none";document.getElementById("c-done").style.display="block";}
+async function submitContract(p){try{if(window.BCA_CONTRACT_ENDPOINT){const r=await fetch(window.BCA_CONTRACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});return r.ok;}return false;}catch(e){console.error('contract submit',e);return false;}}
+async function signContract(){
+  var sig=val("c-sign");if(!sig){document.getElementById("c-sign").focus();return;}
+  var em=val("c-email");if(!em||em.indexOf("@")<1){closeErr();document.getElementById("c-s2").style.display="none";document.getElementById("c-s1").style.display="block";document.getElementById("c-email").focus();return;}
+  var ok=await submitContract({
+    full_name:val("c-name")||sig,
+    email:em,
+    company:val("c-company"),
+    country:val("c-country"),
+    tier:"Coaching: "+cv.dataset.pkg+" ("+cv.dataset.price+")",
+    agreed:true,
+    agreement_version:"coaching-placeholder-v1",
+    submitted_at:new Date().toISOString(),
+    page:location.href,
+    signature:sig
+  });
+  if(!ok){
+    var err=document.getElementById("c-sign-err");
+    if(!err){err=document.createElement("p");err.id="c-sign-err";err.style.cssText="color:#C14027;font-size:13.5px;margin-top:10px";err.innerHTML='We could not record your signature just now. Please try again, or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a> and we will complete it for you.';document.getElementById("c-s2").appendChild(err);}
+    err.style.display="block";return;
+  }
+  closeErr();
+  document.getElementById("c-s2").style.display="none";document.getElementById("c-done").style.display="block";
+}
+function closeErr(){var e=document.getElementById("c-sign-err");if(e)e.style.display="none";}
 </script>
 </body>
 </html>
