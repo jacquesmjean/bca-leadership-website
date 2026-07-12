@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Membership — BCA Leadership</title>
-<meta name="description" content="Join Africa's premier executive coaching network. Peer learning labs, ICF-certified coaching, and a continental boardroom — with monthly billing available.">
+<title>Membership | BCA Leadership</title>
+<meta name="description" content="Join Africa's premier executive coaching network. Peer learning labs, ICF-certified coaching, and a continental boardroom.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="assets/logo.png">
+<script src="assets/contract-config.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -16,10 +17,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How is BCA different from YPO or Vistage?",
+      "name": "How is BCA different from global executive networks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Those are excellent global networks at $10,000 to $26,000 per year with limited African presence. BCA was built for Africa from day one: 40+ certified coaches and consultants living and working across the continent, peer rooms filled with leaders in your markets, at a fraction of the price."
+        "text": "Global programs are excellent in their home markets. BCA was built for Africa from day one: 40+ certified coaches and consultants living and working across the continent, peer rooms filled with leaders in your markets, and pricing set for African market realities."
       }
     },
     {
@@ -44,14 +45,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Absolutely. Cohorts run under strict confidentiality, and your coaching relationship is private. What is said in the room stays in the room."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I pay monthly?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. New for 2026, every individual tier offers monthly billing through a secure branded checkout."
       }
     },
     {
@@ -237,7 +230,7 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
   <div class="wrap inner">
     <div class="eyebrow" data-t="hero.eyebrow">Membership</div>
     <h1 data-t="hero.h1">Making it to the top isn't success. <span class="gild">It's the starting line.</span></h1>
-    <div class="edit-line" data-t="hero.edit">Just because you've made it to a top position doesn't mean you've succeeded yet — and the leaders who know that are the ones who keep rising.</div>
+    <div class="edit-line" data-t="hero.edit">Just because you've made it to a top position doesn't mean you've succeeded yet. The leaders who know that are the ones who keep rising.</div>
   </div>
 </header>
 
@@ -248,29 +241,25 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
         <div class="sec-eyebrow" data-t="pricing.eyebrow">Individual Membership</div>
         <h2 data-t="pricing.h2">Choose your <span class="gild">room.</span></h2>
       </div>
-      <div class="toggle reveal" role="group" aria-label="Billing period">
-        <button class="on" id="bill-annual" onclick="setBilling('annual')" data-t="pricing.annual">Annual</button>
-        <button id="bill-monthly" onclick="setBilling('monthly')" data-t="pricing.monthly">Monthly · New</button>
-      </div>
     </div>
     <div class="tiers">
       <div class="tier reveal">
-        <h3>Associate</h3>
+        <h3>Basic</h3>
         <div class="for" data-t="t1.for">Rising executives &amp; founders</div>
-        <div class="price" data-annual="$600" data-monthly="$55"><span class="amount">$600</span> <span class="per" data-t="pricing.peryear">/ year</span></div>
+        <div class="price"><span class="amount">$600</span> <span class="per" data-t="pricing.peryear">/ year</span></div>
         <ul>
           <li data-t="t1.f1">Monthly peer learning cohort</li>
           <li data-t="t1.f2">BCAOnline boardroom access</li>
           <li data-t="t1.f3">Needs &amp; Leads networking</li>
           <li data-t="t1.f4">Member rates for MLC</li>
         </ul>
-        <button class="btn ghost" onclick="openJoin('Associate')" data-t="t1.cta">Begin as Associate</button>
+        <button class="btn ghost" onclick="openJoin('Basic')" data-t="t1.cta">Begin with Basic</button>
       </div>
       <div class="tier feature reveal" style="transition-delay:.1s">
         <div class="badge" data-t="t2.badge">Most Chosen</div>
         <h3>Platinum</h3>
         <div class="for" style="color:rgba(250,246,238,.6)" data-t="t2.for">CEOs &amp; managing directors</div>
-        <div class="price" data-annual="$2,800" data-monthly="$250"><span class="amount">$2,800</span> <span class="per" data-t="pricing.peryear">/ year</span></div>
+        <div class="price"><span class="amount">$2,800</span> <span class="per" data-t="pricing.peryear">/ year</span></div>
         <ul>
           <li data-t="t2.f1">12 private coaching sessions / year</li>
           <li data-t="t2.f2">12 monthly cohort meetings</li>
@@ -283,7 +272,7 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
       <div class="tier reveal" style="transition-delay:.2s">
         <h3>Executive</h3>
         <div class="for" data-t="t3.for">Senior leaders headed for the C-suite</div>
-        <div class="price" data-annual="$1,600" data-monthly="$160"><span class="amount">$1,600</span> <span class="per" data-t="pricing.peryear">/ year</span></div>
+        <div class="price"><span class="amount">$1,600</span> <span class="per" data-t="pricing.peryear">/ year</span></div>
         <ul>
           <li data-t="t3.f1">4 private coaching sessions / year</li>
           <li data-t="t3.f2">Monthly cohort meetings</li>
@@ -293,7 +282,7 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
         <button class="btn ghost" onclick="openJoin('Executive')" data-t="t3.cta">Choose Executive</button>
       </div>
     </div>
-    <p class="note reveal" data-t="pricing.note" style="font-style:normal">Coaching packages are sold separately from membership — for one-to-one coaching without a cohort, see <a href="coaching-packages.html" style="color:var(--bca-green);font-weight:500">Coaching Packages →</a></p>
+    <p class="note reveal" data-t="pricing.xsell" style="font-style:normal">Coaching packages are sold separately from membership. For one-to-one coaching without a cohort, see <a href="coaching-packages.html" style="color:var(--bca-green);font-weight:500">Coaching Packages →</a></p>
   </div>
 </section>
 
@@ -307,9 +296,9 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
       <button class="btn gold" style="margin-top:30px" onclick="openCorp()" data-t="corp.cta">Request a Corporate Proposal</button>
     </div>
     <div class="seats reveal">
-      <div class="seat" onclick="openCorp()"><div><div class="s-name" data-t="corp.s1">Team — 5 seats</div><div class="s-detail" data-t="corp.s1d">Executive committee</div></div><div class="s-price">$10,000 <small>/yr</small></div></div>
-      <div class="seat" onclick="openCorp()"><div><div class="s-name" data-t="corp.s2">Leadership — 10 seats</div><div class="s-detail" data-t="corp.s2d">Senior leadership tier</div></div><div class="s-price">$18,000 <small>/yr</small></div></div>
-      <div class="seat" onclick="openCorp()"><div><div class="s-name" data-t="corp.s3">Enterprise — 20 seats</div><div class="s-detail" data-t="corp.s3d">Organization-wide bench</div></div><div class="s-price">$30,000 <small>/yr</small></div></div>
+      <div class="seat" onclick="openCorp()"><div><div class="s-name" data-t="corp.s1">Team · 5 seats</div><div class="s-detail" data-t="corp.s1d">Executive committee</div></div><div class="s-price">$10,000 <small>/yr</small></div></div>
+      <div class="seat" onclick="openCorp()"><div><div class="s-name" data-t="corp.s2">Leadership · 10 seats</div><div class="s-detail" data-t="corp.s2d">Senior leadership tier</div></div><div class="s-price">$18,000 <small>/yr</small></div></div>
+      <div class="seat" onclick="openCorp()"><div><div class="s-name" data-t="corp.s3">Enterprise · 20 seats</div><div class="s-detail" data-t="corp.s3d">Organization-wide bench</div></div><div class="s-price">$30,000 <small>/yr</small></div></div>
     </div>
   </div>
 </section>
@@ -318,37 +307,37 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
   <div class="wrap">
     <div class="head reveal">
       <div class="sec-eyebrow" data-t="cmp.eyebrow">Why BCA</div>
-      <h2 data-t="cmp.h2">Built for Africa — <span class="gild">not adapted for it.</span></h2>
-      <p data-t="cmp.sub">Global peer networks are excellent for their geography and price point. Here is where each stands on what matters most: presence on the continent.</p>
+      <h2 data-t="cmp.h2">Built for Africa. <span class="gild">Not adapted for it.</span></h2>
+      <p data-t="cmp.sub">Global programs are excellent in their home markets. Here is what membership looks like when it is built on the continent, for the continent.</p>
     </div>
     <table class="compare reveal">
-      <thead><tr><th data-t="cmp.th1">Network</th><th data-t="cmp.th2">Annual Investment</th><th data-t="cmp.th3">African Coach Presence</th><th data-t="cmp.th4">Coaching Included</th><th data-t="cmp.th5">Built for Africa</th></tr></thead>
+      <thead><tr><th data-t="cmp.th1">What you get</th><th>BCA Leadership</th><th data-t="cmp.th3">Typical global executive program</th></tr></thead>
       <tbody>
-        <tr class="bca"><td>BCA Leadership</td><td>$600 – $2,800</td><td data-t="cmp.bca3">40+ coaches · all five regions</td><td class="y" data-t="cmp.inc">✓ Included</td><td class="y" data-t="cmp.since">✓ Since 2017</td></tr>
-        <tr><td>YPO</td><td>$10,000 – $20,000</td><td data-t="cmp.lim">Limited chapters</td><td data-t="cmp.addon">Add-on</td><td>—</td></tr>
-        <tr><td>Vistage</td><td>$18,000 – $26,000</td><td data-t="cmp.min">Minimal</td><td>✓</td><td>—</td></tr>
-        <tr><td>EO</td><td>$3,000 – $5,000</td><td data-t="cmp.some">Some chapters</td><td>—</td><td>—</td></tr>
+        <tr><td data-t="cmp.r1">Coaches who have led on the continent</td><td class="y" data-t="cmp.r1a">✓ 40+ coaches across all five regions</td><td data-t="cmp.r1b">Limited local presence</td></tr>
+        <tr><td data-t="cmp.r2">Peer cohort of African CEOs</td><td class="y" data-t="cmp.r2a">✓ The core of every cohort</td><td data-t="cmp.r2b">Rare</td></tr>
+        <tr><td data-t="cmp.r3">Pricing set for African market realities</td><td class="y" data-t="cmp.r3a">✓ From $600 per year</td><td data-t="cmp.r3b">Priced for global markets</td></tr>
+        <tr><td data-t="cmp.r4">Sessions across time zones and languages: EN &amp; FR</td><td class="y" data-t="cmp.r4a">✓ Built in from day one</td><td data-t="cmp.r4b">Limited</td></tr>
+        <tr><td data-t="cmp.r5">Continental network: Needs &amp; Leads</td><td class="y" data-t="cmp.r5a">✓ Included</td><td data-t="cmp.r5b">Not offered</td></tr>
       </tbody>
     </table>
-    <p class="note" data-t="cmp.note">Competitor figures are public-range estimates for draft review; verify before publication.</p>
   </div>
 </section>
 
 <section class="faq">
   <div class="wrap inner">
     <h2 class="reveal" data-t="faq.h2">Questions leaders <span class="gild">ask us.</span></h2>
-    <details><summary data-t="faq.q1">How is BCA different from YPO or Vistage?</summary><p data-t="faq.a1">Those are excellent global networks — at $10,000–$26,000 per year with limited African presence. BCA was built for Africa from day one: 40+ certified coaches and consultants living and working across the continent, peer rooms filled with leaders in your markets, at a fraction of the price.</p></details>
-    <details><summary data-t="faq.q2">Who will my coach be?</summary><p data-t="faq.a2">You choose one of the two cohort facilitators in your cohort as your personal leadership coach — certified professionals whose careers span Honeywell, Shell, Kenya Airways, the World Bank, and boards across Africa.</p></details>
+    <details><summary data-t="faq.q1">How is BCA different from global executive networks?</summary><p data-t="faq.a1">Global programs are excellent in their home markets. BCA was built for Africa from day one: 40+ certified coaches and consultants living and working across the continent, peer rooms filled with leaders in your markets, and pricing set for African market realities.</p></details>
+    <details><summary data-t="faq.q2">Who will my coach be?</summary><p data-t="faq.a2">You choose one of the two cohort facilitators in your cohort as your personal leadership coach. These are certified professionals whose careers span Honeywell, Shell, Kenya Airways, the World Bank, and boards across Africa.</p></details>
     <details><summary data-t="faq.q3">What happens in a cohort meeting?</summary><p data-t="faq.a3">A guest speaker opens with a relevant topic; members discuss. Then half the meeting goes to peer problem-solving: you bring the problem, your peers bring solutions. Every problem you face has been solved by another member before.</p></details>
     <details><summary data-t="faq.q4">Is everything confidential?</summary><p data-t="faq.a4">Absolutely. Cohorts run under strict confidentiality, and your coaching relationship is private. What is said in the room stays in the room.</p></details>
-    <details><summary data-t="faq.q5">Can I pay monthly?</summary><p data-t="faq.a5">Yes — new for 2026, every individual tier offers monthly billing through a secure branded checkout.</p></details>
+
     <details><summary data-t="faq.q6">What results do members see?</summary><p data-t="faq.a6">63% of member CEOs experience revenue growth above 10%. Beyond the numbers: sharper decisions, stronger boards, and a peer network that has your back across the continent.</p></details>
   </div>
 </section>
 
 <section class="cta-final">
   <div class="inner">
-    <div class="reveal" style="font-family:var(--edit);font-style:italic;font-size:clamp(19px,2.3vw,26px);color:var(--bca-gold);max-width:60ch;margin:0 auto 28px" data-t="final.quote">"The peer network has my back across the continent. That's worth more than the fee." — Maryam Darwich</div>
+    <div class="reveal" style="font-family:var(--edit);font-style:italic;font-size:clamp(19px,2.3vw,26px);color:var(--bca-gold);max-width:60ch;margin:0 auto 28px" data-t="final.quote">"The peer network has my back across the continent. That's worth more than the fee." · Maryam Darwich</div>
     <h2 class="reveal" data-t="final.h2">Your next level has <span class="gild">a room waiting.</span></h2>
     <div class="edit-line reveal" data-t="final.edit">Tell us where you lead, and we'll match the tier, the cohort, and the coach.</div>
     <button class="btn gold reveal" onclick="document.getElementById('tiers').scrollIntoView({behavior:'smooth'})" data-t="final.cta">Start My Application →</button>
@@ -358,10 +347,10 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
 <div class="brandstrip"></div>
 
 <footer>
-  <div class="wrap" style="text-align:center;padding-bottom:16px"><div class="social"><a href="https://www.linkedin.com/company/bcaafrica/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://www.facebook.com/bcaAfrica" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://x.com/bcaAfrica" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zm-1.293 19.494h2.039L6.486 3.24H4.298L17.608 20.647z"/></svg></a><span class="soon" title="Coming soon" aria-label="TikTok — coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="soon" title="Coming soon" aria-label="Instagram — coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span><a href="https://www.youtube.com/@bcaleadership1873" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div></div>
+  <div class="wrap" style="text-align:center;padding-bottom:16px"><div class="social"><a href="https://www.linkedin.com/company/bcaafrica/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://www.facebook.com/bcaAfrica" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://x.com/bcaAfrica" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zm-1.293 19.494h2.039L6.486 3.24H4.298L17.608 20.647z"/></svg></a><span class="soon" title="Coming soon" aria-label="TikTok (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></span><span class="soon" title="Coming soon" aria-label="Instagram (coming soon)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span><a href="https://www.youtube.com/@bcaleadership1873" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a></div></div>
   <div class="wrap foot-bottom">
     <span data-t="foot.copy">© 2026 BCA Leadership. All rights reserved. · C/O FFG (Mauritius) Ltd, Grand Baie, Mauritius</span>
-    <span data-t="foot.draft">Website v3 — prepared by TechFides</span>
+    <span data-t="foot.draft">Website v3 · prepared by TechFides</span>
   </div>
 </footer>
 
@@ -376,24 +365,24 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
         <h3 data-t="jm.h">Secure your place</h3>
         <p class="m-sub"><span data-t="m.tier">Selected tier:</span> <strong id="j-tier">Platinum</strong> · <strong id="j-price">$2,800 / year</strong></p>
         <div class="field"><label data-t="m.name">Full name</label><input id="j-name" type="text"></div>
+        <div class="field"><label data-t="m.email">Work email</label><input id="j-email" type="email" placeholder="you@company.com"></div>
         <div class="field"><label data-t="m.company">Company</label><input id="j-company" type="text"></div>
         <div class="field"><label data-t="m.country">Country</label><select id="j-country" data-countries></select></div>
-        <div class="field"><label data-t="jm.addr">Billing address</label><input id="j-addr" type="text" placeholder="Street, city, postal code"></div>
-        <button class="btn gold" style="width:100%;justify-content:center;margin-top:8px" onclick="buildContract()" data-t="jm.gen">Generate my contract →</button>
+        <button class="btn gold" style="width:100%;justify-content:center;margin-top:8px" onclick="toAgreement()" data-t="jm.next">Continue to agreement →</button>
       </div>
       <div id="j-s2" style="display:none">
         <h3 data-t="jm.review">Review &amp; sign</h3>
-        <p class="m-sub" data-t="jm.reviewsub">Read the agreement, then sign on the spot.</p>
-        <div id="j-contract" style="background:#fff;border:1px solid var(--line);padding:20px 22px;font-size:13.5px;color:rgba(36,36,36,.78);max-height:220px;overflow:auto;line-height:1.55"></div>
-        <div class="field" style="margin-top:16px"><label data-t="jm.sign">Sign — type your full name</label><input id="j-sign" type="text" style="font-family:var(--edit);font-style:italic;font-size:22px"></div>
-        <button class="btn gold" style="width:100%;justify-content:center" onclick="signContract()" data-t="jm.signbtn">Sign &amp; submit</button>
-        <p style="font-size:12px;opacity:.6;margin-top:10px" data-t="jm.signnote">Legally binding e-signature. Timestamped and recorded.</p>
+        <p class="m-sub" data-t="jm.reviewsub">Read the agreement, then sign by checking the box below.</p>
+        <div id="j-contract" data-t="jm.contract" style="background:#fff;border:1px solid var(--line);padding:20px 22px;font-size:13.5px;color:rgba(36,36,36,.78);max-height:220px;overflow:auto;line-height:1.55"><h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">BCA Leadership Membership Agreement</h4><p style="font-style:italic;margin-bottom:10px">[Placeholder — BCA's approved Membership Agreement text will be inserted here before launch.]</p><p style="margin-bottom:8px"><b>1. Term.</b> Membership runs for 12 months from the date of signing.</p><p style="margin-bottom:8px"><b>2. Fees.</b> The membership fee is annual. BCA issues an invoice after this agreement is signed.</p><p style="margin-bottom:8px"><b>3. Renewal.</b> Membership renews for a further 12 months unless either party gives notice before the renewal date.</p><p><b>4. Conduct.</b> Members observe BCA's confidentiality and professional conduct standards.</p></div>
+        <label style="display:flex;gap:12px;align-items:flex-start;margin-top:16px;font-size:14px;cursor:pointer"><input id="j-agree" type="checkbox" style="margin-top:4px;width:16px;height:16px;flex-shrink:0;accent-color:var(--bca-green)"><span data-t="jm.agree">I have read and agree to the BCA Leadership Membership Agreement.</span></label>
+        <p style="font-size:12px;opacity:.6;margin:10px 0 16px" data-t="jm.esign">By checking this box and submitting, you are signing the agreement electronically.</p>
+        <button class="btn gold" style="width:100%;justify-content:center" onclick="signContract()" data-t="jm.signbtn">Sign &amp; request invoice</button>
       </div>
       <div class="m-done" id="j-done" style="display:none">
         <div class="ok">✓</div>
-        <h3 data-t="jm.congrats">Congratulations!</h3>
-        <p data-t="jm.done2">Your signed contract (PDF) and an invoice with payment instructions are on the way to your inbox shortly.</p>
-        <p style="margin-top:18px;font-size:12.5px;opacity:.55" data-t="jm.internal">This notifies BCA internally to authorize and issue your invoice. Payment is through secure branded checkout — no PayPal personal links.</p>
+        <h3 data-t="jm.congrats">Agreement signed.</h3>
+        <p data-t="jm.done2">Your membership agreement is signed and recorded. BCA will issue your annual invoice to your email shortly.</p>
+        <p style="margin-top:18px;font-size:12.5px;opacity:.55" data-t="jm.invoice">Membership billing is annual and follows your signed agreement, by secure Stripe invoice.</p>
       </div>
     </div>
   </div>
@@ -406,7 +395,7 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
     <div class="m-body">
       <div id="corp-form">
         <h3 data-t="corp.h">Request a corporate proposal</h3>
-        <p class="m-sub" data-t="corp.subm">A few questions, then we book a private briefing — this also helps us tailor the proposal.</p>
+        <p class="m-sub" data-t="corp.subm">A few questions, then we book a private briefing. This also helps us tailor the proposal.</p>
         <div class="field"><label data-t="m.name">Full name</label><input type="text"></div>
         <div class="field"><label data-t="m.email">Work email</label><input type="email" placeholder="you@company.com"></div>
         <div class="field"><label data-t="corp.org">Organization</label><input type="text"></div>
@@ -426,145 +415,151 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
 </div>
 
 <script>
+// BCA_CONTRACT_ENDPOINT is set in contract-config.js (wired to Supabase; invoice alerts go to admin@bcaleadership.com, authorized by Nii Lokko).
+async function submitContract(p){try{if(window.BCA_CONTRACT_ENDPOINT){const r=await fetch(window.BCA_CONTRACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});return r.ok;}return false;}catch(e){console.error('contract submit',e);return false;}}
 const I18N = {
 en:{
  "nav.home":"Home","nav.membership":"Membership","nav.coaches":"The Bench","nav.coaching":"Coaching","nav.services":"Services","nav.join":"Join BCA",
  "hero.eyebrow":"Membership",
  "hero.h1":'Making it to the top isn\'t success. <span class="gild">It\'s the starting line.</span>',
- "hero.edit":"Just because you've made it to a top position doesn't mean you've succeeded yet — and the leaders who know that are the ones who keep rising.",
+ "hero.edit":"Just because you've made it to a top position doesn't mean you've succeeded yet. The leaders who know that are the ones who keep rising.",
  "pricing.eyebrow":"Individual Membership","pricing.h2":'Choose your <span class="gild">room.</span>',
- "pricing.annual":"Annual","pricing.monthly":"Monthly · New","pricing.peryear":"/ year","pricing.permonth":"/ month",
- "t1.for":"Rising executives & founders","t1.f1":"Monthly peer learning cohort","t1.f2":"BCAOnline boardroom access","t1.f3":"Needs & Leads networking","t1.f4":"Member rates for MLC","t1.cta":"Begin as Associate",
+ "pricing.peryear":"/ year",
+ "t1.for":"Rising executives & founders","t1.f1":"Monthly peer learning cohort","t1.f2":"BCAOnline boardroom access","t1.f3":"Needs & Leads networking","t1.f4":"Member rates for MLC","t1.cta":"Begin with Basic",
  "t2.badge":"Most Chosen","t2.for":"CEOs & managing directors","t2.f1":"12 private coaching sessions / year","t2.f2":"12 monthly cohort meetings","t2.f3":"Choose your coach from your cohort's facilitators","t2.f4":"MLC conference pass included","t2.f5":"Business matching across 15+ countries","t2.cta":"Join Platinum",
  "t3.for":"Senior leaders headed for the C-suite","t3.f1":"4 private coaching sessions / year","t3.f2":"Monthly cohort meetings","t3.f3":"BCAOnline boardroom access","t3.f4":"MLC member pricing","t3.cta":"Choose Executive",
- "pricing.note":"Draft note for BCA review: Platinum reflects current published pricing (12 sessions + 12 meetings, $2,800/yr). Associate and Executive names, contents, and monthly amounts are TechFides proposals pending BCA confirmation. Monthly billing is new — recommended to remove the upfront barrier for SME leaders. Checkout replaces PayPal personal links with branded payment.",
+ "pricing.xsell":'Coaching packages are sold separately from membership. For one-to-one coaching without a cohort, see <a href="coaching-packages.html" style="color:var(--bca-green);font-weight:500">Coaching Packages →</a>',
  "corp.new":"New for 2026","corp.h2":"Corporate membership.","corp.edit":"Your leadership bench is your succession plan.",
  "corp.p":"Give your executive team shared learning labs, private coaching, and a development program your board can measure. Each seat carries the full Platinum experience, plus an annual leadership report for your organization.",
  "corp.cta":"Request a Corporate Proposal",
- "corp.s1":"Team — 5 seats","corp.s1d":"Executive committee","corp.s2":"Leadership — 10 seats","corp.s2d":"Senior leadership tier","corp.s3":"Enterprise — 20 seats","corp.s3d":"Organization-wide bench",
- "cmp.eyebrow":"Why BCA","cmp.h2":'Built for Africa — <span class="gild">not adapted for it.</span>',
- "cmp.sub":"Global peer networks are excellent for their geography and price point. Here is where each stands on what matters most: presence on the continent.",
- "cmp.th1":"Network","cmp.th2":"Annual Investment","cmp.th3":"African Coach Presence","cmp.th4":"Coaching Included","cmp.th5":"Built for Africa",
- "cmp.bca3":"40+ coaches · all five regions","cmp.inc":"✓ Included","cmp.since":"✓ Since 2017","cmp.lim":"Limited chapters","cmp.addon":"Add-on","cmp.min":"Minimal","cmp.some":"Some chapters",
- "cmp.note":"Competitor figures are public-range estimates for draft review; verify before publication.",
+ "corp.s1":"Team · 5 seats","corp.s1d":"Executive committee","corp.s2":"Leadership · 10 seats","corp.s2d":"Senior leadership tier","corp.s3":"Enterprise · 20 seats","corp.s3d":"Organization-wide bench",
+ "cmp.eyebrow":"Why BCA","cmp.h2":'Built for Africa. <span class="gild">Not adapted for it.</span>',
+ "cmp.sub":"Global programs are excellent in their home markets. Here is what membership looks like when it is built on the continent, for the continent.",
+ "cmp.th1":"What you get","cmp.th3":"Typical global executive program",
+ "cmp.r1":"Coaches who have led on the continent","cmp.r1a":"✓ 40+ coaches across all five regions","cmp.r1b":"Limited local presence",
+ "cmp.r2":"Peer cohort of African CEOs","cmp.r2a":"✓ The core of every cohort","cmp.r2b":"Rare",
+ "cmp.r3":"Pricing set for African market realities","cmp.r3a":"✓ From $600 per year","cmp.r3b":"Priced for global markets",
+ "cmp.r4":"Sessions across time zones and languages: EN & FR","cmp.r4a":"✓ Built in from day one","cmp.r4b":"Limited",
+ "cmp.r5":"Continental network: Needs & Leads","cmp.r5a":"✓ Included","cmp.r5b":"Not offered",
  "faq.h2":'Questions leaders <span class="gild">ask us.</span>',
- "faq.q1":"How is BCA different from YPO or Vistage?","faq.a1":"Those are excellent global networks — at $10,000–$26,000 per year with limited African presence. BCA was built for Africa from day one: 40+ certified coaches and consultants living and working across the continent, peer rooms filled with leaders in your markets, at a fraction of the price.",
- "faq.q2":"Who will my coach be?","faq.a2":"You choose one of the two cohort facilitators in your cohort as your personal leadership coach — certified professionals whose careers span Honeywell, Shell, Kenya Airways, the World Bank, and boards across Africa.",
+ "faq.q1":"How is BCA different from global executive networks?","faq.a1":"Global programs are excellent in their home markets. BCA was built for Africa from day one: 40+ certified coaches and consultants living and working across the continent, peer rooms filled with leaders in your markets, and pricing set for African market realities.",
+ "faq.q2":"Who will my coach be?","faq.a2":"You choose one of the two cohort facilitators in your cohort as your personal leadership coach. These are certified professionals whose careers span Honeywell, Shell, Kenya Airways, the World Bank, and boards across Africa.",
  "faq.q3":"What happens in a cohort meeting?","faq.a3":"A guest speaker opens with a relevant topic; members discuss. Then half the meeting goes to peer problem-solving: you bring the problem, your peers bring solutions. Every problem you face has been solved by another member before.",
  "faq.q4":"Is everything confidential?","faq.a4":"Absolutely. Cohorts run under strict confidentiality, and your coaching relationship is private. What is said in the room stays in the room.",
- "faq.q5":"Can I pay monthly?","faq.a5":"Yes — new for 2026, every individual tier offers monthly billing through a secure branded checkout.",
  "faq.q6":"What results do members see?","faq.a6":"63% of member CEOs experience revenue growth above 10%. Beyond the numbers: sharper decisions, stronger boards, and a peer network that has your back across the continent.",
  "final.h2":'Your next level has <span class="gild">a room waiting.</span>',"final.edit":"Tell us where you lead, and we'll match the tier, the cohort, and the coach.","final.cta":"Start My Application →",
- "foot.copy":"© 2026 BCA Leadership. All rights reserved. · C/O FFG (Mauritius) Ltd, Grand Baie, Mauritius","foot.draft":"Website v3 — prepared by TechFides",
- "m.company":"Company","jm.h":"Secure your place","jm.addr":"Billing address","jm.gen":"Generate my contract →","jm.review":"Review and sign","jm.reviewsub":"Read the agreement, then sign on the spot.","jm.sign":"Sign — type your full name","jm.signbtn":"Sign and submit","jm.signnote":"Legally binding e-signature. Timestamped and recorded.","jm.congrats":"Congratulations!","jm.done2":"Your signed contract (PDF) and an invoice with payment instructions are on the way to your inbox shortly.","jm.internal":"This notifies BCA internally to authorize and issue your invoice. Payment is through secure branded checkout — no PayPal personal links.","corp.h":"Request a corporate proposal","corp.subm":"A few questions, then we book a private briefing — this also helps us tailor the proposal.","corp.org":"Organization","corp.q1":"How many leaders would take part?","corp.q2":"What outcome are you hoping for?","corp.doc":"Attach a brief (optional · PDF/DOCX · max 10MB)","corp.send":"Request private briefing →","corp.recv":"Request received.","corp.recv2":"We will reach out to schedule your private briefing.","final.quote":"“The peer network has my back across the continent. That’s worth more than the fee.” — Maryam Darwich","m.h3":"Membership application","m.tier":"Selected tier:","m.name":"Full name","m.email":"Work email","m.role":"Company & role","m.country":"Country","m.other":"Other",
- "m.checkout":"Continue to Secure Checkout →",
- "m.done.h":"Application received.","m.done.p":"Your cohort match and secure payment link arrive by email within one business day.",
- "m.done.note":"Demo note: in production this flows into BCA's CRM, triggers cohort matching, and issues a branded payment link — no PayPal personal URLs."
+ "foot.copy":"© 2026 BCA Leadership. All rights reserved. · C/O FFG (Mauritius) Ltd, Grand Baie, Mauritius","foot.draft":"Website v3 · prepared by TechFides",
+ "m.company":"Company","jm.h":"Secure your place","jm.next":"Continue to agreement →","jm.review":"Review and sign","jm.reviewsub":"Read the agreement, then sign by checking the box below.",
+ "jm.contract":'<h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">BCA Leadership Membership Agreement</h4><p style="font-style:italic;margin-bottom:10px">[Placeholder — BCA\'s approved Membership Agreement text will be inserted here before launch.]</p><p style="margin-bottom:8px"><b>1. Term.</b> Membership runs for 12 months from the date of signing.</p><p style="margin-bottom:8px"><b>2. Fees.</b> The membership fee is annual. BCA issues an invoice after this agreement is signed.</p><p style="margin-bottom:8px"><b>3. Renewal.</b> Membership renews for a further 12 months unless either party gives notice before the renewal date.</p><p><b>4. Conduct.</b> Members observe BCA\'s confidentiality and professional conduct standards.</p>',
+ "jm.agree":"I have read and agree to the BCA Leadership Membership Agreement.","jm.esign":"By checking this box and submitting, you are signing the agreement electronically.","jm.signbtn":"Sign & request invoice","jm.congrats":"Agreement signed.","jm.done2":"Your membership agreement is signed and recorded. BCA will issue your annual invoice to your email shortly.","jm.invoice":"Membership billing is annual and follows your signed agreement, by secure Stripe invoice.","corp.h":"Request a corporate proposal","corp.subm":"A few questions, then we book a private briefing. This also helps us tailor the proposal.","corp.org":"Organization","corp.q1":"How many leaders would take part?","corp.q2":"What outcome are you hoping for?","corp.doc":"Attach a brief (optional · PDF/DOCX · max 10MB)","corp.send":"Request private briefing →","corp.recv":"Request received.","corp.recv2":"We will reach out to schedule your private briefing.","final.quote":"“The peer network has my back across the continent. That’s worth more than the fee.” · Maryam Darwich","m.tier":"Selected tier:","m.name":"Full name","m.email":"Work email","m.country":"Country"
 },
 fr:{
  "nav.home":"Accueil","nav.membership":"Adhésion","nav.coaches":"Le Banc","nav.coaching":"Coaching","nav.services":"Services","nav.join":"Rejoindre BCA",
  "hero.eyebrow":"Adhésion",
  "hero.h1":'Atteindre le sommet n\'est pas la réussite. <span class="gild">C\'est la ligne de départ.</span>',
- "hero.edit":"Avoir atteint un poste de direction ne signifie pas que vous avez déjà réussi — et les leaders qui le savent sont ceux qui continuent de monter.",
+ "hero.edit":"Avoir atteint un poste de direction ne signifie pas que vous avez déjà réussi. Les leaders qui le savent sont ceux qui continuent de monter.",
  "pricing.eyebrow":"Adhésion individuelle","pricing.h2":'Choisissez votre <span class="gild">salle.</span>',
- "pricing.annual":"Annuel","pricing.monthly":"Mensuel · Nouveau","pricing.peryear":"/ an","pricing.permonth":"/ mois",
- "t1.for":"Cadres montants et fondateurs","t1.f1":"Cohorte mensuelle d'apprentissage entre pairs","t1.f2":"Accès au boardroom BCAOnline","t1.f3":"Réseautage Needs & Leads","t1.f4":"Tarifs membres pour le MLC","t1.cta":"Commencer comme Associate",
+ "pricing.peryear":"/ an",
+ "t1.for":"Cadres montants et fondateurs","t1.f1":"Cohorte mensuelle d'apprentissage entre pairs","t1.f2":"Accès au boardroom BCAOnline","t1.f3":"Réseautage Needs & Leads","t1.f4":"Tarifs membres pour le MLC","t1.cta":"Commencer avec Basic",
  "t2.badge":"Le plus choisi","t2.for":"PDG et directeurs généraux","t2.f1":"12 séances de coaching privées / an","t2.f2":"12 réunions mensuelles de cohorte","t2.f3":"Choisissez votre coach parmi les facilitateurs de votre cohorte","t2.f4":"Pass conférence MLC inclus","t2.f5":"Mise en relation d'affaires dans 15+ pays","t2.cta":"Rejoindre Platinum",
  "t3.for":"Cadres dirigeants en route vers la direction générale","t3.f1":"4 séances de coaching privées / an","t3.f2":"Réunions mensuelles de cohorte","t3.f3":"Accès au boardroom BCAOnline","t3.f4":"Tarif membre MLC","t3.cta":"Choisir Executive",
- "pricing.note":"Note de maquette pour la revue BCA : Platinum reflète le tarif publié actuel (12 séances + 12 réunions, 2 800 $/an). Les noms, contenus et montants mensuels d'Associate et Executive sont des propositions TechFides en attente de confirmation BCA. La facturation mensuelle est nouvelle — recommandée pour lever la barrière du paiement initial. Le paiement remplace les liens PayPal personnels par un règlement de marque.",
+ "pricing.xsell":'Les forfaits de coaching sont vendus séparément de l\'adhésion. Pour un coaching individuel sans cohorte, voir <a href="coaching-packages.html" style="color:var(--bca-green);font-weight:500">Forfaits de coaching →</a>',
  "corp.new":"Nouveau pour 2026","corp.h2":"Adhésion entreprise.","corp.edit":"Votre banc de leaders est votre plan de succession.",
  "corp.p":"Offrez à votre équipe dirigeante des labs partagés, du coaching privé et un programme de développement mesurable par votre conseil. Chaque siège porte l'expérience Platinum complète, plus un rapport annuel de leadership pour votre organisation.",
  "corp.cta":"Demander une proposition entreprise",
- "corp.s1":"Équipe — 5 sièges","corp.s1d":"Comité exécutif","corp.s2":"Leadership — 10 sièges","corp.s2d":"Encadrement supérieur","corp.s3":"Entreprise — 20 sièges","corp.s3d":"Banc à l'échelle de l'organisation",
- "cmp.eyebrow":"Pourquoi BCA","cmp.h2":'Conçu pour l’Afrique — <span class="gild">pas adapté après coup.</span>',
- "cmp.sub":"Les réseaux mondiaux de pairs sont excellents pour leur géographie et leur prix. Voici où chacun se situe sur l’essentiel : la présence sur le continent.",
- "cmp.th1":"Réseau","cmp.th2":"Investissement annuel","cmp.th3":"Présence de coachs en Afrique","cmp.th4":"Coaching inclus","cmp.th5":"Conçu pour l'Afrique",
- "cmp.bca3":"40+ coachs · les cinq régions","cmp.inc":"✓ Inclus","cmp.since":"✓ Depuis 2017","cmp.lim":"Chapitres limités","cmp.addon":"En option","cmp.min":"Minimale","cmp.some":"Quelques chapitres",
- "cmp.note":"Les chiffres des concurrents sont des fourchettes publiques pour la revue de maquette ; à vérifier avant publication.",
+ "corp.s1":"Équipe · 5 sièges","corp.s1d":"Comité exécutif","corp.s2":"Leadership · 10 sièges","corp.s2d":"Encadrement supérieur","corp.s3":"Entreprise · 20 sièges","corp.s3d":"Banc à l'échelle de l'organisation",
+ "cmp.eyebrow":"Pourquoi BCA","cmp.h2":'Conçu pour l’Afrique. <span class="gild">Pas adapté après coup.</span>',
+ "cmp.sub":"Les programmes mondiaux sont excellents sur leurs marchés d'origine. Voici ce que donne une adhésion conçue sur le continent, pour le continent.",
+ "cmp.th1":"Ce que vous obtenez","cmp.th3":"Programme exécutif mondial type",
+ "cmp.r1":"Des coachs qui ont dirigé sur le continent","cmp.r1a":"✓ 40+ coachs dans les cinq régions","cmp.r1b":"Présence locale limitée",
+ "cmp.r2":"Une cohorte de pairs de PDG africains","cmp.r2a":"✓ Le cœur de chaque cohorte","cmp.r2b":"Rare",
+ "cmp.r3":"Des tarifs pensés pour les réalités du marché africain","cmp.r3a":"✓ À partir de 600 $ par an","cmp.r3b":"Tarifs pensés pour les marchés mondiaux",
+ "cmp.r4":"Des séances sur plusieurs fuseaux horaires et langues : EN & FR","cmp.r4a":"✓ Intégré dès le premier jour","cmp.r4b":"Limité",
+ "cmp.r5":"Réseau continental : Needs & Leads","cmp.r5a":"✓ Inclus","cmp.r5b":"Non proposé",
  "faq.h2":'Les questions que les leaders <span class="gild">nous posent.</span>',
- "faq.q1":"En quoi BCA diffère-t-il de YPO ou Vistage ?","faq.a1":"Ce sont d'excellents réseaux mondiaux — à 10 000–26 000 $ par an avec une présence africaine limitée. BCA a été conçu pour l'Afrique dès le premier jour : 40+ coachs et consultants certifiés vivant et travaillant sur le continent, des salles de pairs remplies de leaders de vos marchés, à une fraction du prix.",
- "faq.q2":"Qui sera mon coach ?","faq.a2":"Vous choisissez l'un des deux facilitateurs de votre cohorte comme coach personnel — des professionnels certifiés dont les carrières couvrent Honeywell, Shell, Kenya Airways, la Banque mondiale et des conseils à travers l'Afrique.",
+ "faq.q1":"En quoi BCA diffère-t-il des réseaux exécutifs mondiaux ?","faq.a1":"Les programmes mondiaux sont excellents sur leurs marchés d'origine. BCA a été conçu pour l'Afrique dès le premier jour : 40+ coachs et consultants certifiés vivant et travaillant sur le continent, des salles de pairs remplies de leaders de vos marchés, et des tarifs pensés pour les réalités du marché africain.",
+ "faq.q2":"Qui sera mon coach ?","faq.a2":"Vous choisissez l'un des deux facilitateurs de votre cohorte comme coach personnel. Ce sont des professionnels certifiés dont les carrières couvrent Honeywell, Shell, Kenya Airways, la Banque mondiale et des conseils à travers l'Afrique.",
  "faq.q3":"Que se passe-t-il dans une réunion de cohorte ?","faq.a3":"Un intervenant ouvre avec un sujet pertinent ; les membres en discutent. Puis la moitié de la réunion est consacrée à la résolution entre pairs : vous apportez le problème, vos pairs apportent les solutions. Chaque problème a déjà été résolu par un autre membre.",
  "faq.q4":"Tout est-il confidentiel ?","faq.a4":"Absolument. Les cohortes fonctionnent sous stricte confidentialité, et votre relation de coaching est privée. Ce qui se dit dans la salle reste dans la salle.",
- "faq.q5":"Puis-je payer mensuellement ?","faq.a5":"Oui — nouveauté 2026, chaque formule individuelle propose une facturation mensuelle via un paiement sécurisé de marque.",
  "faq.q6":"Quels résultats voient les membres ?","faq.a6":"63 % des PDG membres connaissent une croissance de chiffre d'affaires supérieure à 10 %. Au-delà des chiffres : des décisions plus nettes, des conseils plus solides et un réseau de pairs qui vous soutient sur tout le continent.",
  "final.h2":'Votre prochain niveau a <span class="gild">une salle qui vous attend.</span>',"final.edit":"Dites-nous où vous dirigez, et nous trouverons la formule, la cohorte et le coach.","final.cta":"Commencer ma candidature →",
- "foot.copy":"© 2026 BCA Leadership. Tous droits réservés. · C/O FFG (Mauritius) Ltd, Grand Baie, Maurice","foot.draft":"Site v3 — préparé par TechFides",
- "m.company":"Entreprise","jm.h":"Réservez votre place","jm.addr":"Adresse de facturation","jm.gen":"Générer mon contrat →","jm.review":"Relire et signer","jm.reviewsub":"Lisez l’accord, puis signez sur-le-champ.","jm.sign":"Signez — saisissez votre nom complet","jm.signbtn":"Signer et envoyer","jm.signnote":"Signature électronique juridiquement contraignante. Horodatée et enregistrée.","jm.congrats":"Félicitations !","jm.done2":"Votre contrat signé (PDF) et une facture avec les instructions de paiement arrivent sous peu dans votre boîte.","jm.internal":"Ceci notifie BCA en interne pour autoriser et émettre votre facture. Le paiement se fait par un règlement sécurisé de marque — sans liens PayPal personnels.","corp.h":"Demander une proposition entreprise","corp.subm":"Quelques questions, puis nous planifions un briefing privé — cela nous aide aussi à adapter la proposition.","corp.org":"Organisation","corp.q1":"Combien de dirigeants participeraient ?","corp.q2":"Quel résultat visez-vous ?","corp.doc":"Joindre un document (facultatif · PDF/DOCX · max 10 Mo)","corp.send":"Demander un briefing privé →","corp.recv":"Demande reçue.","corp.recv2":"Nous vous contacterons pour planifier votre briefing privé.","final.quote":"« Le réseau de pairs me soutient sur tout le continent. Cela vaut plus que la cotisation. » — Maryam Darwich","m.h3":"Candidature d'adhésion","m.tier":"Formule choisie :","m.name":"Nom complet","m.email":"Courriel professionnel","m.role":"Entreprise et fonction","m.country":"Pays","m.other":"Autre",
- "m.checkout":"Continuer vers le paiement sécurisé →",
- "m.done.h":"Candidature reçue.","m.done.p":"Votre affectation de cohorte et le lien de paiement sécurisé arrivent par courriel sous un jour ouvré.",
- "m.done.note":"Note démo : en production, ce formulaire alimente le CRM de BCA, déclenche l'affectation de cohorte et émet un lien de paiement de marque — sans liens PayPal personnels."
+ "foot.copy":"© 2026 BCA Leadership. Tous droits réservés. · C/O FFG (Mauritius) Ltd, Grand Baie, Maurice","foot.draft":"Site v3 · préparé par TechFides",
+ "m.company":"Entreprise","jm.h":"Réservez votre place","jm.next":"Continuer vers l'accord →","jm.review":"Relire et signer","jm.reviewsub":"Lisez l'accord, puis signez en cochant la case ci-dessous.",
+ "jm.contract":'<h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">Accord d\'adhésion BCA Leadership</h4><p style="font-style:italic;margin-bottom:10px">[Texte provisoire : le texte de l\'Accord d\'adhésion approuvé par BCA sera inséré ici avant le lancement.]</p><p style="margin-bottom:8px"><b>1. Durée.</b> L\'adhésion court sur 12 mois à compter de la date de signature.</p><p style="margin-bottom:8px"><b>2. Frais.</b> La cotisation est annuelle. BCA émet une facture après la signature du présent accord.</p><p style="margin-bottom:8px"><b>3. Renouvellement.</b> L\'adhésion se renouvelle pour 12 mois supplémentaires, sauf préavis de l\'une des parties avant la date de renouvellement.</p><p><b>4. Conduite.</b> Les membres respectent les règles de confidentialité et de conduite professionnelle de BCA.</p>',
+ "jm.agree":"J'ai lu et j'accepte l'Accord d'adhésion BCA Leadership.","jm.esign":"En cochant cette case et en envoyant le formulaire, vous signez l'accord par voie électronique.","jm.signbtn":"Signer et demander la facture","jm.congrats":"Accord signé.","jm.done2":"Votre accord d'adhésion est signé et enregistré. BCA enverra sous peu votre facture annuelle à votre adresse e-mail.","jm.invoice":"La facturation de l'adhésion est annuelle et suit votre accord signé, par facture sécurisée Stripe.","corp.h":"Demander une proposition entreprise","corp.subm":"Quelques questions, puis nous planifions un briefing privé. Cela nous aide aussi à adapter la proposition.","corp.org":"Organisation","corp.q1":"Combien de dirigeants participeraient ?","corp.q2":"Quel résultat visez-vous ?","corp.doc":"Joindre un document (facultatif · PDF/DOCX · max 10 Mo)","corp.send":"Demander un briefing privé →","corp.recv":"Demande reçue.","corp.recv2":"Nous vous contacterons pour planifier votre briefing privé.","final.quote":"« Le réseau de pairs me soutient sur tout le continent. Cela vaut plus que la cotisation. » · Maryam Darwich","m.tier":"Formule choisie :","m.name":"Nom complet","m.email":"Courriel professionnel","m.country":"Pays"
 },
 es:{
  "nav.home":"Inicio","nav.membership":"Membresía","nav.coaches":"El Banco","nav.coaching":"Coaching","nav.services":"Servicios","nav.join":"Unirse a BCA",
  "hero.eyebrow":"Membresía",
  "hero.h1":'Llegar a la cima no es el éxito. <span class="gild">Es la línea de salida.</span>',
- "hero.edit":"Haber llegado a un alto cargo no significa que ya haya triunfado — y los líderes que lo saben son los que siguen subiendo.",
+ "hero.edit":"Haber llegado a un alto cargo no significa que ya haya triunfado. Los líderes que lo saben son los que siguen subiendo.",
  "pricing.eyebrow":"Membresía individual","pricing.h2":'Elija su <span class="gild">sala.</span>',
- "pricing.annual":"Anual","pricing.monthly":"Mensual · Nuevo","pricing.peryear":"/ año","pricing.permonth":"/ mes",
- "t1.for":"Ejecutivos en ascenso y fundadores","t1.f1":"Cohorte mensual de aprendizaje entre pares","t1.f2":"Acceso a la sala BCAOnline","t1.f3":"Networking Needs & Leads","t1.f4":"Tarifas de miembro para el MLC","t1.cta":"Comenzar como Associate",
+ "pricing.peryear":"/ año",
+ "t1.for":"Ejecutivos en ascenso y fundadores","t1.f1":"Cohorte mensual de aprendizaje entre pares","t1.f2":"Acceso a la sala BCAOnline","t1.f3":"Networking Needs & Leads","t1.f4":"Tarifas de miembro para el MLC","t1.cta":"Comenzar con Basic",
  "t2.badge":"El más elegido","t2.for":"CEOs y directores generales","t2.f1":"12 sesiones privadas de coaching / año","t2.f2":"12 reuniones mensuales de cohorte","t2.f3":"Elija su coach entre los facilitadores de su cohorte","t2.f4":"Pase a la conferencia MLC incluido","t2.f5":"Conexión de negocios en 15+ países","t2.cta":"Unirse a Platinum",
  "t3.for":"Líderes sénior rumbo a la alta dirección","t3.f1":"4 sesiones privadas de coaching / año","t3.f2":"Reuniones mensuales de cohorte","t3.f3":"Acceso a la sala BCAOnline","t3.f4":"Precio de miembro para el MLC","t3.cta":"Elegir Executive",
- "pricing.note":"Nota de borrador para revisión de BCA: Platinum refleja el precio publicado actual (12 sesiones + 12 reuniones, $2.800/año). Los nombres, contenidos y montos mensuales de Associate y Executive son propuestas de TechFides pendientes de confirmación. La facturación mensual es nueva — recomendada para eliminar la barrera del pago inicial. El pago reemplaza los enlaces personales de PayPal por un cobro de marca.",
+ "pricing.xsell":'Los paquetes de coaching se venden por separado de la membresía. Para coaching individual sin cohorte, vea <a href="coaching-packages.html" style="color:var(--bca-green);font-weight:500">Paquetes de coaching →</a>',
  "corp.new":"Nuevo para 2026","corp.h2":"Membresía corporativa.","corp.edit":"Su banca de líderes es su plan de sucesión.",
  "corp.p":"Dé a su equipo ejecutivo labs compartidos, coaching privado y un programa de desarrollo que su junta pueda medir. Cada asiento incluye la experiencia Platinum completa, más un informe anual de liderazgo para su organización.",
  "corp.cta":"Solicitar una propuesta corporativa",
- "corp.s1":"Equipo — 5 asientos","corp.s1d":"Comité ejecutivo","corp.s2":"Liderazgo — 10 asientos","corp.s2d":"Nivel directivo superior","corp.s3":"Empresa — 20 asientos","corp.s3d":"Banca a escala de la organización",
- "cmp.eyebrow":"Por qué BCA","cmp.h2":'Hecho para África — <span class="gild">no adaptado a ella.</span>',
- "cmp.sub":"Las redes globales de pares son excelentes por su geografía y su precio. Aquí está la posición de cada una en lo que más importa: la presencia en el continente.",
- "cmp.th1":"Red","cmp.th2":"Inversión anual","cmp.th3":"Presencia de coaches en África","cmp.th4":"Coaching incluido","cmp.th5":"Hecho para África",
- "cmp.bca3":"40+ coaches · las cinco regiones","cmp.inc":"✓ Incluido","cmp.since":"✓ Desde 2017","cmp.lim":"Capítulos limitados","cmp.addon":"Adicional","cmp.min":"Mínima","cmp.some":"Algunos capítulos",
- "cmp.note":"Las cifras de competidores son rangos públicos para revisión del borrador; verificar antes de publicar.",
+ "corp.s1":"Equipo · 5 asientos","corp.s1d":"Comité ejecutivo","corp.s2":"Liderazgo · 10 asientos","corp.s2d":"Nivel directivo superior","corp.s3":"Empresa · 20 asientos","corp.s3d":"Banca a escala de la organización",
+ "cmp.eyebrow":"Por qué BCA","cmp.h2":'Hecho para África. <span class="gild">No adaptado a ella.</span>',
+ "cmp.sub":"Los programas globales son excelentes en sus mercados de origen. Así se ve una membresía construida en el continente, para el continente.",
+ "cmp.th1":"Lo que recibe","cmp.th3":"Programa ejecutivo global típico",
+ "cmp.r1":"Coaches que han liderado en el continente","cmp.r1a":"✓ 40+ coaches en las cinco regiones","cmp.r1b":"Presencia local limitada",
+ "cmp.r2":"Cohorte de pares de CEOs africanos","cmp.r2a":"✓ El núcleo de cada cohorte","cmp.r2b":"Poco común",
+ "cmp.r3":"Precios fijados para las realidades del mercado africano","cmp.r3a":"✓ Desde $600 al año","cmp.r3b":"Precios para mercados globales",
+ "cmp.r4":"Sesiones en varios husos horarios e idiomas: EN y FR","cmp.r4a":"✓ Integrado desde el primer día","cmp.r4b":"Limitado",
+ "cmp.r5":"Red continental: Needs & Leads","cmp.r5a":"✓ Incluido","cmp.r5b":"No disponible",
  "faq.h2":'Preguntas que los líderes <span class="gild">nos hacen.</span>',
- "faq.q1":"¿En qué se diferencia BCA de YPO o Vistage?","faq.a1":"Esas son excelentes redes globales — a $10.000–$26.000 al año con presencia africana limitada. BCA fue construido para África desde el primer día: 40+ coaches y consultores certificados viviendo y trabajando en el continente, salas de pares llenas de líderes de sus mercados, a una fracción del precio.",
- "faq.q2":"¿Quién será mi coach?","faq.a2":"Usted elige a uno de los dos facilitadores de su cohorte como su coach personal — profesionales certificados cuyas carreras abarcan Honeywell, Shell, Kenya Airways, el Banco Mundial y juntas en toda África.",
+ "faq.q1":"¿En qué se diferencia BCA de las redes ejecutivas globales?","faq.a1":"Los programas globales son excelentes en sus mercados de origen. BCA fue construido para África desde el primer día: 40+ coaches y consultores certificados viviendo y trabajando en el continente, salas de pares llenas de líderes de sus mercados, y precios fijados para las realidades del mercado africano.",
+ "faq.q2":"¿Quién será mi coach?","faq.a2":"Usted elige a uno de los dos facilitadores de su cohorte como su coach personal. Son profesionales certificados cuyas carreras abarcan Honeywell, Shell, Kenya Airways, el Banco Mundial y juntas en toda África.",
  "faq.q3":"¿Qué sucede en una reunión de cohorte?","faq.a3":"Un orador invitado abre con un tema relevante; los miembros discuten. Luego la mitad de la reunión se dedica a la resolución entre pares: usted trae el problema, sus pares traen las soluciones. Cada problema ya fue resuelto por otro miembro.",
  "faq.q4":"¿Todo es confidencial?","faq.a4":"Absolutamente. Las cohortes operan bajo estricta confidencialidad, y su relación de coaching es privada. Lo que se dice en la sala queda en la sala.",
- "faq.q5":"¿Puedo pagar mensualmente?","faq.a5":"Sí — novedad de 2026, cada nivel individual ofrece facturación mensual mediante un pago seguro de marca.",
  "faq.q6":"¿Qué resultados ven los miembros?","faq.a6":"El 63% de los CEO miembros experimentan un crecimiento de ingresos superior al 10%. Más allá de los números: decisiones más agudas, juntas más sólidas y una red de pares que le respalda en todo el continente.",
  "final.h2":'Su próximo nivel tiene <span class="gild">una sala esperando.</span>',"final.edit":"Díganos dónde lidera, y emparejaremos el nivel, la cohorte y el coach.","final.cta":"Iniciar mi solicitud →",
- "foot.copy":"© 2026 BCA Leadership. Todos los derechos reservados. · C/O FFG (Mauritius) Ltd, Grand Baie, Mauricio","foot.draft":"Sitio v3 — preparado por TechFides",
- "m.company":"Empresa","jm.h":"Asegure su lugar","jm.addr":"Dirección de facturación","jm.gen":"Generar mi contrato →","jm.review":"Revisar y firmar","jm.reviewsub":"Lea el acuerdo y firme en el momento.","jm.sign":"Firme — escriba su nombre completo","jm.signbtn":"Firmar y enviar","jm.signnote":"Firma electrónica legalmente vinculante. Con marca de tiempo y registrada.","jm.congrats":"¡Felicitaciones!","jm.done2":"Su contrato firmado (PDF) y una factura con instrucciones de pago van en camino a su bandeja en breve.","jm.internal":"Esto notifica a BCA internamente para autorizar y emitir su factura. El pago es a través de un cobro seguro de marca — sin enlaces personales de PayPal.","corp.h":"Solicitar una propuesta corporativa","corp.subm":"Unas preguntas y luego agendamos una sesión privada — esto también nos ayuda a adaptar la propuesta.","corp.org":"Organización","corp.q1":"¿Cuántos líderes participarían?","corp.q2":"¿Qué resultado espera?","corp.doc":"Adjunte un documento (opcional · PDF/DOCX · máx 10 MB)","corp.send":"Solicitar sesión privada →","corp.recv":"Solicitud recibida.","corp.recv2":"Nos pondremos en contacto para agendar su sesión privada.","final.quote":"«La red de pares me respalda en todo el continente. Eso vale más que la cuota.» — Maryam Darwich","m.h3":"Solicitud de membresía","m.tier":"Nivel seleccionado:","m.name":"Nombre completo","m.email":"Correo de trabajo","m.role":"Empresa y cargo","m.country":"País","m.other":"Otro",
- "m.checkout":"Continuar al pago seguro →",
- "m.done.h":"Solicitud recibida.","m.done.p":"Su asignación de cohorte y el enlace de pago seguro llegan por correo en un día hábil.",
- "m.done.note":"Nota demo: en producción esto fluye al CRM de BCA, activa el emparejamiento de cohorte y emite un enlace de pago de marca — sin URLs personales de PayPal."
+ "foot.copy":"© 2026 BCA Leadership. Todos los derechos reservados. · C/O FFG (Mauritius) Ltd, Grand Baie, Mauricio","foot.draft":"Sitio v3 · preparado por TechFides",
+ "m.company":"Empresa","jm.h":"Asegure su lugar","jm.next":"Continuar al acuerdo →","jm.review":"Revisar y firmar","jm.reviewsub":"Lea el acuerdo y firme marcando la casilla de abajo.",
+ "jm.contract":'<h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">Acuerdo de Membresía de BCA Leadership</h4><p style="font-style:italic;margin-bottom:10px">[Texto provisional: el texto del Acuerdo de Membresía aprobado por BCA se insertará aquí antes del lanzamiento.]</p><p style="margin-bottom:8px"><b>1. Vigencia.</b> La membresía dura 12 meses desde la fecha de firma.</p><p style="margin-bottom:8px"><b>2. Cuotas.</b> La cuota de membresía es anual. BCA emite una factura después de la firma de este acuerdo.</p><p style="margin-bottom:8px"><b>3. Renovación.</b> La membresía se renueva por otros 12 meses, salvo aviso de cualquiera de las partes antes de la fecha de renovación.</p><p><b>4. Conducta.</b> Los miembros respetan las normas de confidencialidad y conducta profesional de BCA.</p>',
+ "jm.agree":"He leído y acepto el Acuerdo de Membresía de BCA Leadership.","jm.esign":"Al marcar esta casilla y enviar, usted firma el acuerdo electrónicamente.","jm.signbtn":"Firmar y solicitar factura","jm.congrats":"Acuerdo firmado.","jm.done2":"Su acuerdo de membresía está firmado y registrado. BCA emitirá en breve su factura anual a su correo.","jm.invoice":"La facturación de la membresía es anual y sigue a su acuerdo firmado, mediante factura segura de Stripe.","corp.h":"Solicitar una propuesta corporativa","corp.subm":"Unas preguntas y luego agendamos una sesión privada. Esto también nos ayuda a adaptar la propuesta.","corp.org":"Organización","corp.q1":"¿Cuántos líderes participarían?","corp.q2":"¿Qué resultado espera?","corp.doc":"Adjunte un documento (opcional · PDF/DOCX · máx 10 MB)","corp.send":"Solicitar sesión privada →","corp.recv":"Solicitud recibida.","corp.recv2":"Nos pondremos en contacto para agendar su sesión privada.","final.quote":"«La red de pares me respalda en todo el continente. Eso vale más que la cuota.» · Maryam Darwich","m.tier":"Nivel seleccionado:","m.name":"Nombre completo","m.email":"Correo de trabajo","m.country":"País"
 },
 pt:{
  "nav.home":"Início","nav.membership":"Adesão","nav.coaches":"O Banco","nav.coaching":"Coaching","nav.services":"Serviços","nav.join":"Juntar-se à BCA",
  "hero.eyebrow":"Adesão",
  "hero.h1":'Chegar ao topo não é o sucesso. <span class="gild">É a linha de partida.</span>',
- "hero.edit":"Ter chegado a um cargo de topo não significa que já tenha vencido — e os líderes que o sabem são os que continuam a subir.",
+ "hero.edit":"Ter chegado a um cargo de topo não significa que já tenha vencido. Os líderes que o sabem são os que continuam a subir.",
  "pricing.eyebrow":"Adesão individual","pricing.h2":'Escolha a sua <span class="gild">sala.</span>',
- "pricing.annual":"Anual","pricing.monthly":"Mensal · Novo","pricing.peryear":"/ ano","pricing.permonth":"/ mês",
- "t1.for":"Executivos em ascensão e fundadores","t1.f1":"Coorte mensal de aprendizagem entre pares","t1.f2":"Acesso à sala BCAOnline","t1.f3":"Networking Needs & Leads","t1.f4":"Tarifas de membro para o MLC","t1.cta":"Começar como Associate",
+ "pricing.peryear":"/ ano",
+ "t1.for":"Executivos em ascensão e fundadores","t1.f1":"Coorte mensal de aprendizagem entre pares","t1.f2":"Acesso à sala BCAOnline","t1.f3":"Networking Needs & Leads","t1.f4":"Tarifas de membro para o MLC","t1.cta":"Começar com Basic",
  "t2.badge":"O mais escolhido","t2.for":"CEOs e diretores-gerais","t2.f1":"12 sessões privadas de coaching / ano","t2.f2":"12 reuniões mensais de coorte","t2.f3":"Escolha o seu coach entre os facilitadores da sua coorte","t2.f4":"Passe para a conferência MLC incluído","t2.f5":"Conexão de negócios em 15+ países","t2.cta":"Aderir ao Platinum",
  "t3.for":"Líderes seniores a caminho da direção-geral","t3.f1":"4 sessões privadas de coaching / ano","t3.f2":"Reuniões mensais de coorte","t3.f3":"Acesso à sala BCAOnline","t3.f4":"Preço de membro para o MLC","t3.cta":"Escolher Executive",
- "pricing.note":"Nota de rascunho para revisão da BCA: Platinum reflete o preço publicado atual (12 sessões + 12 reuniões, $2.800/ano). Os nomes, conteúdos e valores mensais de Associate e Executive são propostas da TechFides pendentes de confirmação. A faturação mensal é nova — recomendada para remover a barreira do pagamento inicial. O pagamento substitui os links pessoais do PayPal por uma cobrança de marca.",
+ "pricing.xsell":'Os pacotes de coaching são vendidos separadamente da adesão. Para coaching individual sem coorte, veja <a href="coaching-packages.html" style="color:var(--bca-green);font-weight:500">Pacotes de coaching →</a>',
  "corp.new":"Novo para 2026","corp.h2":"Adesão corporativa.","corp.edit":"O seu banco de líderes é o seu plano de sucessão.",
  "corp.p":"Dê à sua equipa executiva labs partilhados, coaching privado e um programa de desenvolvimento que o seu conselho pode medir. Cada lugar inclui a experiência Platinum completa, mais um relatório anual de liderança para a sua organização.",
  "corp.cta":"Pedir uma proposta corporativa",
- "corp.s1":"Equipa — 5 lugares","corp.s1d":"Comité executivo","corp.s2":"Liderança — 10 lugares","corp.s2d":"Quadros superiores","corp.s3":"Empresa — 20 lugares","corp.s3d":"Banco à escala da organização",
- "cmp.eyebrow":"Porquê a BCA","cmp.h2":'Feito para África — <span class="gild">não adaptado a ela.</span>',
- "cmp.sub":"As redes globais de pares são excelentes pela sua geografia e preço. Eis onde cada uma se situa no que mais importa: a presença no continente.",
- "cmp.th1":"Rede","cmp.th2":"Investimento anual","cmp.th3":"Presença de coaches em África","cmp.th4":"Coaching incluído","cmp.th5":"Feito para África",
- "cmp.bca3":"40+ coaches · as cinco regiões","cmp.inc":"✓ Incluído","cmp.since":"✓ Desde 2017","cmp.lim":"Capítulos limitados","cmp.addon":"Opcional","cmp.min":"Mínima","cmp.some":"Alguns capítulos",
- "cmp.note":"Os números dos concorrentes são intervalos públicos para revisão do rascunho; verificar antes de publicar.",
+ "corp.s1":"Equipa · 5 lugares","corp.s1d":"Comité executivo","corp.s2":"Liderança · 10 lugares","corp.s2d":"Quadros superiores","corp.s3":"Empresa · 20 lugares","corp.s3d":"Banco à escala da organização",
+ "cmp.eyebrow":"Porquê a BCA","cmp.h2":'Feito para África. <span class="gild">Não adaptado a ela.</span>',
+ "cmp.sub":"Os programas globais são excelentes nos seus mercados de origem. Eis o que é uma adesão construída no continente, para o continente.",
+ "cmp.th1":"O que recebe","cmp.th3":"Programa executivo global típico",
+ "cmp.r1":"Coaches que lideraram no continente","cmp.r1a":"✓ 40+ coaches nas cinco regiões","cmp.r1b":"Presença local limitada",
+ "cmp.r2":"Coorte de pares de CEOs africanos","cmp.r2a":"✓ O núcleo de cada coorte","cmp.r2b":"Raro",
+ "cmp.r3":"Preços definidos para as realidades do mercado africano","cmp.r3a":"✓ A partir de $600 por ano","cmp.r3b":"Preços para mercados globais",
+ "cmp.r4":"Sessões em vários fusos horários e línguas: EN e FR","cmp.r4a":"✓ Integrado desde o primeiro dia","cmp.r4b":"Limitado",
+ "cmp.r5":"Rede continental: Needs & Leads","cmp.r5a":"✓ Incluída","cmp.r5b":"Não disponível",
  "faq.h2":'Perguntas que os líderes <span class="gild">nos fazem.</span>',
- "faq.q1":"Em que é que a BCA difere da YPO ou da Vistage?","faq.a1":"São excelentes redes globais — a $10.000–$26.000 por ano com presença africana limitada. A BCA foi construída para África desde o primeiro dia: 40+ coaches e consultores certificados a viver e trabalhar no continente, salas de pares cheias de líderes dos seus mercados, a uma fração do preço.",
- "faq.q2":"Quem será o meu coach?","faq.a2":"Escolhe um dos dois facilitadores da sua coorte como coach pessoal — profissionais certificados cujas carreiras passam pela Honeywell, Shell, Kenya Airways, Banco Mundial e conselhos por toda a África.",
+ "faq.q1":"Em que é que a BCA difere das redes executivas globais?","faq.a1":"Os programas globais são excelentes nos seus mercados de origem. A BCA foi construída para África desde o primeiro dia: 40+ coaches e consultores certificados a viver e trabalhar no continente, salas de pares cheias de líderes dos seus mercados, e preços definidos para as realidades do mercado africano.",
+ "faq.q2":"Quem será o meu coach?","faq.a2":"Escolhe um dos dois facilitadores da sua coorte como coach pessoal. São profissionais certificados cujas carreiras passam pela Honeywell, Shell, Kenya Airways, Banco Mundial e conselhos por toda a África.",
  "faq.q3":"O que acontece numa reunião de coorte?","faq.a3":"Um orador convidado abre com um tema relevante; os membros discutem. Depois, metade da reunião é dedicada à resolução entre pares: você traz o problema, os seus pares trazem as soluções. Cada problema já foi resolvido por outro membro.",
  "faq.q4":"É tudo confidencial?","faq.a4":"Absolutamente. As coortes funcionam sob estrita confidencialidade, e a sua relação de coaching é privada. O que se diz na sala fica na sala.",
- "faq.q5":"Posso pagar mensalmente?","faq.a5":"Sim — novidade de 2026, cada nível individual oferece faturação mensal através de um pagamento seguro de marca.",
  "faq.q6":"Que resultados veem os membros?","faq.a6":"63% dos CEOs membros registam crescimento de receita acima de 10%. Para além dos números: decisões mais afiadas, conselhos mais fortes e uma rede de pares que o apoia em todo o continente.",
  "final.h2":'O seu próximo nível tem <span class="gild">uma sala à espera.</span>',"final.edit":"Diga-nos onde lidera, e encontraremos o nível, a coorte e o coach.","final.cta":"Iniciar a minha candidatura →",
- "foot.copy":"© 2026 BCA Leadership. Todos os direitos reservados. · C/O FFG (Mauritius) Ltd, Grand Baie, Maurícia","foot.draft":"Site v3 — preparado pela TechFides",
- "m.company":"Empresa","jm.h":"Garanta o seu lugar","jm.addr":"Endereço de faturação","jm.gen":"Gerar o meu contrato →","jm.review":"Rever e assinar","jm.reviewsub":"Leia o acordo e assine de imediato.","jm.sign":"Assine — escreva o seu nome completo","jm.signbtn":"Assinar e enviar","jm.signnote":"Assinatura eletrónica juridicamente vinculativa. Com data e hora e registada.","jm.congrats":"Parabéns!","jm.done2":"O seu contrato assinado (PDF) e uma fatura com instruções de pagamento seguem em breve para a sua caixa de entrada.","jm.internal":"Isto notifica a BCA internamente para autorizar e emitir a sua fatura. O pagamento é feito através de um checkout seguro de marca — sem links pessoais do PayPal.","corp.h":"Solicitar uma proposta corporativa","corp.subm":"Algumas perguntas e depois marcamos um briefing privado — isto também nos ajuda a adaptar a proposta.","corp.org":"Organização","corp.q1":"Quantos líderes participariam?","corp.q2":"Que resultado espera?","corp.doc":"Anexe um documento (opcional · PDF/DOCX · máx 10 MB)","corp.send":"Solicitar briefing privado →","corp.recv":"Pedido recebido.","corp.recv2":"Entraremos em contacto para marcar o seu briefing privado.","final.quote":"«A rede de pares apoia-me em todo o continente. Vale mais do que a quota.» — Maryam Darwich","m.h3":"Candidatura de adesão","m.tier":"Nível selecionado:","m.name":"Nome completo","m.email":"E-mail de trabalho","m.role":"Empresa e cargo","m.country":"País","m.other":"Outro",
- "m.checkout":"Continuar para o pagamento seguro →",
- "m.done.h":"Candidatura recebida.","m.done.p":"A sua correspondência de coorte e o link de pagamento seguro chegam por e-mail num dia útil.",
- "m.done.note":"Nota demo: em produção, isto flui para o CRM da BCA, ativa a correspondência de coorte e emite um link de pagamento de marca — sem URLs pessoais do PayPal."
+ "foot.copy":"© 2026 BCA Leadership. Todos os direitos reservados. · C/O FFG (Mauritius) Ltd, Grand Baie, Maurícia","foot.draft":"Site v3 · preparado pela TechFides",
+ "m.company":"Empresa","jm.h":"Garanta o seu lugar","jm.next":"Continuar para o acordo →","jm.review":"Rever e assinar","jm.reviewsub":"Leia o acordo e assine marcando a caixa abaixo.",
+ "jm.contract":'<h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">Acordo de Adesão BCA Leadership</h4><p style="font-style:italic;margin-bottom:10px">[Texto provisório: o texto do Acordo de Adesão aprovado pela BCA será inserido aqui antes do lançamento.]</p><p style="margin-bottom:8px"><b>1. Duração.</b> A adesão vigora por 12 meses a partir da data de assinatura.</p><p style="margin-bottom:8px"><b>2. Quotas.</b> A quota de adesão é anual. A BCA emite uma fatura após a assinatura deste acordo.</p><p style="margin-bottom:8px"><b>3. Renovação.</b> A adesão renova-se por mais 12 meses, salvo aviso de qualquer das partes antes da data de renovação.</p><p><b>4. Conduta.</b> Os membros respeitam as normas de confidencialidade e de conduta profissional da BCA.</p>',
+ "jm.agree":"Li e aceito o Acordo de Adesão BCA Leadership.","jm.esign":"Ao marcar esta caixa e submeter, está a assinar o acordo eletronicamente.","jm.signbtn":"Assinar e pedir a fatura","jm.congrats":"Acordo assinado.","jm.done2":"O seu acordo de adesão está assinado e registado. A BCA enviará em breve a sua fatura anual para o seu e-mail.","jm.invoice":"A faturação da adesão é anual e segue o seu acordo assinado, por fatura segura Stripe.","corp.h":"Solicitar uma proposta corporativa","corp.subm":"Algumas perguntas e depois marcamos um briefing privado. Isto também nos ajuda a adaptar a proposta.","corp.org":"Organização","corp.q1":"Quantos líderes participariam?","corp.q2":"Que resultado espera?","corp.doc":"Anexe um documento (opcional · PDF/DOCX · máx 10 MB)","corp.send":"Solicitar briefing privado →","corp.recv":"Pedido recebido.","corp.recv2":"Entraremos em contacto para marcar o seu briefing privado.","final.quote":"«A rede de pares apoia-me em todo o continente. Vale mais do que a quota.» · Maryam Darwich","m.tier":"Nível selecionado:","m.name":"Nome completo","m.email":"E-mail de trabalho","m.country":"País"
 }};
 
-let LANG = "en", BILLING = "annual";
+let LANG = "en";
 function setLang(l){
   LANG = l;
   document.documentElement.lang = l;
@@ -575,24 +570,13 @@ function setLang(l){
     const v = dict[el.dataset.t];
     if (v !== undefined) el.innerHTML = v;
   });
-  setBilling(BILLING, true); // re-apply per-period labels in new language
-}
-function setBilling(mode, silent){
-  BILLING = mode;
-  document.getElementById("bill-annual").classList.toggle("on", mode==="annual");
-  document.getElementById("bill-monthly").classList.toggle("on", mode==="monthly");
-  const per = I18N[LANG][mode==="annual" ? "pricing.peryear" : "pricing.permonth"];
-  document.querySelectorAll(".price").forEach(p=>{
-    p.querySelector(".amount").textContent = mode==="annual" ? p.dataset.annual : p.dataset.monthly;
-    p.querySelector(".per").textContent = per;
-  });
 }
 try{ const saved = localStorage.getItem("bca-lang"); if (saved && I18N[saved]) setLang(saved) }catch(e){}
 
 const COUNTRIES=["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo (Brazzaville)","Congo (DRC)","Costa Rica","Côte d’Ivoire","Croatia","Cuba","Cyprus","Czechia","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Macedonia","Norway","Oman","Pakistan","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Rwanda","Saint Lucia","Samoa","San Marino","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
 function fillCountries(){document.querySelectorAll("select[data-countries]").forEach(function(sel){if(sel.dataset.filled)return;sel.innerHTML='<option value="" disabled selected>Select country</option>'+COUNTRIES.map(function(c){return "<option>"+c+"</option>";}).join("");sel.dataset.filled="1";});}
 fillCountries();
-const PRICES={Associate:"$600 / year",Platinum:"$2,800 / year",Executive:"$1,600 / year"};
+const PRICES={Basic:"$600 / year",Platinum:"$2,800 / year",Executive:"$1,600 / year"};
 const jv = document.getElementById("join");
 function val(id){var e=document.getElementById(id);return e&&e.value?e.value.trim():"";}
 function openJoin(tier){
@@ -601,25 +585,46 @@ function openJoin(tier){
   document.getElementById("j-s1").style.display="block";
   document.getElementById("j-s2").style.display="none";
   document.getElementById("j-done").style.display="none";
+  document.getElementById("j-agree").checked=false;
   jv.classList.add("open"); document.body.style.overflow="hidden";
 }
 function closeJoin(){ jv.classList.remove("open"); document.body.style.overflow=""; }
 jv.addEventListener("click", e=>{ if(e.target===jv) closeJoin(); });
-function buildContract(){
-  var name=val("j-name")||"__________",company=val("j-company"),country=val("j-country")||"__________",addr=val("j-addr")||"__________";
-  var tier=document.getElementById("j-tier").textContent,price=document.getElementById("j-price").textContent;
-  document.getElementById("j-contract").innerHTML='<h4 style="font-family:var(--disp);font-weight:400;margin-bottom:8px">BCA Leadership — Membership Agreement</h4>'+
-    '<p>This Agreement is entered into between <b>BCA Leadership</b> and <b>'+name+'</b>'+(company?", "+company:"")+", of "+country+".</p>"+
-    "<p><b>Billing address:</b> "+addr+"</p>"+
-    "<p><b>Membership:</b> "+tier+" — <b>"+price+"</b>.</p>"+
-    "<p>BCA Leadership will deliver the services of the selected membership. Coaching is confidential and delivered by certified members of the BCA bench. Payment is due per the invoice issued on countersignature.</p>"+
-    "<p>By signing below, the Member accepts these terms and authorizes BCA Leadership to issue an invoice for the amount stated.</p>";
+function toAgreement(){
+  if(!val("j-name")){document.getElementById("j-name").focus();return;}
+  var em=val("j-email"); if(!em||em.indexOf("@")<1){document.getElementById("j-email").focus();return;}
   document.getElementById("j-s1").style.display="none";
   document.getElementById("j-s2").style.display="block";
 }
-function signContract(){
-  var sig=val("j-sign"); if(!sig){document.getElementById("j-sign").focus();return;}
-  /* TODO: persist signed contract PDF to CRM, email member, fire internal "authorize invoice" alert */
+async function signContract(){
+  var box=document.getElementById("j-agree");
+  if(!box.checked){box.focus();return;}
+  var btn=document.querySelector("#j-s2 .btn, #j-s2 button.btn");
+  if(btn){btn.disabled=true;btn.style.opacity=.6;}
+  var ok=await submitContract({
+    full_name:val("j-name"),
+    email:val("j-email"),
+    company:val("j-company"),
+    country:val("j-country"),
+    tier:document.getElementById("j-tier").textContent,
+    agreed:true,
+    agreement_version:"placeholder-v1",
+    submitted_at:new Date().toISOString(),
+    page:location.href
+  });
+  if(btn){btn.disabled=false;btn.style.opacity=1;}
+  if(!ok){
+    var err=document.getElementById("j-sign-err");
+    if(!err){
+      err=document.createElement("p");
+      err.id="j-sign-err";
+      err.style.cssText="color:#C14027;font-size:13.5px;margin-top:10px";
+      err.innerHTML='We could not record your signature just now. Please try again, or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a> and we will complete it for you.';
+      document.getElementById("j-s2").appendChild(err);
+    }
+    err.style.display="block";
+    return;
+  }
   document.getElementById("j-s2").style.display="none";
   document.getElementById("j-done").style.display="block";
 }

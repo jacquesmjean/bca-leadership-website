@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ServiceDesk | BCA Leadership</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="assets/contract-config.js"></script>
+<style>
+:root{
+  --bca-green:#058D52;--bca-green-mid:#23A455;--bca-gold:#F7A61C;--bca-espresso:#452C23;
+  --bca-ink:#242424;--cream:#FAF6EE;--cream-2:#F2EBDD;--line:rgba(36,23,12,.14);
+  --disp:"Marcellus",serif;--sans:"Jost",sans-serif;
+  /* dataviz roles (validated palette, light surface #FBF7EF) */
+  --surface-1:#FBF7EF;--text-primary:#242424;--text-secondary:#5c5348;--text-muted:#8a8177;
+  --grid:#e6ded0;--baseline:#cfc5b4;
+  --series-1:#058D52;--series-2:#C77F00;--series-3:#A63A6A;--series-4:#C14027;
+  --good:#0ca30c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--cream);color:var(--bca-ink);font-size:15.5px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+a{color:var(--bca-green)}
+
+/* top bar */
+.bar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+.bar img{height:40px}
+.bar .right{display:flex;gap:18px;align-items:center}
+.lang button{background:none;border:none;font-family:var(--sans);font-size:13px;letter-spacing:.06em;cursor:pointer;color:var(--text-muted);padding:4px 6px}
+.lang button.on{color:var(--bca-green);font-weight:600}
+.badge-draft{background:var(--bca-gold);color:#3a2a00;font-size:12px;font-weight:600;letter-spacing:.08em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+
+/* gate */
+#gate{position:fixed;inset:0;background:var(--cream);z-index:100;display:flex;align-items:center;justify-content:center}
+.gate-card{background:#fff;border:1px solid var(--line);padding:48px 44px;max-width:420px;width:92%;text-align:center}
+.gate-card img{height:52px;margin-bottom:20px}
+.gate-card h1{font-family:var(--disp);font-weight:400;font-size:26px;margin-bottom:8px}
+.gate-card p{color:var(--text-secondary);font-size:14.5px;margin-bottom:22px}
+.gate-card input{width:100%;padding:13px 14px;border:1px solid var(--line);background:var(--cream);font-family:var(--sans);font-size:15px;text-align:center;letter-spacing:.12em}
+.gate-card button{width:100%;margin-top:14px;padding:13px;background:var(--bca-green);color:#fff;border:none;font-family:var(--sans);font-weight:500;font-size:15px;letter-spacing:.04em;cursor:pointer}
+.gate-card button:hover{background:var(--bca-green-mid)}
+.gate-err{color:#C14027;font-size:13.5px;margin-top:12px;display:none}
+
+/* layout */
+header.page{padding:44px 0 8px}
+.eyebrow{color:var(--bca-green);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+h1.title{font-family:var(--disp);font-weight:400;font-size:clamp(28px,3.4vw,40px);margin-top:8px}
+.sub{color:var(--text-secondary);max-width:640px;margin-top:8px}
+.note-draft{margin-top:16px;background:var(--cream-2);border-left:3px solid var(--bca-gold);padding:12px 16px;font-size:13.5px;color:var(--text-secondary)}
+
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 8px}
+.tile{background:#fff;border:1px solid var(--line);padding:22px 22px 18px}
+.tile .k{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500}
+.tile .v{font-family:var(--sans);font-weight:600;font-size:32px;margin-top:6px;color:var(--text-primary)}
+.tile .d{font-size:13px;color:var(--good);margin-top:4px;font-weight:500}
+.tile .d.na{color:var(--text-muted);font-weight:400}
+.tile.live{border-top:3px solid var(--bca-green)}
+
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;margin:14px 0}
+.card{background:#fff;border:1px solid var(--line);padding:24px}
+.card h3{font-family:var(--disp);font-weight:400;font-size:19px}
+.card .hint{font-size:13px;color:var(--text-muted);margin-top:2px;margin-bottom:14px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 4px;font-size:13px;color:var(--text-secondary)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+svg text{font-family:var(--sans)}
+.axis-t{font-size:11.5px;fill:var(--text-muted)}
+.val-t{font-size:12px;fill:var(--text-secondary);font-weight:500}
+.bar-name{font-size:12.5px;fill:var(--text-primary)}
+
+/* tooltip */
+#tip{position:fixed;pointer-events:none;background:#241a12;color:#fff;font-size:12.5px;padding:8px 11px;border-radius:4px;opacity:0;transition:opacity .12s;z-index:200;line-height:1.45}
+#tip b{color:#F9AF41}
+
+/* table */
+table.ctr{width:100%;border-collapse:collapse;font-size:14px}
+table.ctr th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:500;padding:10px 12px;border-bottom:1px solid var(--line)}
+table.ctr td{padding:11px 12px;border-bottom:1px solid var(--cream-2);font-variant-numeric:tabular-nums}
+.pill{font-size:11.5px;font-weight:600;letter-spacing:.05em;padding:3px 10px;border-radius:999px}
+.pill.pending{background:#FBEFD8;color:#7a5200}
+.pill.issued{background:#E2F2E9;color:#0a6b40}
+.empty{color:var(--text-muted);font-size:14px;padding:22px 12px;text-align:center}
+
+/* modules preview */
+.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0 40px}
+.mod{background:var(--cream-2);border:1px dashed var(--line);padding:18px;font-size:13.5px;color:var(--text-secondary)}
+.mod b{display:block;color:var(--text-primary);font-weight:600;font-size:14px;margin-bottom:4px}
+.mod .soon{display:block;margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bca-green);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-muted);font-size:13px;margin-top:20px}
+
+@media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.mods{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.tiles,.mods{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="tip"></div>
+
+<!-- passcode gate -->
+<div id="gate">
+  <form class="gate-card" onsubmit="return unlock(event)">
+    <img src="assets/logo.png" alt="BCA Leadership">
+    <h1 data-t="gate.h">ServiceDesk</h1>
+    <p data-t="gate.p">Internal dashboard. Enter your access code to continue.</p>
+    <input id="code" type="password" autocomplete="off" placeholder="Access code" data-tp="gate.ph">
+    <button type="submit" data-t="gate.btn">Enter</button>
+    <div class="gate-err" id="gate-err" data-t="gate.err">That code was not recognized. Try again.</div>
+  </form>
+</div>
+
+<!-- top bar -->
+<nav class="bar"><div class="wrap">
+  <a href="index.html"><img src="assets/logo-dark.png" alt="BCA Leadership"></a>
+  <div class="right">
+    <span class="badge-draft" data-t="bar.draft">Draft preview</span>
+    <div class="lang"><button class="on" onclick="setLang('en')">EN</button><button onclick="setLang('fr')">FR</button></div>
+  </div>
+</div></nav>
+
+<header class="page"><div class="wrap">
+  <div class="eyebrow" data-t="h.eyebrow">ServiceDesk · Financial Dashboard</div>
+  <h1 class="title" data-t="h.title">Financial performance, across the continent.</h1>
+  <p class="sub" data-t="h.sub">Annual recurring revenue, revenue mix, and country performance for BCA Leadership. Board and staff view.</p>
+  <div class="note-draft" data-t="h.note">Draft for review. All figures on this page are sample data, except the "Signed on the website" panel, which is live. Real financial data is wired in during the ServiceDesk build.</div>
+</div></header>
+
+<main class="wrap">
+
+  <!-- stat tiles -->
+  <div class="tiles">
+    <div class="tile"><div class="k" data-t="t1.k">ARR (sample)</div><div class="v">$217,800</div><div class="d">▲ 18% <span data-t="t1.d">vs last quarter</span></div></div>
+    <div class="tile"><div class="k" data-t="t2.k">Members (sample)</div><div class="v">137</div><div class="d">▲ 12 <span data-t="t2.d">this quarter</span></div></div>
+    <div class="tile"><div class="k" data-t="t3.k">Countries (sample)</div><div class="v">15</div><div class="d na" data-t="t3.d">across five regions</div></div>
+    <div class="tile live"><div class="k" data-t="t4.k">Signed on the website</div><div class="v" id="live-count">–</div><div class="d na" id="live-arr" data-t="t4.d">live · loading…</div></div>
+  </div>
+
+  <div class="grid2">
+    <!-- ARR trend -->
+    <div class="card">
+      <h3 data-t="c1.h">ARR trend</h3>
+      <div class="hint" data-t="c1.hint">Sample data · trailing 12 months, USD</div>
+      <svg id="trend" viewBox="0 0 640 260" width="100%" role="img" aria-label="ARR trend, last 12 months"></svg>
+    </div>
+    <!-- revenue mix -->
+    <div class="card">
+      <h3 data-t="c2.h">Revenue mix</h3>
+      <div class="hint" data-t="c2.hint">Sample data · share of total revenue, FY 2026</div>
+      <div class="legend" id="mix-legend"></div>
+      <svg id="mix" viewBox="0 0 480 210" width="100%" role="img" aria-label="Revenue mix by stream"></svg>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <!-- ARR by country -->
+    <div class="card">
+      <h3 data-t="c3.h">ARR by country</h3>
+      <div class="hint" data-t="c3.hint">Sample data · top 10 markets, USD</div>
+      <svg id="bycountry" viewBox="0 0 640 380" width="100%" role="img" aria-label="ARR by country"></svg>
+    </div>
+    <!-- live contracts -->
+    <div class="card">
+      <h3 data-t="c4.h">Membership agreements signed on the website</h3>
+      <div class="hint" data-t="c4.hint">Live · invoice alerts go to admin@bcaleadership.com, authorized by Nii Lokko</div>
+      <table class="ctr">
+        <thead><tr><th data-t="tb.name">Name</th><th data-t="tb.tier">Tier</th><th data-t="tb.country">Country</th><th data-t="tb.date">Signed</th><th data-t="tb.inv">Invoice</th></tr></thead>
+        <tbody id="ctr-body"><tr><td colspan="5" class="empty" data-t="tb.loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- coming modules -->
+  <h3 style="font-family:var(--disp);font-weight:400;font-size:20px;margin-top:26px" data-t="m.h">ServiceDesk modules</h3>
+  <div class="hint" style="font-size:13px;color:var(--text-muted);margin:2px 0 12px" data-t="m.hint">Phased build. Each module goes live here as it ships.</div>
+  <div class="mods">
+    <div class="mod"><b data-t="m1.b">Contract management</b><span data-t="m1.p">Membership and coaching agreements, versions, and status.</span><span class="soon" data-t="m.live">Live · phase 1</span></div>
+    <div class="mod"><b data-t="m2.b">Onboarding</b><span data-t="m2.p">Coaches, members, staff, consultants, vendors, partners, clients.</span><span class="soon" data-t="m.soon">Coming</span></div>
+    <div class="mod"><b data-t="m3.b">Lead generation</b><span data-t="m3.p">Prospecting agent, outreach, and response tracking.</span><span class="soon" data-t="m.soon2">Coming</span></div>
+    <div class="mod"><b data-t="m4.b">Social media</b><span data-t="m4.p">Content planning, scheduling, and performance.</span><span class="soon" data-t="m.soon3">Coming</span></div>
+    <div class="mod"><b data-t="m5.b">Support tickets</b><span data-t="m5.p">Coach and member issues, tracked to closure.</span><span class="soon" data-t="m.soon4">Coming</span></div>
+    <div class="mod"><b data-t="m6.b">Event calendar</b><span data-t="m6.p">MLC, cohort meetings, and continental events.</span><span class="soon" data-t="m.soon5">Coming</span></div>
+    <div class="mod"><b data-t="m7.b">Board room</b><span data-t="m7.p">Protected end-to-end view for the board of directors.</span><span class="soon" data-t="m.soon6">Coming</span></div>
+    <div class="mod"><b data-t="m8.b">Staff meetings</b><span data-t="m8.p">Agendas, minutes, and action tracking.</span><span class="soon" data-t="m.soon7">Coming</span></div>
+  </div>
+
+</main>
+
+<footer><div class="wrap">BCA Leadership ServiceDesk · <span data-t="f.note">Draft prepared by TechFides</span></div></footer>
+
+<script>
+/* ---------- i18n ---------- */
+const T={
+en:{},
+fr:{
+ "gate.h":"ServiceDesk","gate.p":"Tableau de bord interne. Entrez votre code d'accès pour continuer.","gate.btn":"Entrer","gate.err":"Code non reconnu. Réessayez.","gate.ph":"Code d'accès",
+ "bar.draft":"Aperçu provisoire",
+ "h.eyebrow":"ServiceDesk · Tableau de bord financier","h.title":"La performance financière, à l'échelle du continent.","h.sub":"Revenus récurrents annuels, composition des revenus et performance par pays pour BCA Leadership. Vue conseil et équipe.","h.note":"Version provisoire. Tous les chiffres de cette page sont des données d'exemple, sauf le panneau « Signés sur le site », qui est en direct. Les données financières réelles seront connectées pendant la construction du ServiceDesk.",
+ "t1.k":"ARR (exemple)","t1.d":"vs trimestre dernier","t2.k":"Membres (exemple)","t2.d":"ce trimestre","t3.k":"Pays (exemple)","t3.d":"dans cinq régions","t4.k":"Signés sur le site","t4.d":"en direct · chargement…",
+ "c1.h":"Évolution de l'ARR","c1.hint":"Données d'exemple · 12 derniers mois, USD",
+ "c2.h":"Composition des revenus","c2.hint":"Données d'exemple · part du revenu total, exercice 2026",
+ "c3.h":"ARR par pays","c3.hint":"Données d'exemple · 10 premiers marchés, USD",
+ "c4.h":"Contrats d'adhésion signés sur le site","c4.hint":"En direct · les alertes de facturation vont à admin@bcaleadership.com, autorisées par Nii Lokko",
+ "tb.name":"Nom","tb.tier":"Niveau","tb.country":"Pays","tb.date":"Signé","tb.inv":"Facture","tb.loading":"Chargement…",
+ "m.h":"Modules ServiceDesk","m.hint":"Construction par phases. Chaque module apparaît ici dès sa mise en service.",
+ "m1.b":"Gestion des contrats","m1.p":"Contrats d'adhésion et de coaching, versions et statuts.","m.live":"En service · phase 1",
+ "m2.b":"Intégration","m2.p":"Coachs, membres, équipe, consultants, fournisseurs, partenaires, clients.","m.soon":"À venir",
+ "m3.b":"Génération de prospects","m3.p":"Agent de prospection, campagnes et suivi des réponses.","m.soon2":"À venir",
+ "m4.b":"Réseaux sociaux","m4.p":"Planification, programmation et performance des contenus.","m.soon3":"À venir",
+ "m5.b":"Tickets de support","m5.p":"Incidents des coachs et des membres, suivis jusqu'à la clôture.","m.soon4":"À venir",
+ "m6.b":"Calendrier des événements","m6.p":"MLC, réunions de cohortes et événements continentaux.","m.soon5":"À venir",
+ "m7.b":"Salle du conseil","m7.p":"Vue protégée de bout en bout pour le conseil d'administration.","m.soon6":"À venir",
+ "m8.b":"Réunions d'équipe","m8.p":"Ordres du jour, comptes rendus et suivi des actions.","m.soon7":"À venir",
+ "f.note":"Version provisoire préparée par TechFides"
+}};
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.textContent.toLowerCase()===l));
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k=el.getAttribute('data-t');
+    if(l==='en'){ if(EN[k]!==undefined) el.innerHTML=EN[k]; }
+    else if(T[l][k]!==undefined) el.innerHTML=T[l][k];
+  });
+  const inp=document.getElementById('code');
+  if(inp) inp.placeholder = l==='fr' ? "Code d'accès" : "Access code";
+}
+const EN={};
+document.querySelectorAll('[data-t]').forEach(el=>{EN[el.getAttribute('data-t')]=el.innerHTML});
+
+/* ---------- gate ---------- */
+let ACCESS_CODE=null;
+async function unlock(e){
+  e.preventDefault();
+  const code=document.getElementById('code').value.trim();
+  const err=document.getElementById('gate-err');
+  err.style.display='none';
+  try{
+    const r=await fetch(window.BCA_DASHBOARD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code})});
+    if(!r.ok) throw new Error('bad code');
+    const data=await r.json();
+    ACCESS_CODE=code;
+    document.getElementById('gate').style.display='none';
+    renderLive(data);
+  }catch(_){ err.style.display='block'; }
+  return false;
+}
+
+/* ---------- tooltip ---------- */
+const tip=document.getElementById('tip');
+function showTip(html,x,y){tip.innerHTML=html;tip.style.opacity=1;tip.style.left=(x+14)+'px';tip.style.top=(y-10)+'px';}
+function hideTip(){tip.style.opacity=0;}
+
+/* ---------- sample data ---------- */
+const MONTHS=["Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun"];
+const ARR=[92,104,118,127,139,151,160,172,186,197,208,218]; // $k
+const COUNTRIES=[["Nigeria",48.4],["Kenya",41.2],["Ghana",32.8],["Rwanda",21.6],["Sierra Leone",18.4],["Zambia",14.2],["Morocco",12.8],["Uganda",11.6],["South Africa",9.8],["Senegal",7.2]];
+const MIX=[["Memberships",217.8,"--series-1"],["Coaching",96.0,"--series-2"],["MLC Conference",45.0,"--series-3"],["Sponsorships",30.0,"--series-4"]];
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+/* ---------- trend chart ---------- */
+(function(){
+  const svg=document.getElementById('trend');
+  const W=640,H=260,P={l:46,r:16,t:16,b:34};
+  const max=240, x=i=>P.l+i*(W-P.l-P.r)/(ARR.length-1), y=v=>H-P.b-(v/max)*(H-P.t-P.b);
+  let g='';
+  for(let gv=0;gv<=240;gv+=60){
+    g+=`<line x1="${P.l}" y1="${y(gv)}" x2="${W-P.r}" y2="${y(gv)}" stroke="${gv===0?css('--baseline'):css('--grid')}" stroke-width="1"/>`;
+    g+=`<text class="axis-t" x="${P.l-8}" y="${y(gv)+4}" text-anchor="end">$${gv}k</text>`;
+  }
+  MONTHS.forEach((m,i)=>{g+=`<text class="axis-t" x="${x(i)}" y="${H-P.b+18}" text-anchor="middle">${m}</text>`});
+  const pts=ARR.map((v,i)=>`${x(i)},${y(v)}`).join(' ');
+  g+=`<polygon points="${P.l},${y(0)} ${pts} ${x(ARR.length-1)},${y(0)}" fill="${css('--series-1')}" opacity="0.10"/>`;
+  g+=`<polyline points="${pts}" fill="none" stroke="${css('--series-1')}" stroke-width="2" stroke-linejoin="round"/>`;
+  g+=`<circle cx="${x(11)}" cy="${y(218)}" r="4" fill="${css('--series-1')}" stroke="#fff" stroke-width="2"/>`;
+  g+=`<text class="val-t" x="${x(11)-6}" y="${y(218)-10}" text-anchor="end">$218k</text>`;
+  ARR.forEach((v,i)=>{g+=`<rect x="${x(i)-13}" y="${P.t}" width="26" height="${H-P.t-P.b}" fill="transparent" data-i="${i}"/>`});
+  svg.innerHTML=g;
+  svg.querySelectorAll('rect[data-i]').forEach(r=>{
+    r.addEventListener('mousemove',ev=>{const i=+r.dataset.i;showTip(`<b>${MONTHS[i]} ${i<6?2025:2026}</b><br>ARR: $${ARR[i]}k`,ev.clientX,ev.clientY)});
+    r.addEventListener('mouseleave',hideTip);
+  });
+})();
+
+/* ---------- revenue mix (100% stacked bar) ---------- */
+(function(){
+  const svg=document.getElementById('mix');
+  const total=MIX.reduce((s,m)=>s+m[1],0);
+  const W=480,BAR_Y=46,BAR_H=46,PAD=16;
+  let xPos=PAD,g='';
+  MIX.forEach(([name,v,cv],idx)=>{
+    const w=(v/total)*(W-PAD*2)-(idx<MIX.length-1?2:0);
+    g+=`<rect x="${xPos}" y="${BAR_Y}" width="${Math.max(w,2)}" height="${BAR_H}" rx="3" fill="${css(cv)}" data-m="${idx}"/>`;
+    const pct=Math.round(v/total*100);
+    if(pct>=10) g+=`<text x="${xPos+w/2}" y="${BAR_Y+BAR_H/2+4}" text-anchor="middle" font-size="12.5" font-weight="600" fill="#fff">${pct}%</text>`;
+    xPos+=w+2;
+  });
+  let ly=BAR_Y+BAR_H+34;
+  MIX.forEach(([name,v,cv])=>{
+    g+=`<circle cx="${PAD+5}" cy="${ly-4}" r="5" fill="${css(cv)}"/>`;
+    g+=`<text x="${PAD+18}" y="${ly}" font-size="13" fill="${css('--text-secondary')}">${name}</text>`;
+    g+=`<text x="${W-PAD}" y="${ly}" text-anchor="end" font-size="13" font-weight="500" fill="${css('--text-primary')}">$${v.toFixed(1)}k</text>`;
+    ly+=24;
+  });
+  svg.innerHTML=g;
+  svg.querySelectorAll('rect[data-m]').forEach(r=>{
+    r.addEventListener('mousemove',ev=>{const m=MIX[+r.dataset.m];showTip(`<b>${m[0]}</b><br>$${m[1].toFixed(1)}k · ${Math.round(m[1]/total*100)}% of revenue`,ev.clientX,ev.clientY)});
+    r.addEventListener('mouseleave',hideTip);
+  });
+})();
+
+/* ---------- ARR by country (horizontal bars) ---------- */
+(function(){
+  const svg=document.getElementById('bycountry');
+  const W=640,rowH=34,P={l:110,r:60,t:8};
+  const max=50;
+  let g='';
+  COUNTRIES.forEach(([name,v],i)=>{
+    const yy=P.t+i*rowH, w=(v/max)*(W-P.l-P.r);
+    g+=`<text class="bar-name" x="${P.l-10}" y="${yy+17}" text-anchor="end">${name}</text>`;
+    g+=`<rect x="${P.l}" y="${yy+4}" width="${w}" height="18" rx="3" fill="${css('--series-1')}" data-c="${i}"/>`;
+    g+=`<text class="val-t" x="${P.l+w+8}" y="${yy+17}">$${v.toFixed(1)}k</text>`;
+  });
+  g+=`<line x1="${P.l}" y1="${P.t}" x2="${P.l}" y2="${P.t+COUNTRIES.length*rowH}" stroke="${css('--baseline')}" stroke-width="1"/>`;
+  svg.setAttribute('viewBox',`0 0 ${W} ${P.t+COUNTRIES.length*rowH+8}`);
+  svg.innerHTML=g;
+  svg.querySelectorAll('rect[data-c]').forEach(r=>{
+    r.addEventListener('mousemove',ev=>{const c=COUNTRIES[+r.dataset.c];showTip(`<b>${c[0]}</b><br>ARR: $${c[1].toFixed(1)}k (sample)`,ev.clientX,ev.clientY)});
+    r.addEventListener('mouseleave',hideTip);
+  });
+})();
+
+/* ---------- live contracts ---------- */
+function renderLive(data){
+  const body=document.getElementById('ctr-body');
+  const rows=(data&&data.contracts)||[];
+  document.getElementById('live-count').textContent=rows.length;
+  const arr=(data&&data.signedARR)||0;
+  document.getElementById('live-arr').textContent='live · $'+arr.toLocaleString()+' ARR signed';
+  if(!rows.length){body.innerHTML='<tr><td colspan="5" class="empty">No agreements signed yet. They will appear here the moment someone signs on the membership page.</td></tr>';return;}
+  body.innerHTML=rows.map(r=>{
+    const d=new Date(r.created_at).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+    const st=r.invoice_status||'pending';
+    return `<tr><td>${esc(r.full_name)}</td><td>${esc(r.tier)}</td><td>${esc(r.country||'–')}</td><td>${d}</td><td><span class="pill ${st==='pending'?'pending':'issued'}">${st}</span></td></tr>`;
+  }).join('');
+}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+</script>
+</body>
+</html>
