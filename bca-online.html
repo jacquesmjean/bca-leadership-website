@@ -249,5 +249,6 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none}footer a:hover{color:va
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.16});
 document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
 </script>
+<script src="assets/concierge.js" defer></script>
 </body>
 </html>

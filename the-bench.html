@@ -234,5 +234,6 @@ function finishBooking(){document.getElementById("b-flow").style.display="none";
 var chips=document.querySelectorAll("#filters .chip"),cards=document.querySelectorAll("#grid .coach");
 chips.forEach(function(c){c.onclick=function(){chips.forEach(function(x){x.classList.remove("on")});c.classList.add("on");var f=c.dataset.f,shown=0;cards.forEach(function(card){var hit=(f==="all"||card.dataset.tags.split(" ").indexOf(f)>-1);card.style.display=hit?"":"none";if(hit)shown++;});document.getElementById("grid-empty").style.display=shown?"none":"block";};});
 </script>
+<script src="assets/concierge.js" defer></script>
 </body>
 </html>

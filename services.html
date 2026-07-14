@@ -190,5 +190,6 @@ var tabs=document.querySelectorAll("#tabs .tab");
 tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(x){x.classList.remove("on")});t.classList.add("on");document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("on")});document.getElementById("p-"+t.dataset.p).classList.add("on");};});
 /* TODO: POST to BCA CRM (typed opportunity) + file upload; route to the right team */
 function submitForm(k){document.getElementById("f-"+k).style.display="none";document.getElementById("d-"+k).style.display="block";window.scrollTo({top:document.getElementById("d-"+k).offsetTop-120,behavior:"smooth"});}</script>
+<script src="assets/concierge.js" defer></script>
 </body>
 </html>

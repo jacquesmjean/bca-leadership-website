@@ -87,7 +87,7 @@ table.ctr td{padding:11px 12px;border-bottom:1px solid var(--cream-2);font-varia
 .empty{color:var(--text-muted);font-size:14px;padding:22px 12px;text-align:center}
 
 /* modules preview */
-.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0 40px}
+.mods{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 40px}
 .mod{background:var(--cream-2);border:1px dashed var(--line);padding:18px;font-size:13.5px;color:var(--text-secondary)}
 .mod b{display:block;color:var(--text-primary);font-weight:600;font-size:14px;margin-bottom:4px}
 .mod .soon{display:block;margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bca-green);font-weight:600}
@@ -177,18 +177,31 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
     </div>
   </div>
 
-  <!-- coming modules -->
+  <!-- concierge requests (live) -->
+  <div class="grid2" style="grid-template-columns:1fr">
+    <div class="card" id="requests">
+      <h3 data-t="c5.h">Concierge: requests from potential clients</h3>
+      <div class="hint" data-t="c5.hint">Live · every request sent through the website concierge lands here; alerts go to admin@bcaleadership.com</div>
+      <table class="ctr">
+        <thead><tr><th data-t="tr.name">Name</th><th data-t="tr.topic">Topic</th><th data-t="tr.msg">Request</th><th data-t="tr.date">Received</th><th data-t="tr.status">Status</th></tr></thead>
+        <tbody id="req-body"><tr><td colspan="5" class="empty" data-t="tr.loading">Loading…</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- modules -->
   <h3 style="font-family:var(--disp);font-weight:400;font-size:20px;margin-top:26px" data-t="m.h">ServiceDesk modules</h3>
-  <div class="hint" style="font-size:13px;color:var(--text-muted);margin:2px 0 12px" data-t="m.hint">Phased build. Each module goes live here as it ships.</div>
+  <div class="hint" style="font-size:13px;color:var(--text-muted);margin:2px 0 12px" data-t="m.hint">The full operating desk, built in phases. Live modules are clickable.</div>
   <div class="mods">
-    <div class="mod live-mod" onclick="document.getElementById('contracts').scrollIntoView({behavior:'smooth',block:'center'});document.getElementById('contracts').classList.add('flash');setTimeout(()=>document.getElementById('contracts').classList.remove('flash'),1600)" role="button" tabindex="0" onkeydown="if(event.key==='Enter')this.click()"><b data-t="m1.b">Contract management</b><span data-t="m1.p">Membership and coaching agreements, versions, and status.</span><span class="soon" data-t="m.live">Live · phase 1 · View signed agreements ↑</span></div>
-    <div class="mod"><b data-t="m2.b">Onboarding</b><span data-t="m2.p">Coaches, members, staff, consultants, vendors, partners, clients.</span><span class="soon" data-t="m.soon">Coming</span></div>
-    <div class="mod"><b data-t="m3.b">Lead generation</b><span data-t="m3.p">Prospecting agent, outreach, and response tracking.</span><span class="soon" data-t="m.soon2">Coming</span></div>
-    <div class="mod"><b data-t="m4.b">Social media</b><span data-t="m4.p">Content planning, scheduling, and performance.</span><span class="soon" data-t="m.soon3">Coming</span></div>
-    <div class="mod"><b data-t="m5.b">Support tickets</b><span data-t="m5.p">Coach and member issues, tracked to closure.</span><span class="soon" data-t="m.soon4">Coming</span></div>
-    <div class="mod"><b data-t="m6.b">Event calendar</b><span data-t="m6.p">MLC, cohort meetings, and continental events.</span><span class="soon" data-t="m.soon5">Coming</span></div>
-    <div class="mod"><b data-t="m7.b">Board room</b><span data-t="m7.p">Protected end-to-end view for the board of directors.</span><span class="soon" data-t="m.soon6">Coming</span></div>
-    <div class="mod"><b data-t="m8.b">Staff meetings</b><span data-t="m8.p">Agendas, minutes, and action tracking.</span><span class="soon" data-t="m.soon7">Coming</span></div>
+    <div class="mod live-mod" onclick="jumpTo('requests')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')this.click()"><b data-t="m0.b">Concierge</b><span data-t="m0.p">Any request from potential clients, captured sitewide and tracked to an answer. AI-assisted replies come next.</span><span class="soon" data-t="m.live0">Live · view requests ↑</span></div>
+    <div class="mod live-mod" onclick="jumpTo('contracts')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')this.click()"><b data-t="m1.b">Contracts</b><span data-t="m1.p">Membership and coaching agreements, signed on the site, tracked to invoice.</span><span class="soon" data-t="m.live">Live · view signed agreements ↑</span></div>
+    <div class="mod"><b data-t="m2.b">Members & onboarding</b><span data-t="m2.p">One record per person: members, coaches, staff, consultants, vendors, partners. Renewals flagged 60 days out.</span><span class="soon" data-t="m.soon">Phase 2</span></div>
+    <div class="mod"><b data-t="m3.b">Bench operations</b><span data-t="m3.p">Coach matching, utilization, session logging, and payouts across the 44-person bench.</span><span class="soon" data-t="m.soon2">Phase 2</span></div>
+    <div class="mod"><b data-t="m4.b">Lead generation</b><span data-t="m4.p">Prospecting agent, personalized outreach, and response tracking feeding the pipeline.</span><span class="soon" data-t="m.soon3">Phase 3</span></div>
+    <div class="mod"><b data-t="m5.b">Marketing & social</b><span data-t="m5.p">Content generation, scheduling, and performance in one calendar.</span><span class="soon" data-t="m.soon4">Phase 3</span></div>
+    <div class="mod"><b data-t="m6.b">Support tickets</b><span data-t="m6.p">Coach and member issues, AI-triaged and tracked to closure.</span><span class="soon" data-t="m.soon5">Phase 2</span></div>
+    <div class="mod"><b data-t="m7.b">Events & MLC</b><span data-t="m7.p">Conference, cohort meetings, and continental events: registration to follow-up.</span><span class="soon" data-t="m.soon6">Phase 3</span></div>
+    <div class="mod"><b data-t="m8.b">Governance</b><span data-t="m8.p">Board room (password-protected), staff meetings, minutes, and action tracking.</span><span class="soon" data-t="m.soon7">Phase 3</span></div>
   </div>
 
 </main>
@@ -209,15 +222,18 @@ fr:{
  "c3.h":"ARR par pays","c3.hint":"Données d'exemple · 10 premiers marchés, USD",
  "c4.h":"Contrats d'adhésion signés sur le site","c4.hint":"En direct · les alertes de facturation vont à admin@bcaleadership.com, autorisées par Nii Lokko",
  "tb.name":"Nom","tb.tier":"Niveau","tb.country":"Pays","tb.date":"Signé","tb.inv":"Facture","tb.loading":"Chargement…",
- "m.h":"Modules ServiceDesk","m.hint":"Construction par phases. Chaque module apparaît ici dès sa mise en service.",
- "m1.b":"Gestion des contrats","m1.p":"Contrats d'adhésion et de coaching, versions et statuts.","m.live":"En service · phase 1",
- "m2.b":"Intégration","m2.p":"Coachs, membres, équipe, consultants, fournisseurs, partenaires, clients.","m.soon":"À venir",
- "m3.b":"Génération de prospects","m3.p":"Agent de prospection, campagnes et suivi des réponses.","m.soon2":"À venir",
- "m4.b":"Réseaux sociaux","m4.p":"Planification, programmation et performance des contenus.","m.soon3":"À venir",
- "m5.b":"Tickets de support","m5.p":"Incidents des coachs et des membres, suivis jusqu'à la clôture.","m.soon4":"À venir",
- "m6.b":"Calendrier des événements","m6.p":"MLC, réunions de cohortes et événements continentaux.","m.soon5":"À venir",
- "m7.b":"Salle du conseil","m7.p":"Vue protégée de bout en bout pour le conseil d'administration.","m.soon6":"À venir",
- "m8.b":"Réunions d'équipe","m8.p":"Ordres du jour, comptes rendus et suivi des actions.","m.soon7":"À venir",
+ "m.h":"Modules ServiceDesk","m.hint":"Le poste de pilotage complet, construit par phases. Les modules en service sont cliquables.",
+ "c5.h":"Conciergerie : demandes de clients potentiels","c5.hint":"En direct · chaque demande envoyée via la conciergerie du site arrive ici ; les alertes vont à admin@bcaleadership.com",
+ "tr.name":"Nom","tr.topic":"Sujet","tr.msg":"Demande","tr.date":"Reçue","tr.status":"Statut","tr.loading":"Chargement…",
+ "m0.b":"Conciergerie","m0.p":"Toute demande de clients potentiels, captée sur tout le site et suivie jusqu'à la réponse. Réponses assistées par IA à venir.","m.live0":"En service · voir les demandes ↑",
+ "m1.b":"Contrats","m1.p":"Contrats d'adhésion et de coaching, signés sur le site, suivis jusqu'à la facture.","m.live":"En service · voir les contrats signés ↑",
+ "m2.b":"Membres & intégration","m2.p":"Une fiche par personne : membres, coachs, équipe, consultants, fournisseurs, partenaires. Renouvellements signalés 60 jours à l'avance.","m.soon":"Phase 2",
+ "m3.b":"Opérations du bench","m3.p":"Affectation des coachs, taux d'utilisation, suivi des séances et paiements pour les 44 coachs.","m.soon2":"Phase 2",
+ "m4.b":"Génération de prospects","m4.p":"Agent de prospection, campagnes personnalisées et suivi des réponses vers le pipeline.","m.soon3":"Phase 3",
+ "m5.b":"Marketing & réseaux sociaux","m5.p":"Création de contenus, programmation et performance dans un seul calendrier.","m.soon4":"Phase 3",
+ "m6.b":"Tickets de support","m6.p":"Incidents des coachs et des membres, triés par IA et suivis jusqu'à la clôture.","m.soon5":"Phase 2",
+ "m7.b":"Événements & MLC","m7.p":"Conférence, réunions de cohortes et événements continentaux : de l'inscription au suivi.","m.soon6":"Phase 3",
+ "m8.b":"Gouvernance","m8.p":"Salle du conseil (protégée), réunions d'équipe, comptes rendus et suivi des actions.","m.soon7":"Phase 3",
  "f.note":"Version provisoire préparée par TechFides"
 }};
 function setLang(l){
@@ -336,19 +352,38 @@ const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim
   });
 })();
 
-/* ---------- live contracts ---------- */
+/* ---------- live panels ---------- */
+function jumpTo(id){
+  const el=document.getElementById(id);
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  el.classList.add('flash');
+  setTimeout(()=>el.classList.remove('flash'),1600);
+}
 function renderLive(data){
   const body=document.getElementById('ctr-body');
   const rows=(data&&data.contracts)||[];
   document.getElementById('live-count').textContent=rows.length;
   const arr=(data&&data.signedARR)||0;
   document.getElementById('live-arr').textContent='live · $'+arr.toLocaleString()+' ARR signed';
-  if(!rows.length){body.innerHTML='<tr><td colspan="5" class="empty">No agreements signed yet. They will appear here the moment someone signs on the membership page.</td></tr>';return;}
-  body.innerHTML=rows.map(r=>{
-    const d=new Date(r.created_at).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
-    const st=r.invoice_status||'pending';
-    return `<tr><td>${esc(r.full_name)}</td><td>${esc(r.tier)}</td><td>${esc(r.country||'–')}</td><td>${d}</td><td><span class="pill ${st==='pending'?'pending':'issued'}">${st}</span></td></tr>`;
-  }).join('');
+  if(!rows.length){body.innerHTML='<tr><td colspan="5" class="empty">No agreements signed yet. They will appear here the moment someone signs on the membership page.</td></tr>';}
+  else{
+    body.innerHTML=rows.map(r=>{
+      const d=new Date(r.created_at).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+      const st=r.invoice_status||'pending';
+      return `<tr><td>${esc(r.full_name)}</td><td>${esc(r.tier)}</td><td>${esc(r.country||'–')}</td><td>${d}</td><td><span class="pill ${st==='pending'?'pending':'issued'}">${st}</span></td></tr>`;
+    }).join('');
+  }
+  const rbody=document.getElementById('req-body');
+  const reqs=(data&&data.requests)||[];
+  if(!reqs.length){rbody.innerHTML='<tr><td colspan="5" class="empty">No requests yet. Anything a visitor sends through the Concierge button on the website appears here.</td></tr>';}
+  else{
+    rbody.innerHTML=reqs.map(r=>{
+      const d=new Date(r.created_at).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});
+      const st=r.status||'new';
+      const excerpt=(r.message||'').length>90?(r.message.slice(0,90)+'…'):(r.message||'');
+      return `<tr><td>${esc(r.full_name)}<div style="font-size:12px;color:var(--text-muted)">${esc(r.email)}</div></td><td>${esc(r.topic||'–')}</td><td title="${esc(r.message)}">${esc(excerpt)}</td><td>${d}</td><td><span class="pill ${st==='handled'?'issued':'pending'}">${st}</span></td></tr>`;
+    }).join('');
+  }
 }
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 </script>
