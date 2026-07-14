@@ -1,115 +1,180 @@
-/* BCA Concierge — sitewide request widget (TechFides).
-   Any request from a potential client is recorded and routed to the ServiceDesk;
-   an email alert to admin@bcaleadership.com activates once RESEND_API_KEY is set. */
+/* BCA Intelligent Concierge (TechFides) — self-serve, full-catalog, 4 languages.
+   Chat brain: bca-concierge-chat edge function (Claude when ANTHROPIC_API_KEY is set,
+   deterministic catalog engine otherwise). Actions deep-link into the signing flows.
+   Unresolved needs are recorded via bca-concierge and appear on the ServiceDesk. */
 (function () {
-  var ENDPOINT = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge";
+  var CHAT = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge-chat";
+  var LOG = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge";
 
   var STR = {
-    en: { btn: "Concierge", h: "How can we help?", sub: "Membership, coaching, consulting, events, sponsorship: tell us what you need and the right person will come back to you.", name: "Full name", email: "Email", company: "Company (optional)", topic: "Topic", msg: "Your request", send: "Send request", topics: ["Membership", "Coaching", "Consulting", "Events & MLC", "Sponsorship", "Other"], ok: "Received. Your request is with our team, and you will hear from us shortly.", err: "We could not send that just now. Please try again or email admin@bcaleadership.com." },
-    fr: { btn: "Conciergerie", h: "Comment pouvons-nous vous aider ?", sub: "Adhésion, coaching, conseil, événements, sponsoring : dites-nous ce qu'il vous faut et la bonne personne vous répondra.", name: "Nom complet", email: "Email", company: "Société (facultatif)", topic: "Sujet", msg: "Votre demande", send: "Envoyer la demande", topics: ["Adhésion", "Coaching", "Conseil", "Événements & MLC", "Sponsoring", "Autre"], ok: "Bien reçu. Votre demande est chez notre équipe, nous revenons vers vous rapidement.", err: "Envoi impossible pour le moment. Réessayez ou écrivez à admin@bcaleadership.com." },
-    es: { btn: "Concierge", h: "¿Cómo podemos ayudarle?", sub: "Membresía, coaching, consultoría, eventos, patrocinio: díganos qué necesita y la persona indicada le responderá.", name: "Nombre completo", email: "Email", company: "Empresa (opcional)", topic: "Tema", msg: "Su solicitud", send: "Enviar solicitud", topics: ["Membresía", "Coaching", "Consultoría", "Eventos y MLC", "Patrocinio", "Otro"], ok: "Recibido. Su solicitud está con nuestro equipo y le responderemos pronto.", err: "No pudimos enviarlo. Inténtelo de nuevo o escriba a admin@bcaleadership.com." },
-    pt: { btn: "Concierge", h: "Como podemos ajudar?", sub: "Adesão, coaching, consultoria, eventos, patrocínio: diga-nos o que precisa e a pessoa certa entrará em contacto.", name: "Nome completo", email: "Email", company: "Empresa (opcional)", topic: "Assunto", msg: "O seu pedido", send: "Enviar pedido", topics: ["Adesão", "Coaching", "Consultoria", "Eventos e MLC", "Patrocínio", "Outro"], ok: "Recebido. O seu pedido está com a nossa equipa e responderemos em breve.", err: "Não foi possível enviar. Tente novamente ou escreva para admin@bcaleadership.com." }
+    en: { btn: "Concierge", h: "BCA Concierge", sub: "Ask anything: membership, coaching, consulting, MLC, sponsorship. I can set you up right here.", ph: "Type your question…", send: "Send", chips: ["Become a member", "Start coaching", "Consulting for my company", "Attend or sponsor MLC"], greet: "Welcome to BCA Leadership. I can help you join as a member, start executive coaching, engage our consultants, sponsor, or attend the Made in Africa Leadership Conference. What do you need?", hoIntro: "Leave your details and the full conversation goes to our team.", hoName: "Full name", hoEmail: "Email", hoSend: "Send to the team", hoOk: "Done. Your request and this conversation are with our team.", hoErr: "That did not go through. Please try again or email admin@bcaleadership.com.", human: "Talk to the team", err: "I lost the connection for a second. Please try again." },
+    fr: { btn: "Conciergerie", h: "Conciergerie BCA", sub: "Demandez ce que vous voulez : adhésion, coaching, conseil, MLC, sponsoring. Je peux tout mettre en place ici.", ph: "Écrivez votre question…", send: "Envoyer", chips: ["Devenir membre", "Démarrer un coaching", "Conseil pour mon entreprise", "Participer ou sponsoriser le MLC"], greet: "Bienvenue chez BCA Leadership. Je peux vous aider à devenir membre, démarrer un coaching exécutif, engager nos consultants, sponsoriser ou participer à la Made in Africa Leadership Conference. Que vous faut-il ?", hoIntro: "Laissez vos coordonnées et toute la conversation part à notre équipe.", hoName: "Nom complet", hoEmail: "Email", hoSend: "Envoyer à l'équipe", hoOk: "C'est fait. Votre demande et cette conversation sont chez notre équipe.", hoErr: "L'envoi a échoué. Réessayez ou écrivez à admin@bcaleadership.com.", human: "Parler à l'équipe", err: "J'ai perdu la connexion un instant. Réessayez." },
+    es: { btn: "Concierge", h: "Concierge BCA", sub: "Pregunte lo que quiera: membresía, coaching, consultoría, MLC, patrocinio. Puedo dejarlo todo listo aquí.", ph: "Escriba su pregunta…", send: "Enviar", chips: ["Hacerme miembro", "Empezar coaching", "Consultoría para mi empresa", "Asistir o patrocinar el MLC"], greet: "Bienvenido a BCA Leadership. Puedo ayudarle a hacerse miembro, empezar coaching ejecutivo, contratar consultores, patrocinar o asistir a la Made in Africa Leadership Conference. ¿Qué necesita?", hoIntro: "Deje sus datos y la conversación completa irá a nuestro equipo.", hoName: "Nombre completo", hoEmail: "Email", hoSend: "Enviar al equipo", hoOk: "Listo. Su solicitud y esta conversación están con nuestro equipo.", hoErr: "No se pudo enviar. Inténtelo de nuevo o escriba a admin@bcaleadership.com.", human: "Hablar con el equipo", err: "Perdí la conexión un momento. Inténtelo de nuevo." },
+    pt: { btn: "Concierge", h: "Concierge BCA", sub: "Pergunte o que quiser: adesão, coaching, consultoria, MLC, patrocínio. Posso deixar tudo pronto aqui.", ph: "Escreva a sua pergunta…", send: "Enviar", chips: ["Tornar-me membro", "Começar coaching", "Consultoria para a minha empresa", "Participar ou patrocinar o MLC"], greet: "Bem-vindo à BCA Leadership. Posso ajudá-lo a tornar-se membro, começar coaching executivo, contratar consultores, patrocinar ou participar na Made in Africa Leadership Conference. O que precisa?", hoIntro: "Deixe os seus dados e a conversa completa segue para a nossa equipa.", hoName: "Nome completo", hoEmail: "Email", hoSend: "Enviar à equipa", hoOk: "Feito. O seu pedido e esta conversa estão com a nossa equipa.", hoErr: "Não foi possível enviar. Tente novamente ou escreva para admin@bcaleadership.com.", human: "Falar com a equipa", err: "Perdi a ligação por um momento. Tente novamente." }
   };
-  function lang() {
-    var l = (document.documentElement.lang || "en").slice(0, 2).toLowerCase();
-    return STR[l] ? l : "en";
-  }
+  function lang() { var l = (document.documentElement.lang || "en").slice(0, 2).toLowerCase(); return STR[l] ? l : "en"; }
+  function T() { return STR[lang()]; }
 
   var css = document.createElement("style");
   css.textContent =
     "#bca-cg-btn{position:fixed;bottom:26px;left:26px;z-index:96;display:inline-flex;align-items:center;gap:9px;background:#24170C;color:#F7A61C;border:1px solid rgba(247,166,28,.45);padding:12px 20px;font-family:'Jost',Helvetica,sans-serif;font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:999px;box-shadow:0 8px 24px rgba(36,23,12,.35);transition:.25s}" +
     "#bca-cg-btn:hover{transform:translateY(-2px);background:#F7A61C;color:#24170C}" +
-    "#bca-cg-veil{position:fixed;inset:0;background:rgba(33,16,18,.7);backdrop-filter:blur(6px);z-index:160;display:none;align-items:center;justify-content:center;padding:24px}" +
-    "#bca-cg-veil.open{display:flex}" +
-    "#bca-cg{background:#FAF6EE;max-width:520px;width:100%;padding:38px 40px;position:relative;max-height:92vh;overflow:auto;border-top:6px solid #F7A61C}" +
-    "#bca-cg .x{position:absolute;top:12px;right:16px;background:none;border:none;font-size:26px;color:#452C23;cursor:pointer;line-height:1}" +
-    "#bca-cg h3{font-family:'Marcellus',serif;font-weight:400;font-size:24px;color:#24170C;margin:0 0 8px}" +
-    "#bca-cg .sub{font-family:'Jost',sans-serif;font-size:14.5px;color:rgba(36,36,36,.65);margin:0 0 22px;line-height:1.5}" +
-    "#bca-cg label{display:block;font-family:'Jost',sans-serif;font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#452C23;margin:14px 0 6px}" +
-    "#bca-cg input,#bca-cg select,#bca-cg textarea{width:100%;padding:12px 14px;border:1px solid rgba(36,23,12,.18);background:#fff;font-family:'Jost',sans-serif;font-size:15px;color:#242424;outline:none;box-sizing:border-box}" +
-    "#bca-cg textarea{min-height:96px;resize:vertical}" +
-    "#bca-cg input:focus,#bca-cg select:focus,#bca-cg textarea:focus{border-color:#058D52;box-shadow:0 0 0 3px rgba(5,141,82,.12)}" +
-    "#bca-cg .send{width:100%;margin-top:20px;padding:14px;background:#F7A61C;border:1px solid #F7A61C;color:#24170C;font-family:'Jost',sans-serif;font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.25s}" +
-    "#bca-cg .send:hover{background:transparent;color:#8a5c00}" +
-    "#bca-cg .note{display:none;font-family:'Jost',sans-serif;font-size:14px;margin-top:14px;line-height:1.5}" +
-    "#bca-cg .note.ok{color:#058D52}#bca-cg .note.err{color:#C14027}" +
-    "@media(max-width:560px){#bca-cg{padding:30px 22px}#bca-cg-btn{bottom:20px;left:16px;padding:11px 16px}}";
+    "#bca-cg-veil{position:fixed;inset:0;background:rgba(33,16,18,.55);backdrop-filter:blur(4px);z-index:160;display:none}" +
+    "#bca-cg-veil.open{display:block}" +
+    "#bca-cg{position:fixed;bottom:24px;left:24px;z-index:161;width:400px;max-width:calc(100vw - 32px);height:600px;max-height:calc(100vh - 48px);background:#FAF6EE;display:none;flex-direction:column;border-top:5px solid #F7A61C;box-shadow:0 24px 64px rgba(36,23,12,.45);font-family:'Jost',Helvetica,sans-serif}" +
+    "#bca-cg.open{display:flex}" +
+    "#bca-cg .head{padding:18px 20px 14px;border-bottom:1px solid rgba(36,23,12,.12);position:relative;background:#24170C}" +
+    "#bca-cg .head h3{font-family:'Marcellus',serif;font-weight:400;font-size:19px;color:#FAF6EE;margin:0}" +
+    "#bca-cg .head p{font-size:12.5px;color:rgba(250,246,238,.65);margin:5px 0 0;line-height:1.4}" +
+    "#bca-cg .x{position:absolute;top:10px;right:14px;background:none;border:none;font-size:24px;color:rgba(250,246,238,.7);cursor:pointer;line-height:1}" +
+    "#bca-cg .log{flex:1;overflow-y:auto;padding:18px 16px;display:flex;flex-direction:column;gap:10px}" +
+    "#bca-cg .msg{max-width:86%;padding:11px 14px;font-size:14.5px;line-height:1.5;color:#242424}" +
+    "#bca-cg .msg.bot{background:#fff;border:1px solid rgba(36,23,12,.12);align-self:flex-start;border-radius:2px 12px 12px 12px}" +
+    "#bca-cg .msg.me{background:#058D52;color:#fff;align-self:flex-end;border-radius:12px 2px 12px 12px}" +
+    "#bca-cg .msg.typing{color:rgba(36,36,36,.5);font-style:italic}" +
+    "#bca-cg .act{align-self:flex-start;display:inline-block;background:#F7A61C;color:#24170C;text-decoration:none;padding:11px 18px;font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;border-radius:3px;transition:.2s;border:1px solid #F7A61C}" +
+    "#bca-cg .act:hover{background:transparent;color:#8a5c00}" +
+    "#bca-cg .chips{display:flex;flex-wrap:wrap;gap:7px;align-self:flex-start}" +
+    "#bca-cg .chip{background:transparent;border:1px solid rgba(5,141,82,.5);color:#058D52;padding:8px 13px;font-family:'Jost',sans-serif;font-size:12.5px;border-radius:999px;cursor:pointer;transition:.2s}" +
+    "#bca-cg .chip:hover{background:#058D52;color:#fff}" +
+    "#bca-cg .bar{display:flex;gap:8px;padding:12px 14px;border-top:1px solid rgba(36,23,12,.12);background:#fff}" +
+    "#bca-cg .bar input{flex:1;padding:11px 13px;border:1px solid rgba(36,23,12,.18);background:#FAF6EE;font-family:'Jost',sans-serif;font-size:14.5px;outline:none}" +
+    "#bca-cg .bar input:focus{border-color:#058D52}" +
+    "#bca-cg .bar button{background:#058D52;color:#fff;border:none;padding:0 18px;font-family:'Jost',sans-serif;font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}" +
+    "#bca-cg .bar button:hover{background:#23A455}" +
+    "#bca-cg .ho{align-self:flex-start;background:#fff;border:1px solid rgba(36,23,12,.12);padding:14px;border-radius:2px 12px 12px 12px;width:86%}" +
+    "#bca-cg .ho p{font-size:13px;color:rgba(36,36,36,.7);margin:0 0 10px;line-height:1.45}" +
+    "#bca-cg .ho input{width:100%;box-sizing:border-box;margin-bottom:8px;padding:10px 12px;border:1px solid rgba(36,23,12,.18);background:#FAF6EE;font-family:'Jost',sans-serif;font-size:14px;outline:none}" +
+    "#bca-cg .ho button{width:100%;background:#F7A61C;border:none;color:#24170C;padding:11px;font-family:'Jost',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}" +
+    "#bca-cg .hint{align-self:center;font-size:11.5px;color:rgba(36,36,36,.4);cursor:pointer;text-decoration:underline;background:none;border:none;font-family:'Jost',sans-serif;margin-top:2px}" +
+    "@media(max-width:560px){#bca-cg{bottom:0;left:0;width:100vw;max-width:100vw;height:100dvh;max-height:100dvh}#bca-cg-btn{bottom:20px;left:16px;padding:11px 16px}}";
   document.head.appendChild(css);
 
   var btn = document.createElement("button");
-  btn.id = "bca-cg-btn";
-  btn.type = "button";
+  btn.id = "bca-cg-btn"; btn.type = "button";
   btn.innerHTML = '<span style="font-size:15px">✦</span><span id="bca-cg-btn-t"></span>';
   document.body.appendChild(btn);
 
-  var veil = document.createElement("div");
-  veil.id = "bca-cg-veil";
-  veil.innerHTML =
-    '<div id="bca-cg" role="dialog" aria-modal="true">' +
-    '<button class="x" type="button" aria-label="Close">×</button>' +
-    "<h3></h3><p class=\"sub\"></p>" +
-    '<form novalidate>' +
-    '<input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">' +
-    '<label data-k="name"></label><input id="cg-name" type="text" required>' +
-    '<label data-k="email"></label><input id="cg-email" type="email" required>' +
-    '<label data-k="company"></label><input id="cg-company" type="text">' +
-    '<label data-k="topic"></label><select id="cg-topic"></select>' +
-    '<label data-k="msg"></label><textarea id="cg-msg" required></textarea>' +
-    '<button class="send" type="submit"></button>' +
-    '<p class="note"></p>' +
-    "</form></div>";
-  document.body.appendChild(veil);
+  var veil = document.createElement("div"); veil.id = "bca-cg-veil"; document.body.appendChild(veil);
+  var box = document.createElement("div");
+  box.id = "bca-cg";
+  box.innerHTML =
+    '<div class="head"><h3></h3><p></p><button class="x" type="button" aria-label="Close">×</button></div>' +
+    '<div class="log" id="cg-log"></div>' +
+    '<div class="bar"><input id="cg-in" type="text" autocomplete="off"><button id="cg-send" type="button"></button></div>';
+  document.body.appendChild(box);
+
+  var history = [];   // {role, content}
+  var started = false;
+  var handedOff = false;
 
   function paint() {
-    var t = STR[lang()];
+    var t = T();
     document.getElementById("bca-cg-btn-t").textContent = t.btn;
-    veil.querySelector("h3").textContent = t.h;
-    veil.querySelector(".sub").textContent = t.sub;
-    veil.querySelectorAll("label[data-k]").forEach(function (l) { l.textContent = t[l.getAttribute("data-k")]; });
-    veil.querySelector(".send").textContent = t.send;
-    var sel = document.getElementById("cg-topic");
-    sel.innerHTML = t.topics.map(function (o) { return "<option>" + o + "</option>"; }).join("");
+    box.querySelector(".head h3").textContent = t.h;
+    box.querySelector(".head p").textContent = t.sub;
+    document.getElementById("cg-in").placeholder = t.ph;
+    document.getElementById("cg-send").textContent = t.send;
   }
-  paint();
 
-  btn.addEventListener("click", function () { paint(); veil.classList.add("open"); document.body.style.overflow = "hidden"; });
-  function close() { veil.classList.remove("open"); document.body.style.overflow = ""; }
-  veil.querySelector(".x").addEventListener("click", close);
-  veil.addEventListener("click", function (e) { if (e.target === veil) close(); });
-
-  veil.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var t = STR[lang()];
-    var note = veil.querySelector(".note");
-    var name = document.getElementById("cg-name").value.trim();
-    var email = document.getElementById("cg-email").value.trim();
-    var msg = document.getElementById("cg-msg").value.trim();
-    if (!name) { document.getElementById("cg-name").focus(); return; }
-    if (!email || email.indexOf("@") < 1) { document.getElementById("cg-email").focus(); return; }
-    if (!msg) { document.getElementById("cg-msg").focus(); return; }
-    var sendBtn = veil.querySelector(".send");
-    sendBtn.disabled = true; sendBtn.style.opacity = 0.6;
-    fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        full_name: name, email: email,
-        company: document.getElementById("cg-company").value.trim(),
-        topic: document.getElementById("cg-topic").value,
-        message: msg, page: location.href,
-        website: veil.querySelector('input[name="website"]').value
-      })
-    }).then(function (r) {
-      sendBtn.disabled = false; sendBtn.style.opacity = 1;
-      note.style.display = "block";
-      if (r.ok) {
-        note.className = "note ok"; note.textContent = t.ok;
-        veil.querySelector("form").reset();
-        setTimeout(close, 3200);
-      } else { note.className = "note err"; note.textContent = t.err; }
-    }).catch(function () {
-      sendBtn.disabled = false; sendBtn.style.opacity = 1;
-      note.style.display = "block"; note.className = "note err"; note.textContent = t.err;
+  function log() { return document.getElementById("cg-log"); }
+  function scroll() { var l = log(); l.scrollTop = l.scrollHeight; }
+  function addMsg(cls, text) {
+    var d = document.createElement("div");
+    d.className = "msg " + cls; d.textContent = text;
+    log().appendChild(d); scroll(); return d;
+  }
+  function addAction(a) {
+    var el = document.createElement("a");
+    el.className = "act"; el.href = a.href; el.textContent = a.label + " →";
+    log().appendChild(el); scroll();
+  }
+  function addHumanHint() {
+    if (handedOff) return;
+    var b = document.createElement("button");
+    b.className = "hint"; b.type = "button"; b.textContent = T().human;
+    b.addEventListener("click", function () { b.remove(); showHandoff(); });
+    log().appendChild(b); scroll();
+  }
+  function addChips() {
+    var t = T();
+    var wrap = document.createElement("div"); wrap.className = "chips";
+    t.chips.forEach(function (c) {
+      var b = document.createElement("button"); b.className = "chip"; b.type = "button"; b.textContent = c;
+      b.addEventListener("click", function () { wrap.remove(); sendText(c); });
+      wrap.appendChild(b);
     });
+    log().appendChild(wrap); scroll();
+  }
+
+  function showHandoff() {
+    if (handedOff) return; handedOff = true;
+    var t = T();
+    var d = document.createElement("div"); d.className = "ho";
+    d.innerHTML = '<p></p><input class="ho-n" type="text"><input class="ho-e" type="email"><button type="button"></button>';
+    d.querySelector("p").textContent = t.hoIntro;
+    d.querySelector(".ho-n").placeholder = t.hoName;
+    d.querySelector(".ho-e").placeholder = t.hoEmail;
+    var sb = d.querySelector("button"); sb.textContent = t.hoSend;
+    sb.addEventListener("click", function () {
+      var n = d.querySelector(".ho-n").value.trim(), e = d.querySelector(".ho-e").value.trim();
+      if (!n) { d.querySelector(".ho-n").focus(); return; }
+      if (!e || e.indexOf("@") < 1) { d.querySelector(".ho-e").focus(); return; }
+      sb.disabled = true; sb.style.opacity = .6;
+      var transcript = history.map(function (m) { return (m.role === "user" ? "Visitor: " : "Concierge: ") + m.content; }).join("\n");
+      fetch(LOG, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ full_name: n, email: e, topic: "Concierge chat", message: transcript.slice(0, 3900) || "(no transcript)", page: location.href }) })
+        .then(function (r) {
+          sb.disabled = false; sb.style.opacity = 1;
+          d.remove(); handedOff = r.ok ? true : false;
+          addMsg("bot", r.ok ? t.hoOk : t.hoErr);
+        }).catch(function () { sb.disabled = false; sb.style.opacity = 1; addMsg("bot", t.hoErr); handedOff = false; });
+    });
+    log().appendChild(d); scroll();
+  }
+
+  var busy = false;
+  function sendText(text) {
+    if (busy || !text) return;
+    busy = true;
+    addMsg("me", text);
+    history.push({ role: "user", content: text });
+    var typing = addMsg("bot typing", "…");
+    fetch(CHAT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: history.slice(-10), lang: lang(), page: location.href }) })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        typing.remove(); busy = false;
+        var reply = data.reply || T().err;
+        addMsg("bot", reply);
+        history.push({ role: "assistant", content: reply });
+        if (data.action) addAction(data.action);
+        if (data.handoff) showHandoff(); else addHumanHint();
+      })
+      .catch(function () { typing.remove(); busy = false; addMsg("bot", T().err); });
+  }
+
+  function open() {
+    paint();
+    veil.classList.add("open"); box.classList.add("open");
+    if (!started) {
+      started = true;
+      var g = T().greet;
+      addMsg("bot", g);
+      history.push({ role: "assistant", content: g });
+      addChips();
+    }
+    document.getElementById("cg-in").focus();
+  }
+  function close() { veil.classList.remove("open"); box.classList.remove("open"); }
+
+  btn.addEventListener("click", open);
+  veil.addEventListener("click", close);
+  box.querySelector(".x").addEventListener("click", close);
+  document.getElementById("cg-send").addEventListener("click", function () {
+    var i = document.getElementById("cg-in"); var v = i.value.trim();
+    if (v) { i.value = ""; sendText(v); }
   });
+  document.getElementById("cg-in").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { var v = this.value.trim(); if (v) { this.value = ""; sendText(v); } }
+  });
+  paint();
 })();

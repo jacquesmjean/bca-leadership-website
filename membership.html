@@ -590,6 +590,12 @@ function openJoin(tier){
   jv.classList.add("open"); document.body.style.overflow="hidden";
 }
 function closeJoin(){ jv.classList.remove("open"); document.body.style.overflow=""; }
+/* Concierge deep-link: membership.html#join or #join-Basic|Executive|Platinum opens the signing flow */
+(function(){
+  var m=/^#join(?:-(\w+))?$/.exec(location.hash);
+  if(m){var t=(m[1]||'Basic');t=t.charAt(0).toUpperCase()+t.slice(1).toLowerCase();if(!PRICES[t])t='Basic';setTimeout(function(){openJoin(t);},400);}
+})();
+
 jv.addEventListener("click", e=>{ if(e.target===jv) closeJoin(); });
 function toAgreement(){
   if(!val("j-name")){document.getElementById("j-name").focus();return;}
