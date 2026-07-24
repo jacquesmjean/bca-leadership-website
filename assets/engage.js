@@ -5,6 +5,8 @@
 (function () {
   try { if (sessionStorage.getItem('bca_engaged')) return; } catch (e) {}
   var btn = null, shown = false, done = false;
+  var SETTINGS = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-settings";
+  var CFG = { enabled: true, delaySeconds: 25, scrollPct: 55, exitIntent: true }; // fallback; ServiceDesk can override
 
   var MSG = {
     en: {
@@ -99,27 +101,67 @@
     if (b) mark();
   }, true);
 
-  // Trigger 1: dwell
-  setTimeout(function () { show('dwell'); }, 25000);
+  // Wire the triggers using whatever config we end up with (remote or fallback).
+  function arm() {
+    if (!CFG || CFG.enabled === false) return; // ServiceDesk can switch auto-engage off entirely.
 
-  // Trigger 2: scroll depth
-  function onScroll() {
-    var h = document.documentElement;
-    var d = (h.scrollTop || document.body.scrollTop);
-    var max = (h.scrollHeight - h.clientHeight) || 1;
-    if (d / max > 0.55) { window.removeEventListener('scroll', onScroll); show('scroll'); }
+    var delayMs = Math.max(3, +CFG.delaySeconds || 25) * 1000;
+    var scrollAt = Math.min(0.95, Math.max(0.10, (+CFG.scrollPct || 55) / 100));
+
+    // Trigger 1: dwell
+    setTimeout(function () { show('dwell'); }, delayMs);
+
+    // Trigger 2: scroll depth
+    function onScroll() {
+      var h = document.documentElement;
+      var d = (h.scrollTop || document.body.scrollTop);
+      var max = (h.scrollHeight - h.clientHeight) || 1;
+      if (d / max > scrollAt) { window.removeEventListener('scroll', onScroll); show('scroll'); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Trigger 3: exit intent (desktop) / fast scroll-up (mobile)
+    if (CFG.exitIntent !== false) {
+      document.addEventListener('mouseout', function (e) {
+        if (!e.relatedTarget && e.clientY <= 0) show('exit');
+      });
+      var lastY = 0, upStart = 0;
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY || 0;
+        if (y < lastY) { if (!upStart) upStart = lastY; if (upStart - y > 500 && y < 300) show('exit'); }
+        else { upStart = 0; }
+        lastY = y;
+      }, { passive: true });
+    }
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
 
-  // Trigger 3: exit intent (desktop) / fast scroll-up (mobile)
-  document.addEventListener('mouseout', function (e) {
-    if (!e.relatedTarget && e.clientY <= 0) show('exit');
-  });
-  var lastY = 0, upStart = 0;
-  window.addEventListener('scroll', function () {
-    var y = window.scrollY || 0;
-    if (y < lastY) { if (!upStart) upStart = lastY; if (upStart - y > 500 && y < 300) show('exit'); }
-    else { upStart = 0; }
-    lastY = y;
-  }, { passive: true });
+  // Fetch the live config once per session; fall back to defaults on any hiccup.
+  function boot() {
+    var cached = null;
+    try { cached = sessionStorage.getItem('bca_engage_cfg'); } catch (e) {}
+    if (cached) {
+      try { CFG = JSON.parse(cached); } catch (e) {}
+      return arm();
+    }
+    var settled = false;
+    var t = setTimeout(function () { if (!settled) { settled = true; arm(); } }, 1500);
+    try {
+      fetch(SETTINGS, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'get' })
+      })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          if (d && d.engage) {
+            CFG = d.engage;
+            try { sessionStorage.setItem('bca_engage_cfg', JSON.stringify(CFG)); } catch (e) {}
+          }
+        })
+        .catch(function () {})
+        .then(function () { if (!settled) { settled = true; clearTimeout(t); arm(); } });
+    } catch (e) { if (!settled) { settled = true; clearTimeout(t); arm(); } }
+  }
+
+  boot();
 })();

@@ -96,6 +96,20 @@ table.ctr td{padding:11px 12px;border-bottom:1px solid var(--cream-2);font-varia
 .mod.live-mod:hover{box-shadow:0 8px 22px rgba(5,141,82,.16);transform:translateY(-2px)}
 .card.flash{outline:2px solid var(--bca-green);outline-offset:3px;transition:outline .3s}
 
+/* auto-engage settings */
+.se-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin-top:14px}
+.se-row{display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--cream-2);border:1px solid var(--line);padding:12px 14px;font-size:13.5px;color:var(--text-secondary)}
+.se-row input[type=number]{width:78px;padding:7px 8px;border:1px solid var(--line);border-radius:4px;font:inherit;font-size:14px;text-align:right;color:var(--text-primary);background:#fff}
+.se-toggle input[type=checkbox]{width:20px;height:20px;accent-color:var(--bca-green);cursor:pointer}
+.se-actions{display:flex;align-items:center;gap:14px;margin-top:16px}
+.se-btn{background:var(--bca-green);color:#fff;border:none;font:inherit;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:10px 20px;border-radius:4px;cursor:pointer;transition:.2s}
+.se-btn:hover{background:#046e40}
+.se-btn:disabled{opacity:.55;cursor:not-allowed}
+.se-status{font-size:13px;color:var(--text-muted)}
+.se-status.ok{color:var(--bca-green);font-weight:600}
+.se-status.err{color:var(--clay,#C14027);font-weight:600}
+@media(max-width:600px){.se-grid{grid-template-columns:1fr}}
+
 footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-muted);font-size:13px;margin-top:20px}
 
 @media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.mods{grid-template-columns:repeat(2,1fr)}}
@@ -190,6 +204,36 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
     </div>
   </div>
 
+  <!-- auto-engage settings (live control) -->
+  <div class="grid2" style="grid-template-columns:1fr">
+    <div class="card" id="engage-settings">
+      <h3 data-t="se.h">Auto-engage</h3>
+      <div class="hint" data-t="se.hint">Live · the website invites quiet visitors to the concierge. Adjust the timing or switch it off here — no code change, takes effect on the next visit.</div>
+      <div class="se-grid">
+        <label class="se-row se-toggle">
+          <span data-t="se.on">Auto-engage on</span>
+          <input type="checkbox" id="se-enabled" checked>
+        </label>
+        <label class="se-row">
+          <span data-t="se.delay">Show after (seconds on page)</span>
+          <input type="number" id="se-delay" min="3" max="120" step="1" value="25">
+        </label>
+        <label class="se-row">
+          <span data-t="se.scroll">Or after scrolling (% of page)</span>
+          <input type="number" id="se-scroll" min="10" max="95" step="5" value="55">
+        </label>
+        <label class="se-row se-toggle">
+          <span data-t="se.exit">Also on exit-intent (mouse leaves)</span>
+          <input type="checkbox" id="se-exit" checked>
+        </label>
+      </div>
+      <div class="se-actions">
+        <button type="button" id="se-save" class="se-btn" data-t="se.save">Save changes</button>
+        <span id="se-msg" class="se-status"></span>
+      </div>
+    </div>
+  </div>
+
   <!-- modules -->
   <h3 style="font-family:var(--disp);font-weight:400;font-size:20px;margin-top:26px" data-t="m.h">ServiceDesk modules</h3>
   <div class="hint" style="font-size:13px;color:var(--text-muted);margin:2px 0 12px" data-t="m.hint">The full operating desk, built in phases. Live modules are clickable.</div>
@@ -235,7 +279,7 @@ fr:{
  "m6.b":"Tickets de support","m6.p":"Incidents des coachs et des membres, triés par IA et suivis jusqu'à la clôture.","m.soon5":"Phase 2",
  "m7.b":"Événements & MLC","m7.p":"Conférence, réunions de cohortes et événements continentaux : de l'inscription au suivi.","m.soon6":"Phase 3",
  "m8.b":"Gouvernance","m8.p":"Salle du conseil (protégée), réunions d'équipe, comptes rendus et suivi des actions.","m.soon7":"Phase 3",
- "f.note":"Version provisoire préparée par TechFides"
+ "se.h":"Engagement automatique","se.hint":"En direct · le site invite les visiteurs discrets vers la conciergerie. Ajustez le délai ou désactivez-le ici — sans code, effectif dès la prochaine visite.","se.on":"Engagement activé","se.delay":"Afficher après (secondes sur la page)","se.scroll":"Ou après défilement (% de la page)","se.exit":"Aussi à l'intention de sortie (la souris quitte)","se.save":"Enregistrer","f.note":"Version provisoire préparée par TechFides"
 }};
 function setLang(l){
   document.documentElement.lang=l;
@@ -265,9 +309,49 @@ async function unlock(e){
     ACCESS_CODE=code;
     document.getElementById('gate').style.display='none';
     renderLive(data);
+    loadEngage();
   }catch(_){ err.style.display='block'; }
   return false;
 }
+
+/* ---------- auto-engage settings ---------- */
+const SETTINGS_ENDPOINT="https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-settings";
+function seMsg(txt,cls){const el=document.getElementById('se-msg');el.textContent=txt||'';el.className='se-status'+(cls?' '+cls:'');}
+function fillEngage(e){
+  if(!e) return;
+  document.getElementById('se-enabled').checked = e.enabled!==false;
+  document.getElementById('se-delay').value = e.delaySeconds||25;
+  document.getElementById('se-scroll').value = e.scrollPct||55;
+  document.getElementById('se-exit').checked = e.exitIntent!==false;
+}
+async function loadEngage(){
+  seMsg('');
+  try{
+    const r=await fetch(SETTINGS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'get'})});
+    const d=await r.json();
+    fillEngage(d&&d.engage);
+  }catch(_){ seMsg('Could not load current settings.','err'); }
+}
+async function saveEngage(){
+  if(!ACCESS_CODE){ seMsg('Enter the access code first.','err'); return; }
+  const btn=document.getElementById('se-save');
+  const engage={
+    enabled: document.getElementById('se-enabled').checked,
+    delaySeconds: parseInt(document.getElementById('se-delay').value)||25,
+    scrollPct: parseInt(document.getElementById('se-scroll').value)||55,
+    exitIntent: document.getElementById('se-exit').checked
+  };
+  btn.disabled=true; seMsg('Saving…');
+  try{
+    const r=await fetch(SETTINGS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'set',code:ACCESS_CODE,engage})});
+    const d=await r.json();
+    if(!r.ok||d.error) throw new Error(d.error||'save failed');
+    fillEngage(d.engage);
+    seMsg('Saved. Live on the next visit.','ok');
+  }catch(_){ seMsg('Save failed — check the access code and try again.','err'); }
+  finally{ btn.disabled=false; }
+}
+document.getElementById('se-save').addEventListener('click',saveEngage);
 
 /* ---------- tooltip ---------- */
 const tip=document.getElementById('tip');
