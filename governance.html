@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Board & Governance | BCA Leadership</title>
-<meta name="description" content="BCA Leadership board of directors and governance: credibility for partners and donors.">
+<meta name="description" content="BCA Leadership governance: the full board of directors, our Vision 2030, Theory of Change, and the values behind pan-African leadership development.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -104,7 +104,7 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 .frame::before{content:"";position:absolute;inset:5px;border:1px solid var(--bca-gold);opacity:.7;pointer-events:none;z-index:3}
 .frame::after{content:"";position:absolute;inset:12px;border:1px solid rgba(247,166,28,.25);pointer-events:none;z-index:3}
 .frame .inner{width:100%;height:100%;overflow:hidden;background:var(--cream-2);position:relative}
-.frame .inner img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.96)}
+.frame .inner img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;filter:saturate(.96)}
 .frame .mono{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:64px;color:var(--bca-gold);background:radial-gradient(120% 120% at 50% 20%,#3a2418,#1c120a)}
 .frame .corner{position:absolute;width:16px;height:16px;border:2px solid var(--bca-gold);z-index:4}
 .frame .c1{top:6px;left:6px;border-right:0;border-bottom:0}.frame .c2{top:6px;right:6px;border-left:0;border-bottom:0}
@@ -119,6 +119,67 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 @media(max-width:900px){.board{grid-template-columns:1fr;gap:48px}}
 
 .social{display:inline-flex;gap:15px;align-items:center;flex-wrap:wrap}.social a,.social .soon{display:inline-flex;color:rgba(250,246,238,.72);transition:.2s}.social a:hover{color:var(--bca-gold)}.social .soon{opacity:.4}.social svg{width:19px;height:19px;fill:currentColor;display:block}
+
+/* board tiers */
+.tier-label{display:flex;align-items:center;justify-content:center;gap:16px;margin:64px 0 8px;font-size:11.5px;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--bca-espresso)}
+.tier-label::before,.tier-label::after{content:"";height:1px;width:60px;background:var(--line)}
+.tier-sub{text-align:center;font-size:13.5px;color:rgba(36,36,36,.5);margin-bottom:10px}
+.officers{display:flex;flex-wrap:wrap;justify-content:center;gap:56px;margin-top:30px}
+.officers .dir{flex:0 0 300px;max-width:300px}
+.officers .frame{max-width:300px}
+.directors{display:flex;flex-wrap:wrap;justify-content:center;gap:44px 40px;margin-top:30px}
+.directors .dir{flex:0 0 280px;max-width:280px}
+.dir .where{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(36,36,36,.45);margin-bottom:12px}
+.dir .where::before{content:"◦ ";color:var(--bca-gold)}
+@media(max-width:900px){.officers .dir,.directors .dir{flex:0 0 260px}}
+@media(max-width:600px){.officers,.directors{gap:44px}.officers .dir,.directors .dir{flex:0 0 100%;max-width:320px}}
+
+/* futuristic strategy canvas */
+.future{position:relative;background:var(--bca-night-2);color:var(--cream);padding:104px 0 96px;overflow:hidden}
+.future::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(247,166,28,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(247,166,28,.05) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(120% 80% at 50% 0%,#000,transparent 78%);-webkit-mask-image:radial-gradient(120% 80% at 50% 0%,#000,transparent 78%);pointer-events:none}
+.future::after{content:"";position:absolute;top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(5,141,82,.16),transparent 62%);pointer-events:none}
+.future .wrap{position:relative;z-index:2}
+.future .kicker{display:inline-flex;align-items:center;gap:14px;font-family:var(--ui);font-size:12px;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--bca-gold)}
+.future .kicker::before{content:"";width:38px;height:1px;background:var(--bca-gold);opacity:.7}
+.future h2{color:var(--cream);margin-top:18px}
+.future h2 .gild{color:var(--bca-gold)}
+.v2030-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.ghost2030{font-family:var(--disp);font-weight:400;font-size:clamp(96px,15vw,220px);line-height:.86;color:transparent;-webkit-text-stroke:1px rgba(247,166,28,.5);letter-spacing:-.02em}
+.ghost2030 span{display:block;font-size:13px;-webkit-text-stroke:0;color:rgba(250,246,238,.5);letter-spacing:.4em;text-transform:uppercase;margin-top:18px;padding-left:6px}
+.v2030-lead{font-family:var(--edit);font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.32;color:rgba(250,246,238,.92);margin-bottom:22px}
+.v2030-body{color:rgba(250,246,238,.68);font-size:16px;max-width:52ch}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-light);border:1px solid var(--line-light);margin-top:64px}
+.pillar{background:var(--bca-night-2);padding:28px 24px;transition:.3s}
+.pillar:hover{background:#2b1810}
+.pillar .pn{font-family:var(--edit);font-style:italic;font-size:15px;color:var(--bca-gold)}
+.pillar h4{font-family:var(--disp);font-weight:400;font-size:19px;color:var(--cream);margin:8px 0 8px}
+.pillar p{font-size:13.5px;color:rgba(250,246,238,.6);line-height:1.55}
+.future-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(247,166,28,.4),transparent);margin:0}
+/* theory of change pathway */
+.toc-head{max-width:60ch}
+.pathway{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:60px;position:relative}
+.pathway::before{content:"";position:absolute;top:26px;left:6%;right:6%;height:1px;background:linear-gradient(90deg,var(--bca-gold),rgba(247,166,28,.25));z-index:1}
+.stage{position:relative;z-index:2;text-align:left}
+.stage .node{width:54px;height:54px;border-radius:50%;background:var(--bca-night-2);border:1px solid rgba(247,166,28,.5);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-size:20px;color:var(--bca-gold);margin-bottom:22px;box-shadow:0 0 0 6px var(--bca-night-2),0 0 30px rgba(247,166,28,.12)}
+.stage .st-k{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,166,28,.85);margin-bottom:8px}
+.stage h4{font-family:var(--disp);font-weight:400;font-size:20px;color:var(--cream);margin-bottom:9px;line-height:1.2}
+.stage p{font-size:14px;color:rgba(250,246,238,.62);line-height:1.55}
+.toc-outcome{margin-top:56px;border:1px solid rgba(247,166,28,.28);background:linear-gradient(180deg,rgba(247,166,28,.06),transparent);padding:30px 34px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.toc-outcome .lbl{font-size:11.5px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--bca-gold);white-space:nowrap}
+.toc-outcome .txt{font-family:var(--edit);font-style:italic;font-size:clamp(19px,2.2vw,26px);color:rgba(250,246,238,.92);line-height:1.3;flex:1;min-width:260px}
+@media(max-width:900px){.v2030-wrap{grid-template-columns:1fr;gap:22px}.pillars{grid-template-columns:1fr 1fr}.pathway{grid-template-columns:1fr;gap:34px}.pathway::before{left:26px;right:auto;top:6%;bottom:6%;width:1px;height:auto;background:linear-gradient(180deg,var(--bca-gold),rgba(247,166,28,.25))}.stage{padding-left:0}}
+@media(max-width:520px){.pillars{grid-template-columns:1fr}}
+
+/* values */
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.val{background:#fff;border:1px solid var(--line);padding:38px 32px;position:relative;transition:.35s}
+.val::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--bca-green),var(--bca-gold));transform:scaleX(0);transform-origin:left;transition:.4s}
+.val:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(36,23,12,.12);border-color:var(--bca-gold)}
+.val:hover::before{transform:scaleX(1)}
+.val .vk{font-family:var(--edit);font-style:italic;font-size:16px;color:var(--bca-clay)}
+.val h3{font-family:var(--disp);font-weight:400;font-size:26px;color:var(--bca-night);margin:6px 0 14px}
+.val p{font-size:15px;color:rgba(36,36,36,.7);line-height:1.6}
+@media(max-width:900px){.vals{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -137,37 +198,130 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 <section><div class="wrap center">
   <div class="sec-eyebrow">Board of Directors</div>
   <h2>Governance you can <span class="gild">trust.</span></h2>
-  <p class="lead">Our board brings decades of operating, financial, and sector leadership across the continent and the diaspora.</p>
-  <div class="board">
+  <p class="lead">BCA Leadership is guided by a board that brings decades of operating, financial, legal, and sector leadership across the continent and the diaspora.</p>
+
+  <div class="tier-label">Officers</div>
+  <div class="tier-sub">Chair and Vice-Chair of the Board</div>
+  <div class="officers">
     <div class="dir">
       <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
-        <div class="inner"><img src="https://bcaleadership.com/wp-content/uploads/2024/02/Dr-Modupe-S.-Taylor-Pearce-2.jpg" alt="Dr. Modupe Taylor-Pearce" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;MT&lt;/div&gt;'"></div>
+        <div class="inner"><img src="assets/board/short.jpg" alt="Mr. Wilben Short" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;WS&lt;/div&gt;'"></div>
       </div>
-      <h3>Dr. Modupe Taylor-Pearce</h3>
-      <div class="role">Founder &amp; CEO</div>
-      <p>Founder and Chief Executive of BCA Leadership. An executive coach and leadership scholar, he built BCA to help African leaders make better decisions through peer learning and coaching.</p>
+      <h3>Mr. Wilben Short</h3>
+      <div class="role">Board Chair</div>
+      <div class="where">Sierra Leone</div>
+      <p>Partner at CTI Consulting with over thirty years of board-level experience across consulting, hospitality, transport, and events in Sierra Leone and the United Kingdom. He holds a combined honours degree in Physics and Electronic Engineering from Leeds University and an MBA from Cranfield, and is a certified John Maxwell leadership trainer.</p>
+    </div>
+    <div class="dir">
+      <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="inner"><img src="assets/board/musakali.jpg" alt="Catherine Musakali" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;CM&lt;/div&gt;'"></div>
+      </div>
+      <h3>Catherine Musakali</h3>
+      <div class="role">Board Vice-Chair</div>
+      <div class="where">Kenya</div>
+      <p>Advocate of the High Court of Kenya and founder of Dorion Associates LLP, specializing in governance and commercial law. She spent fifteen years as Company Secretary and Head of Legal for Shell across East and North Africa, and is a past Chair of the Institute of Certified Public Secretaries of Kenya. She also consults for the IFC.</p>
+    </div>
+  </div>
+
+  <div class="tier-label">Directors</div>
+  <div class="tier-sub">Members of the Board</div>
+  <div class="directors">
+    <div class="dir">
+      <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="inner"><img src="assets/board/modupe.jpg" alt="Dr. Modupe S. Taylor-Pearce" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;MT&lt;/div&gt;'"></div>
+      </div>
+      <h3>Dr. Modupe S. Taylor-Pearce</h3>
+      <div class="role">Board Member · CEO</div>
+      <div class="where">Sierra Leone</div>
+      <p>Founder and Chief Executive of BCA Leadership, and a scholar and practitioner of leadership and organizational management. A veteran of the Sierra Leone Civil War, he was founding Dean of the African Leadership University School of Business. He holds a PhD from Capella, an MEng from Cornell, and a BSc from West Point.</p>
       <a class="li" href="https://www.linkedin.com/in/modupe-taylor-pearce-205336/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg> LinkedIn</a>
     </div>
     <div class="dir">
       <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
-        <div class="inner"><div class="mono">VW</div></div>
+        <div class="inner"><img src="assets/board/jacques.jpg" alt="Mr. Jacques M. Jean" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;JJ&lt;/div&gt;'"></div>
       </div>
-      <h3>Victor Ernest Williams</h3>
-      <div class="role">Director</div>
+      <h3>Mr. Jacques M. Jean</h3>
+      <div class="role">Board Member</div>
+      <div class="where">United States · Haiti</div>
+      <p>Founder and CEO of TechFides, with 25 years building enterprise technology for companies like Honeywell and Schneider Electric across 15 countries. Today he helps businesses own their AI. A Carnegie Mellon graduate and Forbes Technology Council member, he has built three public libraries in northern Haiti.</p>
+    </div>
+    <div class="dir">
+      <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="inner"><img src="assets/board/persun.jpg" alt="Mrs. Persun-Gajudhur" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;PG&lt;/div&gt;'"></div>
+      </div>
+      <h3>Mrs. Persun-Gajudhur</h3>
+      <div class="role">Board Member</div>
+      <div class="where">Mauritius</div>
+      <p>Corporate Manager and Secretary of FFG (Mauritius) Ltd, with over twelve years in financial services and corporate governance. She was formerly Head of Corporate Services at AAMIL (Mauritius). She holds a B.A. (Hons) in Law and Management from the University of Mauritius and is a qualified Chartered Secretary (ICSA, UK).</p>
+    </div>
+    <div class="dir">
+      <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+        <div class="inner"><img src="assets/board/victor.jpg" alt="Mr. Victor Ernest Williams" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;VW&lt;/div&gt;'"></div>
+      </div>
+      <h3>Mr. Victor Ernest Williams</h3>
+      <div class="role">Board Member</div>
+      <div class="where">United States</div>
       <p>Managing Partner at Lions Range Group and former CEO of NBA Africa. He led Corporate and Investment Banking across Africa at Standard Bank for nine years, with earlier M&amp;A roles at Wells Fargo Securities and Goldman Sachs. He advises the boards of the Smithsonian National Museum of African Art and Harvard Business School.</p>
       <a class="li" href="https://www.linkedin.com/in/victorewilliams" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg> LinkedIn</a>
     </div>
     <div class="dir">
       <div class="frame"><span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
-        <div class="inner"><div class="mono">AC</div></div>
+        <div class="inner"><img src="assets/board/adrian.jpg" alt="Mr. Adrian Carr" loading="lazy" onerror="this.outerHTML='&lt;div class=mono&gt;AC&lt;/div&gt;'"></div>
       </div>
-      <h3>Adrian Carr</h3>
-      <div class="role">Director</div>
+      <h3>Mr. Adrian Carr</h3>
+      <div class="role">Board Member</div>
+      <div class="where">United Kingdom</div>
       <p>Impact investor and non-executive chair. He leads an impact portfolio at ADCA Investments and chairs the governing bodies of Dulwich College and Life-by-Design, an African enterprise development agency. His background spans banking at JP Morgan, Paribas, and Credit Suisse, and founding education initiatives in Sierra Leone.</p>
       <a class="li" href="https://www.linkedin.com/in/adrian-carr-ba6992150/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg> LinkedIn</a>
     </div>
   </div>
-  <p class="board-note">Additional director profiles are being finalized and will be published here.</p>
+</div></section>
+
+<!-- BCA Vision 2030 -->
+<section class="future"><div class="wrap">
+  <div class="v2030-wrap">
+    <div>
+      <div class="kicker">BCA Vision 2030</div>
+      <div class="ghost2030">2030<span>The horizon we are building toward</span></div>
+    </div>
+    <div>
+      <p class="v2030-lead">A generation of African leaders making better decisions — and a continent that feels the difference.</p>
+      <p class="v2030-body">By 2030, BCA Leadership aims to be the trusted home for executive growth across Africa: a living network where leaders learn from one another, coaches meet leaders in every major market, and better decisions compound into stronger institutions, healthier organizations, and lasting prosperity. We are building the room where the continent's leaders sharpen each other.</p>
+    </div>
+  </div>
+  <div class="pillars">
+    <div class="pillar"><div class="pn">01</div><h4>Reach</h4><p>A coaching bench present in every major African market, so no leader is more than a conversation away from support.</p></div>
+    <div class="pillar"><div class="pn">02</div><h4>Depth</h4><p>Peer communities where leaders think together, challenge each other, and carry what they learn back to their teams.</p></div>
+    <div class="pillar"><div class="pn">03</div><h4>Rigor</h4><p>Measurable growth in decision quality, tracked from the coaching room to real organizational results.</p></div>
+    <div class="pillar"><div class="pn">04</div><h4>Legacy</h4><p>Leaders who raise the next generation — turning individual growth into institutional strength that outlasts them.</p></div>
+  </div>
+</div></section>
+
+<div class="future-divider"></div>
+
+<!-- BCA Theory of Change -->
+<section class="future"><div class="wrap">
+  <div class="kicker">BCA Theory of Change</div>
+  <h2 class="toc-head">How growth in one leader becomes <span class="gild">change across a continent.</span></h2>
+  <div class="pathway">
+    <div class="stage"><div class="node">01</div><div class="st-k">Invest</div><h4>We develop the leader</h4><p>Coaching, peer learning, and honest feedback build self-awareness and sharper judgment in each leader we work with.</p></div>
+    <div class="stage"><div class="node">02</div><div class="st-k">Apply</div><h4>They lead better</h4><p>Stronger leaders make clearer decisions, build healthier cultures, and get more from the people around them.</p></div>
+    <div class="stage"><div class="node">03</div><div class="st-k">Scale</div><h4>Organizations strengthen</h4><p>Better-led organizations perform, endure, and create opportunity — jobs, services, and trust in their communities.</p></div>
+    <div class="stage"><div class="node">04</div><div class="st-k">Compound</div><h4>The continent gains</h4><p>Multiplied across markets and generations, better leadership becomes stronger institutions and lasting prosperity.</p></div>
+  </div>
+  <div class="toc-outcome"><span class="lbl">The Result</span><span class="txt">Better Decisions. Better Knowledge. Better Results.</span></div>
+</div></section>
+
+<!-- Our Values -->
+<section><div class="wrap center">
+  <div class="sec-eyebrow">Our Values</div>
+  <h2>What we <span class="gild">stand on.</span></h2>
+  <p class="lead">Three commitments shape how BCA plans, works, and shows up for the leaders and communities we serve.</p>
+  <div class="vals">
+    <div class="val"><div class="vk">i.</div><h3>Integrity</h3><p>We believe integrity is the bedrock of everything we plan or do, that trust is essential to unity and purpose, and that honesty and transparency enable accountability. We honor our commitments.</p></div>
+    <div class="val"><div class="vk">ii.</div><h3>Growth</h3><p>We believe growth is essential and continual — permeating every aspect of our individual and corporate character, beliefs, knowledge, and capabilities.</p></div>
+    <div class="val"><div class="vk">iii.</div><h3>Service</h3><p>We believe service is both a noble calling and a winning strategy. We put the needs of our clients, agents, communities, nations, and continent above our own — and strive to meet them with excellence.</p></div>
+  </div>
 </div></section>
 <section class="cta-final"><div class="wrap"><h2>Considering a partnership <span class="gild">with BCA?</span></h2><p>Let us introduce the people and the track record behind the work.</p><a class="btn gold" href="services.html">Start a conversation →</a></div></section>
 <div class="brandstrip"></div>
