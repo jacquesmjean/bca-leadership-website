@@ -170,15 +170,17 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 @media(max-width:900px){.v2030-wrap{grid-template-columns:1fr;gap:22px}.pillars{grid-template-columns:1fr 1fr}.pathway{grid-template-columns:1fr;gap:34px}.pathway::before{left:26px;right:auto;top:6%;bottom:6%;width:1px;height:auto;background:linear-gradient(180deg,var(--bca-gold),rgba(247,166,28,.25))}.stage{padding-left:0}}
 @media(max-width:520px){.pillars{grid-template-columns:1fr}}
 
-/* values */
-.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
-.val{background:#fff;border:1px solid var(--line);padding:38px 32px;position:relative;transition:.35s}
-.val::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--bca-green),var(--bca-gold));transform:scaleX(0);transform-origin:left;transition:.4s}
-.val:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(36,23,12,.12);border-color:var(--bca-gold)}
-.val:hover::before{transform:scaleX(1)}
-.val .vk{font-family:var(--edit);font-style:italic;font-size:16px;color:var(--bca-clay)}
-.val h3{font-family:var(--disp);font-weight:400;font-size:26px;color:var(--bca-night);margin:6px 0 14px}
-.val p{font-size:15px;color:rgba(36,36,36,.7);line-height:1.6}
+/* values — BCA brand-colored cards */
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px;text-align:left}
+.val{padding:42px 34px 46px;position:relative;transition:.35s;color:#fff;overflow:hidden}
+.val.integrity{background:var(--bca-olive)}
+.val.growth{background:var(--bca-green)}
+.val.service{background:var(--bca-espresso)}
+.val:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(36,23,12,.22)}
+.val .vk{font-family:var(--edit);font-style:italic;font-size:16px;color:rgba(255,255,255,.6)}
+.val h3{font-family:var(--disp);font-weight:400;font-size:27px;color:#fff;margin:6px 0 12px;padding-bottom:14px;position:relative}
+.val h3::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:2px;background:rgba(255,255,255,.55)}
+.val p{font-size:15px;color:rgba(255,255,255,.9);line-height:1.62}
 @media(max-width:900px){.vals{grid-template-columns:1fr}}
 </style>
 </head>
@@ -286,18 +288,18 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
   <div class="v2030-wrap">
     <div>
       <div class="kicker">BCA Vision 2030</div>
-      <div class="ghost2030">2030<span>The horizon we are building toward</span></div>
+      <div class="ghost2030">2030<span>BCA's vision, in its own words</span></div>
     </div>
     <div>
-      <p class="v2030-lead">A generation of African leaders making better decisions — and a continent that feels the difference.</p>
-      <p class="v2030-body">By 2030, BCA Leadership aims to be the trusted home for executive growth across Africa: a living network where leaders learn from one another, coaches meet leaders in every major market, and better decisions compound into stronger institutions, healthier organizations, and lasting prosperity. We are building the room where the continent's leaders sharpen each other.</p>
+      <p class="v2030-lead">It is 2030. BCA is the most visible catalyst for exponential growth in organizations — public, private, and non-profit — in Africa, and the preferred leadership enhancement partner for leaders of organizations across the continent.</p>
+      <p class="v2030-body">BCA Leadership is a Pan-African leadership enhancement organization, created to support leaders of organizations in raising their leadership capacity and performance — benefitting their organizations, their stakeholders, and their communities.</p>
     </div>
   </div>
   <div class="pillars">
-    <div class="pillar"><div class="pn">01</div><h4>Reach</h4><p>A coaching bench present in every major African market, so no leader is more than a conversation away from support.</p></div>
-    <div class="pillar"><div class="pn">02</div><h4>Depth</h4><p>Peer communities where leaders think together, challenge each other, and carry what they learn back to their teams.</p></div>
-    <div class="pillar"><div class="pn">03</div><h4>Rigor</h4><p>Measurable growth in decision quality, tracked from the coaching room to real organizational results.</p></div>
-    <div class="pillar"><div class="pn">04</div><h4>Legacy</h4><p>Leaders who raise the next generation — turning individual growth into institutional strength that outlasts them.</p></div>
+    <div class="pillar"><div class="pn">01</div><h4>Most Visible Catalyst</h4><p>The clearest driver of growth for organizations across Africa — the name leaders associate with getting better.</p></div>
+    <div class="pillar"><div class="pn">02</div><h4>Every Sector</h4><p>Public, private, and non-profit organizations alike — leadership matters in all of them.</p></div>
+    <div class="pillar"><div class="pn">03</div><h4>Exponential Growth</h4><p>Not incremental gains, but step-change performance for the organizations BCA serves.</p></div>
+    <div class="pillar"><div class="pn">04</div><h4>Preferred Partner</h4><p>The leadership enhancement partner of choice for leaders across the continent.</p></div>
   </div>
 </div></section>
 
@@ -306,12 +308,13 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 <!-- BCA Theory of Change -->
 <section class="future"><div class="wrap">
   <div class="kicker">BCA Theory of Change</div>
-  <h2 class="toc-head">How growth in one leader becomes <span class="gild">change across a continent.</span></h2>
+  <h2 class="toc-head">How access to leadership becomes <span class="gild">change across a continent.</span></h2>
+  <p class="v2030-body" style="margin-top:14px">Through BCA, a majority of leaders of organizations in Africa are made aware of — and given access to — transformative leadership enhancement services. What follows is a chain of change:</p>
   <div class="pathway">
-    <div class="stage"><div class="node">01</div><div class="st-k">Invest</div><h4>We develop the leader</h4><p>Coaching, peer learning, and honest feedback build self-awareness and sharper judgment in each leader we work with.</p></div>
-    <div class="stage"><div class="node">02</div><div class="st-k">Apply</div><h4>They lead better</h4><p>Stronger leaders make clearer decisions, build healthier cultures, and get more from the people around them.</p></div>
-    <div class="stage"><div class="node">03</div><div class="st-k">Scale</div><h4>Organizations strengthen</h4><p>Better-led organizations perform, endure, and create opportunity — jobs, services, and trust in their communities.</p></div>
-    <div class="stage"><div class="node">04</div><div class="st-k">Compound</div><h4>The continent gains</h4><p>Multiplied across markets and generations, better leadership becomes stronger institutions and lasting prosperity.</p></div>
+    <div class="stage"><div class="node">01</div><div class="st-k">Awareness &amp; Access</div><h4>Leaders reach BCA</h4><p>A majority of Africa's organizational leaders are made aware of, and given access to, transformative leadership enhancement services.</p></div>
+    <div class="stage"><div class="node">02</div><div class="st-k">Better Decisions</div><h4>They decide better</h4><p>As leaders regularly access these services, they make more optimal decisions.</p></div>
+    <div class="stage"><div class="node">03</div><div class="st-k">Purpose</div><h4>Organizations deliver</h4><p>Their organizations fulfill their purpose — performing against the reason they exist.</p></div>
+    <div class="stage"><div class="node">04</div><div class="st-k">ESG Impact</div><h4>Communities gain</h4><p>Their communities experience improved environmental, social, and governance outcomes.</p></div>
   </div>
   <div class="toc-outcome"><span class="lbl">The Result</span><span class="txt">Better Decisions. Better Knowledge. Better Results.</span></div>
 </div></section>
@@ -322,9 +325,9 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
   <h2>What we <span class="gild">stand on.</span></h2>
   <p class="lead">Three commitments shape how BCA plans, works, and shows up for the leaders and communities we serve.</p>
   <div class="vals">
-    <div class="val"><div class="vk">i.</div><h3>Integrity</h3><p>We believe integrity is the bedrock of everything we plan or do, that trust is essential to unity and purpose, and that honesty and transparency enable accountability. We honor our commitments.</p></div>
-    <div class="val"><div class="vk">ii.</div><h3>Growth</h3><p>We believe growth is essential and continual — permeating every aspect of our individual and corporate character, beliefs, knowledge, and capabilities.</p></div>
-    <div class="val"><div class="vk">iii.</div><h3>Service</h3><p>We believe service is both a noble calling and a winning strategy. We put the needs of our clients, agents, communities, nations, and continent above our own — and strive to meet them with excellence.</p></div>
+    <div class="val integrity"><div class="vk">i.</div><h3>Integrity</h3><p>We believe that integrity is the bedrock of everything we plan or do, that trust is essential to unity and purpose, and that honesty and transparency enable accountability. We honor our commitments.</p></div>
+    <div class="val growth"><div class="vk">ii.</div><h3>Growth</h3><p>We believe that growth is essential, continual, and permeates every aspect of our individual and corporate character and beliefs, knowledge, and capabilities.</p></div>
+    <div class="val service"><div class="vk">iii.</div><h3>Service</h3><p>We believe that service is both a noble calling and a winning strategy, leading us to prioritize the needs of our clients, agents, communities, nations, and continent above our own and to strive to meet those needs with excellence.</p></div>
   </div>
 </div></section>
 <section class="cta-final"><div class="wrap"><h2>Considering a partnership <span class="gild">with BCA?</span></h2><p>Let us introduce the people and the track record behind the work.</p><a class="btn gold" href="services.html">Start a conversation →</a></div></section>
