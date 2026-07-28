@@ -74,7 +74,7 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
 footer a{color:rgba(250,246,238,.7);text-decoration:none}footer a:hover{color:var(--bca-gold)}
 .modal-veil{position:fixed;inset:0;background:rgba(33,16,18,.7);backdrop-filter:blur(6px);z-index:150;display:none;align-items:center;justify-content:center;padding:24px}
 .modal-veil.open{display:flex}
-.modal{background:var(--cream);max-width:560px;width:100%;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.modal{background:var(--cream);max-width:560px;width:100%;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5);max-height:92vh;overflow-y:auto}
 .modal .m-strip{height:6px;background:repeating-linear-gradient(90deg,var(--bca-green) 0 40px,var(--bca-gold) 40px 54px,var(--bca-clay) 54px 68px,var(--bca-olive) 68px 82px)}
 .modal .m-body{padding:42px 46px}
 .modal .x{position:absolute;top:16px;right:20px;background:none;border:none;font-size:26px;cursor:pointer;opacity:.5}
@@ -253,7 +253,7 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none}footer a:hover{color:va
       <div class="field"><label>Choose a time (GMT)</label><div class="slots" id="b-slots"></div></div>
       <button class="btn gold" style="width:100%;justify-content:center;margin-top:6px" onclick="finishBooking()">Confirm Booking</button>
     </div>
-    <div class="m-done" id="b-done" style="display:none"><div class="ok">✓</div><h3>You’re booked.</h3><p class="m-sub" style="margin-top:10px">A calendar invitation is on its way. We will confirm by email and match you to the right member of the bench.</p></div>
+    <div class="m-done" id="b-done" style="display:none"><div class="ok">✓</div><h3>You’re booked.</h3><p class="m-sub" style="margin-top:10px">We will confirm by email within one business day and match you to the right member of the bench.</p></div>
   </div>
 </div></div>
 
@@ -267,7 +267,25 @@ const bv=document.getElementById("booking");
 function openBooking(){document.getElementById("b-flow").style.display="block";document.getElementById("b-done").style.display="none";bv.classList.add("open");document.body.style.overflow="hidden";}
 function closeBooking(){bv.classList.remove("open");document.body.style.overflow="";}
 bv.addEventListener("click",function(e){if(e.target===bv)closeBooking();});
-function finishBooking(){document.getElementById("b-flow").style.display="none";document.getElementById("b-done").style.display="block";}
+async function finishBooking(){
+  var f=document.getElementById("b-flow");
+  var name=f.querySelector('input[type=text]');
+  var email=f.querySelector('input[type=email]');
+  var texts=f.querySelectorAll('input[type=text]'); var company=texts[1], role=texts[2];
+  var country=f.querySelector('select[data-countries]');
+  var slot=document.querySelector('#b-slots .slot.on');
+  function bad(el){if(el&&el.focus)el.focus();if(el&&el.style)el.style.borderColor='var(--bca-clay)';}
+  if(!name.value.trim()){bad(name);return;}
+  if(!email.value.trim()||email.value.indexOf('@')<1){bad(email);return;}
+  if(!slot){var g=document.getElementById('b-slots');g.style.outline='2px solid var(--bca-clay)';g.style.outlineOffset='4px';return;}
+  var msg="Consultation booking. Role: "+(role?role.value.trim():'-')+". Country: "+(country?country.value:'-')+". Preferred time: "+slot.textContent+".";
+  var btn=f.querySelector('button.btn.gold'); if(btn){btn.disabled=true;btn.style.opacity=.6;}
+  var ok=false;
+  try{var r=await fetch("https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({full_name:name.value.trim(),email:email.value.trim(),company:company?company.value.trim():"",topic:"Consultation booking",message:msg,page:location.href})});ok=r.ok;}catch(e){ok=false;}
+  if(btn){btn.disabled=false;btn.style.opacity=1;}
+  if(!ok){var e2=document.getElementById('b-err');if(!e2){e2=document.createElement('p');e2.id='b-err';e2.style.cssText='color:var(--bca-clay);font-size:13.5px;margin-top:10px';e2.innerHTML='We could not send that just now. Please try again or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.';btn.insertAdjacentElement('afterend',e2);}e2.style.display='block';return;}
+  f.style.display="none";document.getElementById("b-done").style.display="block";
+}
 var chips=document.querySelectorAll("#filters .chip"),cards=document.querySelectorAll("#grid .coach");
 chips.forEach(function(c){c.onclick=function(){chips.forEach(function(x){x.classList.remove("on")});c.classList.add("on");var f=c.dataset.f,shown=0;cards.forEach(function(card){var hit=(f==="all"||card.dataset.tags.split(" ").indexOf(f)>-1);card.style.display=hit?"":"none";if(hit)shown++;});document.getElementById("grid-empty").style.display=shown?"none":"block";};});
 </script>

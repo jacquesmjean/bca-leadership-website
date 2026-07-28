@@ -682,6 +682,7 @@ async function submitCorp(){
   var outcome=f.querySelectorAll('input[type=text]')[2];
   if(!name.value.trim()){name.focus();name.style.borderColor="var(--bca-clay)";return;}
   if(!email.value.trim()||email.value.indexOf("@")<1){email.focus();email.style.borderColor="var(--bca-clay)";return;}
+  if(org&&!org.value.trim()){org.focus();org.style.borderColor="var(--bca-clay)";return;}
   var msg="Corporate membership proposal. Organization: "+(org?org.value.trim():"-")+". Country: "+(country?country.value:"-")+". Leaders: "+(count?count.value:"-")+". Desired outcome: "+(outcome?outcome.value.trim():"-");
   var endpoint="https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge";
   var btn=f.querySelector('button.btn'); if(btn){btn.disabled=true;btn.style.opacity=.6;}
