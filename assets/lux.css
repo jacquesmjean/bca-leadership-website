@@ -1,0 +1,101 @@
+/* ===== BCA Lux — mobile auto-fit + glass + glow (by TechFides) ===== */
+:root{--lux-gold:#F7A61C;--lux-green:#058D52;--lux-night:#24170C;--lux-cream:#FAF6EE}
+
+/* ---------- universal mobile auto-fit ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg,video,iframe{max-width:100%}
+*{-webkit-tap-highlight-color:transparent}
+
+/* ---------- hamburger (shown where desktop nav collapses) ---------- */
+.lux-burger{display:none;align-items:center;justify-content:center;width:46px;height:46px;flex:0 0 auto;
+ border:1px solid rgba(36,23,12,.16);background:rgba(255,255,255,.55);
+ backdrop-filter:blur(10px) saturate(1.3);-webkit-backdrop-filter:blur(10px) saturate(1.3);
+ border-radius:12px;cursor:pointer;padding:0;transition:.25s;box-shadow:0 4px 18px rgba(36,23,12,.10)}
+.lux-burger:active{transform:scale(.94)}
+.lux-burger i{display:block;width:20px;height:2px;background:var(--lux-night);position:relative;transition:.3s}
+.lux-burger i::before,.lux-burger i::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--lux-night);transition:.3s}
+.lux-burger i::before{top:-6px}.lux-burger i::after{top:6px}
+body.lux-open .lux-burger i{background:transparent}
+body.lux-open .lux-burger i::before{top:0;transform:rotate(45deg)}
+body.lux-open .lux-burger i::after{top:0;transform:rotate(-45deg)}
+
+@media(max-width:1080px){
+  .lux-burger{display:inline-flex}
+  /* the desktop CTA + language chips live in the glass menu on mobile */
+  nav .nav-right>.btn{display:none}
+  nav .nav-right{gap:12px}
+}
+
+/* ---------- glassy full-screen mobile menu ---------- */
+#lux-menu{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;justify-content:center;
+ padding:96px 32px 48px;
+ background:radial-gradient(120% 80% at 85% 0%,rgba(247,166,28,.16),transparent 60%),
+            radial-gradient(120% 80% at 0% 100%,rgba(5,141,82,.16),transparent 55%),
+            linear-gradient(165deg,rgba(36,23,12,.90),rgba(33,16,18,.86));
+ backdrop-filter:blur(26px) saturate(1.25);-webkit-backdrop-filter:blur(26px) saturate(1.25);
+ opacity:0;pointer-events:none;transition:opacity .4s ease;overflow-y:auto;-webkit-overflow-scrolling:touch}
+@media(max-height:720px){#lux-menu{justify-content:flex-start}#lux-menu a.lux-link{font-size:21px;padding:9px 0}}
+body.lux-open{overflow:hidden}
+body.lux-open #lux-menu{opacity:1;pointer-events:auto}
+#lux-menu .lux-inner{max-width:520px;margin:0 auto;width:100%}
+#lux-menu a.lux-link{display:block;font-family:'Marcellus',serif;font-weight:400;font-size:clamp(22px,7vw,30px);
+ color:var(--lux-cream);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(247,166,28,.15);
+ opacity:0;transform:translateY(14px);transition:color .25s,padding .25s}
+body.lux-open #lux-menu a.lux-link{animation:luxIn .5s forwards}
+#lux-menu a.lux-link:hover,#lux-menu a.lux-link:active{color:var(--lux-gold);padding-left:10px}
+@keyframes luxIn{to{opacity:1;transform:translateY(0)}}
+#lux-menu a.lux-link:nth-child(1){animation-delay:.05s}
+#lux-menu a.lux-link:nth-child(2){animation-delay:.09s}
+#lux-menu a.lux-link:nth-child(3){animation-delay:.13s}
+#lux-menu a.lux-link:nth-child(4){animation-delay:.17s}
+#lux-menu a.lux-link:nth-child(5){animation-delay:.21s}
+#lux-menu a.lux-link:nth-child(6){animation-delay:.25s}
+#lux-menu a.lux-link:nth-child(7){animation-delay:.29s}
+#lux-menu a.lux-link:nth-child(8){animation-delay:.33s}
+#lux-menu a.lux-link:nth-child(9){animation-delay:.37s}
+#lux-menu .lux-sub{margin-top:18px;font-family:'Jost',sans-serif;font-size:13.5px;letter-spacing:.05em;color:rgba(250,246,238,.62)}
+#lux-menu .lux-sub a{color:rgba(250,246,238,.62);text-decoration:none;transition:.2s}
+#lux-menu .lux-sub a:hover{color:var(--lux-gold)}
+#lux-menu .lux-tools{margin-top:30px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+#lux-menu .btn,#lux-menu .lux-cta{display:inline-flex;align-items:center;gap:10px;background:var(--lux-gold);color:var(--lux-night);
+ font-family:'Jost',sans-serif;font-weight:600;font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+ padding:15px 28px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;
+ box-shadow:0 0 0 1px rgba(247,166,28,.45),0 12px 44px rgba(247,166,28,.30)}
+#lux-menu .lang{display:inline-flex;border:1px solid rgba(250,246,238,.28);border-radius:8px;overflow:hidden}
+#lux-menu .lang button{background:transparent;color:rgba(250,246,238,.8)}
+#lux-menu .lang button.on{background:var(--lux-gold);color:var(--lux-night)}
+
+/* ---------- glow + glass accents (mobile-first, tasteful) ---------- */
+@media(max-width:1080px){
+  /* frosted sticky nav */
+  nav{background:rgba(250,246,238,.72)!important;
+      backdrop-filter:blur(18px) saturate(1.3)!important;-webkit-backdrop-filter:blur(18px) saturate(1.3)!important;
+      box-shadow:0 6px 34px rgba(36,23,12,.10)}
+  /* soft gold glow on primary buttons */
+  .btn.gold,.btn.green,.btn.clay,.btn:not(.ghost){box-shadow:0 8px 30px rgba(36,23,12,.14)}
+  .btn:active{transform:scale(.98)}
+  /* cards & framed elements lift with a warm glow */
+  .card,.val,.tile,.mod,.pillar,.stage,.frame,.dir .frame{box-shadow:0 14px 40px rgba(36,23,12,.12)}
+  .frame,.dir .frame{box-shadow:0 20px 50px rgba(36,23,12,.30),0 0 0 1px rgba(247,166,28,.10)}
+  /* eyebrows / labels get a subtle glow */
+  .sec-eyebrow,.hero .eyebrow,.kicker,.tier-label{text-shadow:0 0 20px rgba(247,166,28,.25)}
+}
+
+/* dark sections: glassy translucent cards that actually show the blur */
+@media(max-width:1080px){
+  .future .pillar{background:rgba(255,255,255,.045)!important;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border:1px solid rgba(247,166,28,.14)}
+  .cta-final,.quoteband{position:relative}
+}
+
+/* concierge + nudge: frosted glass on every device */
+#bca-cg-btn{box-shadow:0 10px 34px rgba(36,23,12,.34),0 0 0 1px rgba(247,166,28,.18)!important}
+#bca-nudge{background:rgba(255,255,255,.82)!important;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2)}
+
+/* honor reduced motion */
+@media(prefers-reduced-motion:reduce){
+  #lux-menu a.lux-link{animation:none!important;opacity:1;transform:none}
+  #lux-menu{transition:opacity .2s}
+}

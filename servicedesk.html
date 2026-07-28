@@ -115,6 +115,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
 @media(max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.mods{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){.tiles,.mods{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="assets/lux.css">
 </head>
 <body>
 
@@ -472,5 +473,6 @@ function renderLive(data){
 }
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 </script>
+<script src="assets/lux.js" defer></script>
 </body>
 </html>
