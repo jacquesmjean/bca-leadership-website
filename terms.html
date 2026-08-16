@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Use | BCA Leadership</title>
+<title data-t="terms.doc.title">Terms of Use | BCA Leadership</title>
 <meta name="description" content="The terms that govern your use of the BCA Leadership website, membership, and coaching services.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +54,7 @@ nav{background:rgba(250,246,238,.92);backdrop-filter:blur(12px);border-bottom:1p
 .toc li{margin-bottom:6px}
 .toc a{color:rgba(36,36,36,.75);text-decoration:none;border:none}
 .toc a:hover{color:var(--bca-green)}
+.legal-note{font-size:13px;opacity:.72;font-style:italic;margin:-6px 0 26px;color:rgba(36,36,36,.9);max-width:70ch}
 footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:56px 0 36px;font-size:14px;border-top:1px solid var(--line-light)}
 footer .flogo{height:50px;display:block;margin-bottom:14px}
 footer p{max-width:340px;font-size:14px;color:rgba(250,246,238,.6)}
@@ -80,112 +81,115 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 <div class="brandstrip"></div>
 <nav><div class="wrap nav-inner">
   <a class="nav-logo" href="index.html"><img src="assets/logo-dark.png" alt="BCA Leadership"></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="why-bca.html">Why BCA</a></li><li><a href="the-bench.html">The Bench</a></li><li><a href="membership.html">Membership</a></li><li><a href="coaching-packages.html">Coaching</a></li><li><a href="services.html">Services</a></li><li><a href="bca-online.html">BCAOnline</a></li></ul>
-  <div class="nav-right"><a class="btn" href="membership.html">Join BCA</a></div>
+  <ul class="nav-links"><li><a href="index.html" data-t="nav.home">Home</a></li><li><a href="why-bca.html" data-t="nav.why">Why BCA</a></li><li><a href="the-bench.html" data-t="nav.coaches">The Bench</a></li><li><a href="membership.html" data-t="nav.membership">Membership</a></li><li><a href="coaching-packages.html" data-t="nav.coaching">Coaching</a></li><li><a href="services.html" data-t="nav.services">Services</a></li><li><a href="bca-online.html" data-t="nav.online">BCAOnline</a></li></ul>
+  <div class="nav-right"><div class="lang"><button data-lang="en" class="on">EN</button><button data-lang="fr">FR</button><button data-lang="es">ES</button><button data-lang="pt">PT</button></div><a class="btn" href="membership.html" data-t="terms.nav.cta">Join BCA</a></div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">Legal</div>
-  <h1>Terms of Use</h1>
-  <p>These terms govern your use of the BCA Leadership website and the membership and coaching services you access through it. Please read them before you join or sign an agreement.</p>
+  <div class="eyebrow" data-t="terms.hero.eyebrow">Legal</div>
+  <h1 data-t="terms.hero.h1">Terms of Use</h1>
+  <p data-t="terms.hero.p">These terms govern your use of the BCA Leadership website and the membership and coaching services you access through it. Please read them before you join or sign an agreement.</p>
 </div></header>
 
 <section class="legal"><div class="wrap">
-  <div class="updated">Last updated: 12 July 2026</div>
-  <div class="review-note">This page is a working draft prepared for BCA Leadership. It should be confirmed by qualified Mauritian legal counsel before final publication. It is written for clarity, not as legal advice.</div>
+  <p class="legal-note" data-t="legal.binding">This document is available in French, Spanish and Portuguese for convenience. In the event of any discrepancy, the English version governs.</p>
+  <div class="updated" data-t="terms.updated">Last updated: 12 July 2026</div>
+  <div class="review-note" data-t="terms.reviewnote">This page is a working draft prepared for BCA Leadership. It should be confirmed by qualified Mauritian legal counsel before final publication. It is written for clarity, not as legal advice.</div>
 
   <div class="toc">
-    <h4>Contents</h4>
+    <h4 data-t="terms.toc.h">Contents</h4>
     <ol>
-      <li><a href="#who">Who we are</a></li>
-      <li><a href="#accept">Accepting these terms</a></li>
-      <li><a href="#eligibility">Eligibility</a></li>
-      <li><a href="#accounts">Membership and coaching</a></li>
-      <li><a href="#sign">Electronic signature</a></li>
-      <li><a href="#pay">Fees, billing, and invoices</a></li>
-      <li><a href="#conduct">Acceptable use</a></li>
-      <li><a href="#ip">Intellectual property</a></li>
-      <li><a href="#thirdparty">Third-party services</a></li>
-      <li><a href="#confidential">Confidentiality</a></li>
-      <li><a href="#disclaimer">Disclaimers</a></li>
-      <li><a href="#liability">Limitation of liability</a></li>
-      <li><a href="#termination">Termination</a></li>
-      <li><a href="#changes">Changes to these terms</a></li>
-      <li><a href="#law">Governing law</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#who" data-t="terms.toc.1">Who we are</a></li>
+      <li><a href="#accept" data-t="terms.toc.2">Accepting these terms</a></li>
+      <li><a href="#eligibility" data-t="terms.toc.3">Eligibility</a></li>
+      <li><a href="#accounts" data-t="terms.toc.4">Membership and coaching</a></li>
+      <li><a href="#sign" data-t="terms.toc.5">Electronic signature</a></li>
+      <li><a href="#pay" data-t="terms.toc.6">Fees, billing, and invoices</a></li>
+      <li><a href="#conduct" data-t="terms.toc.7">Acceptable use</a></li>
+      <li><a href="#ip" data-t="terms.toc.8">Intellectual property</a></li>
+      <li><a href="#thirdparty" data-t="terms.toc.9">Third-party services</a></li>
+      <li><a href="#confidential" data-t="terms.toc.10">Confidentiality</a></li>
+      <li><a href="#disclaimer" data-t="terms.toc.11">Disclaimers</a></li>
+      <li><a href="#liability" data-t="terms.toc.12">Limitation of liability</a></li>
+      <li><a href="#termination" data-t="terms.toc.13">Termination</a></li>
+      <li><a href="#changes" data-t="terms.toc.14">Changes to these terms</a></li>
+      <li><a href="#law" data-t="terms.toc.15">Governing law</a></li>
+      <li><a href="#contact" data-t="terms.toc.16">Contact</a></li>
     </ol>
   </div>
 
-  <h2 id="who">1. Who we are</h2>
-  <p>This website is operated by BCA Leadership, care of FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Mauritius ("BCA," "we," "us," or "our"). BCA Leadership is a pan-African executive coaching and peer-learning network. You can reach us at <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.</p>
+  <h2 data-t="terms.s1.h" id="who">1. Who we are</h2>
+  <p data-t="terms.s1.p1">This website is operated by BCA Leadership, care of FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Mauritius ("BCA," "we," "us," or "our"). BCA Leadership is a pan-African executive coaching and peer-learning network. You can reach us at <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.</p>
 
-  <h2 id="accept">2. Accepting these terms</h2>
-  <p>By using this website, joining as a member, booking coaching, or signing an agreement through the site, you agree to these Terms of Use and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use the site or its services.</p>
+  <h2 data-t="terms.s2.h" id="accept">2. Accepting these terms</h2>
+  <p data-t="terms.s2.p1">By using this website, joining as a member, booking coaching, or signing an agreement through the site, you agree to these Terms of Use and to our <a href="privacy.html">Privacy Policy</a>. If you do not agree, please do not use the site or its services.</p>
 
-  <h2 id="eligibility">3. Eligibility</h2>
-  <p>You must be at least 18 years old and able to enter into a binding contract to use our services. If you use the site for an organization, you confirm that you are authorized to accept these terms on that organization's behalf.</p>
+  <h2 data-t="terms.s3.h" id="eligibility">3. Eligibility</h2>
+  <p data-t="terms.s3.p1">You must be at least 18 years old and able to enter into a binding contract to use our services. If you use the site for an organization, you confirm that you are authorized to accept these terms on that organization's behalf.</p>
 
-  <h2 id="accounts">4. Membership and coaching</h2>
-  <p>The site lets you apply for membership tiers and coaching packages. When you submit a request, you provide details such as your name, email, company, and country. Membership and coaching are subject to the specific agreement you sign and to availability. We may decline or discontinue a membership at our discretion, consistent with the signed agreement and applicable law.</p>
+  <h2 data-t="terms.s4.h" id="accounts">4. Membership and coaching</h2>
+  <p data-t="terms.s4.p1">The site lets you apply for membership tiers and coaching packages. When you submit a request, you provide details such as your name, email, company, and country. Membership and coaching are subject to the specific agreement you sign and to availability. We may decline or discontinue a membership at our discretion, consistent with the signed agreement and applicable law.</p>
 
-  <h2 id="sign">5. Electronic signature</h2>
-  <p>You can sign a membership or coaching agreement on the site by checking the box that confirms you have read and agree to that agreement. By checking the box and submitting, you are signing the agreement electronically. You agree that your electronic signature has the same legal effect as a handwritten one.</p>
-  <p>We record the fact of your signature, the version of the agreement you signed, and the date and time. We keep this record so that both sides have proof of what was agreed. A copy of the agreement text is available on the signing page before you agree.</p>
+  <h2 data-t="terms.s5.h" id="sign">5. Electronic signature</h2>
+  <p data-t="terms.s5.p1">You can sign a membership or coaching agreement on the site by checking the box that confirms you have read and agree to that agreement. By checking the box and submitting, you are signing the agreement electronically. You agree that your electronic signature has the same legal effect as a handwritten one.</p>
+  <p data-t="terms.s5.p2">We record the fact of your signature, the version of the agreement you signed, and the date and time. We keep this record so that both sides have proof of what was agreed. A copy of the agreement text is available on the signing page before you agree.</p>
 
-  <h2 id="pay">6. Fees, billing, and invoices</h2>
-  <p>Membership is billed annually. Billing follows the signing of your agreement. After you sign, BCA reviews and issues an invoice for the amount stated in your chosen tier or package. Payment is handled through Stripe, our payment processor. We do not store your full card details on our own systems.</p>
-  <p>Unless your signed agreement says otherwise, fees are stated in the currency shown at checkout, and taxes may apply depending on your location.</p>
+  <h2 data-t="terms.s6.h" id="pay">6. Fees, billing, and invoices</h2>
+  <p data-t="terms.s6.p1">Membership is billed annually. Billing follows the signing of your agreement. After you sign, BCA reviews and issues an invoice for the amount stated in your chosen tier or package. Payment is handled through Stripe, our payment processor. We do not store your full card details on our own systems.</p>
+  <p data-t="terms.s6.p2">Unless your signed agreement says otherwise, fees are stated in the currency shown at checkout, and taxes may apply depending on your location.</p>
 
-  <h2 id="conduct">7. Acceptable use</h2>
-  <p>When you use the site and take part in BCA programs, you agree not to:</p>
+  <h2 data-t="terms.s7.h" id="conduct">7. Acceptable use</h2>
+  <p data-t="terms.s7.p1">When you use the site and take part in BCA programs, you agree not to:</p>
   <ul>
-    <li>break any law or infringe anyone's rights;</li>
-    <li>share another member's confidential information outside the program;</li>
-    <li>upload harmful code, attempt to breach the site's security, or scrape data without permission;</li>
-    <li>misrepresent who you are or your authority to act for an organization;</li>
-    <li>use the site to send spam or unsolicited marketing.</li>
+    <li data-t="terms.s7.li1">break any law or infringe anyone's rights;</li>
+    <li data-t="terms.s7.li2">share another member's confidential information outside the program;</li>
+    <li data-t="terms.s7.li3">upload harmful code, attempt to breach the site's security, or scrape data without permission;</li>
+    <li data-t="terms.s7.li4">misrepresent who you are or your authority to act for an organization;</li>
+    <li data-t="terms.s7.li5">use the site to send spam or unsolicited marketing.</li>
   </ul>
 
-  <h2 id="ip">8. Intellectual property</h2>
-  <p>The BCA name, logo, site design, written content, and program materials are owned by BCA or its licensors and are protected by intellectual property laws. You may view and use the site for its intended purpose. You may not copy, resell, or redistribute our materials without our written permission.</p>
+  <h2 data-t="terms.s8.h" id="ip">8. Intellectual property</h2>
+  <p data-t="terms.s8.p1">The BCA name, logo, site design, written content, and program materials are owned by BCA or its licensors and are protected by intellectual property laws. You may view and use the site for its intended purpose. You may not copy, resell, or redistribute our materials without our written permission.</p>
 
-  <h2 id="thirdparty">9. Third-party services</h2>
-  <p>The site relies on trusted third parties to work. These include Stripe for payments, Supabase for secure data storage, Google Fonts for typography, and YouTube for embedded testimonial videos. When you use features that rely on these providers, their own terms and privacy practices may also apply. We describe how these providers handle your data in our <a href="privacy.html">Privacy Policy</a>.</p>
+  <h2 data-t="terms.s9.h" id="thirdparty">9. Third-party services</h2>
+  <p data-t="terms.s9.p1">The site relies on trusted third parties to work. These include Stripe for payments, Supabase for secure data storage, Google Fonts for typography, and YouTube for embedded testimonial videos. When you use features that rely on these providers, their own terms and privacy practices may also apply. We describe how these providers handle your data in our <a href="privacy.html">Privacy Policy</a>.</p>
 
-  <h2 id="confidential">10. Confidentiality</h2>
-  <p>BCA cohorts and coaching are built on trust. What is shared inside a BCA room stays inside that room. You agree to keep other members' confidential information private, and we commit to the same in how we handle yours.</p>
+  <h2 data-t="terms.s10.h" id="confidential">10. Confidentiality</h2>
+  <p data-t="terms.s10.p1">BCA cohorts and coaching are built on trust. What is shared inside a BCA room stays inside that room. You agree to keep other members' confidential information private, and we commit to the same in how we handle yours.</p>
 
-  <h2 id="disclaimer">11. Disclaimers</h2>
-  <p>We provide the site and its content on an "as is" and "as available" basis. Coaching and peer learning support your judgment. They do not guarantee a particular business, financial, or career outcome. We do not warrant that the site will always be uninterrupted or error-free, though we work to keep it reliable and secure.</p>
+  <h2 data-t="terms.s11.h" id="disclaimer">11. Disclaimers</h2>
+  <p data-t="terms.s11.p1">We provide the site and its content on an "as is" and "as available" basis. Coaching and peer learning support your judgment. They do not guarantee a particular business, financial, or career outcome. We do not warrant that the site will always be uninterrupted or error-free, though we work to keep it reliable and secure.</p>
 
-  <h2 id="liability">12. Limitation of liability</h2>
-  <p>To the extent permitted by law, BCA is not liable for indirect or consequential losses arising from your use of the site. Nothing in these terms limits liability that cannot be limited under applicable law. Where a signed agreement between you and BCA sets specific liability terms, that agreement governs.</p>
+  <h2 data-t="terms.s12.h" id="liability">12. Limitation of liability</h2>
+  <p data-t="terms.s12.p1">To the extent permitted by law, BCA is not liable for indirect or consequential losses arising from your use of the site. Nothing in these terms limits liability that cannot be limited under applicable law. Where a signed agreement between you and BCA sets specific liability terms, that agreement governs.</p>
 
-  <h2 id="termination">13. Termination</h2>
-  <p>You may stop using the site at any time. We may suspend or end your access if you breach these terms or your signed agreement, or where we must do so to comply with the law. Sections that by their nature should survive, such as intellectual property, confidentiality, and limitation of liability, continue to apply after termination.</p>
+  <h2 data-t="terms.s13.h" id="termination">13. Termination</h2>
+  <p data-t="terms.s13.p1">You may stop using the site at any time. We may suspend or end your access if you breach these terms or your signed agreement, or where we must do so to comply with the law. Sections that by their nature should survive, such as intellectual property, confidentiality, and limitation of liability, continue to apply after termination.</p>
 
-  <h2 id="changes">14. Changes to these terms</h2>
-  <p>We may update these terms from time to time. When we do, we will change the "last updated" date at the top of this page. Significant changes will be communicated where appropriate. Continuing to use the site after an update means you accept the revised terms.</p>
+  <h2 data-t="terms.s14.h" id="changes">14. Changes to these terms</h2>
+  <p data-t="terms.s14.p1">We may update these terms from time to time. When we do, we will change the "last updated" date at the top of this page. Significant changes will be communicated where appropriate. Continuing to use the site after an update means you accept the revised terms.</p>
 
-  <h2 id="law">15. Governing law</h2>
-  <p>These terms are governed by the laws of the Republic of Mauritius, where BCA's operating entity is based. Any dispute will be handled by the courts of Mauritius, unless a signed agreement between you and BCA states otherwise, or unless applicable law in your own country gives you rights that cannot be waived.</p>
+  <h2 data-t="terms.s15.h" id="law">15. Governing law</h2>
+  <p data-t="terms.s15.p1">These terms are governed by the laws of the Republic of Mauritius, where BCA's operating entity is based. Any dispute will be handled by the courts of Mauritius, unless a signed agreement between you and BCA states otherwise, or unless applicable law in your own country gives you rights that cannot be waived.</p>
 
-  <h2 id="contact">16. Contact</h2>
-  <p>Questions about these terms can be sent to <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.</p>
+  <h2 data-t="terms.s16.h" id="contact">16. Contact</h2>
+  <p data-t="terms.s16.p1">Questions about these terms can be sent to <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.</p>
 </div></section>
 
 <div class="brandstrip"></div>
 <footer><div class="wrap">
   <img class="flogo" src="assets/logo-white.png" alt="BCA Leadership">
-  <p>Pan-African leadership enhancement, helping leaders of companies become better leaders since 2017.</p>
+  <p data-t="terms.foot.tag">Pan-African leadership enhancement, helping leaders of companies become better leaders since 2017.</p>
   <div class="flinks">
-    <a href="index.html">Home</a><a href="membership.html">Membership</a><a href="coaching-packages.html">Coaching</a><a href="the-bench.html">The Bench</a><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>
+    <a href="index.html" data-t="nav.home">Home</a><a href="membership.html" data-t="nav.membership">Membership</a><a href="coaching-packages.html" data-t="nav.coaching">Coaching</a><a href="the-bench.html" data-t="nav.coaches">The Bench</a><a href="terms.html" data-t="foot.terms">Terms of Use</a><a href="privacy.html" data-t="foot.privacy">Privacy Policy</a><a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>
   </div>
-  <div class="foot-bottom"><span>© 2026 BCA Leadership. All rights reserved. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius</span><span><a href="https://www.techfides.com" target="_blank" rel="noopener" style="color:#0EA5E9;text-decoration:none;font-weight:500">Powered by TechFides</a></span></div>
+  <div class="foot-bottom"><span data-t="terms.foot.bottom">© 2026 BCA Leadership. All rights reserved. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius</span><span><a href="https://www.techfides.com" target="_blank" rel="noopener" style="color:#0EA5E9;text-decoration:none;font-weight:500" data-t="foot.powered">Powered by TechFides</a></span></div>
 </div></footer>
 <script src="assets/concierge.js" defer></script>
 <script src="assets/engage.js" defer></script>
 <script src="assets/search.js" defer></script>
 <script src="assets/lux.js" defer></script>
+<script src="assets/i18n-terms.js"></script>
+<script src="assets/i18n.js"></script>
 </body>
 </html>

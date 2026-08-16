@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | BCA Leadership</title>
+<title data-t="priv.doc.title">Privacy Policy | BCA Leadership</title>
 <meta name="description" content="How BCA Leadership collects, uses, and protects your personal data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,9 @@ nav{background:rgba(250,246,238,.92);backdrop-filter:blur(12px);border-bottom:1p
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--bca-gold);transition:width .3s}
 .nav-links a:hover::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:18px}
+.lang{display:inline-flex;border:1px solid var(--line)}
+.lang button{font-family:var(--ui);font-size:12px;font-weight:500;letter-spacing:.06em;padding:8px 12px;border:none;background:transparent;color:var(--bca-espresso);cursor:pointer}
+.lang button.on{background:var(--bca-night);color:var(--bca-gold)}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--bca-clay);color:var(--cream);text-decoration:none;padding:14px 30px;font-family:var(--ui);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--bca-clay);cursor:pointer;transition:.3s}
 .btn:hover{background:transparent;color:var(--bca-clay);box-shadow:inset 0 0 0 1px var(--bca-clay)}
 .hero{background:var(--bca-night-2);color:var(--cream);padding:82px 0 60px;position:relative;overflow:hidden;background-image:radial-gradient(800px 420px at 80% -10%,rgba(247,166,28,.14),transparent 60%),radial-gradient(600px 420px at 0% 110%,rgba(5,141,82,.13),transparent 55%)}
@@ -53,6 +56,7 @@ table.data td{color:rgba(36,36,36,.8)}
 .toc h4{font-family:var(--disp);font-weight:400;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--bca-espresso);margin-bottom:12px}
 .toc ol{margin-left:20px;font-size:15px;color:rgba(36,36,36,.7);columns:2;column-gap:36px}
 .toc li{margin-bottom:6px}.toc a{color:rgba(36,36,36,.75);text-decoration:none}.toc a:hover{color:var(--bca-green)}
+.legal-note{font-size:13px;opacity:.72;font-style:italic;margin:-6px 0 26px;color:rgba(36,36,36,.9);max-width:70ch}
 footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:56px 0 36px;font-size:14px;border-top:1px solid var(--line-light)}
 footer .flogo{height:50px;display:block;margin-bottom:14px}
 footer p{max-width:340px;font-size:14px;color:rgba(250,246,238,.6)}
@@ -79,121 +83,124 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 <div class="brandstrip"></div>
 <nav><div class="wrap nav-inner">
   <a class="nav-logo" href="index.html"><img src="assets/logo-dark.png" alt="BCA Leadership"></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="why-bca.html">Why BCA</a></li><li><a href="the-bench.html">The Bench</a></li><li><a href="membership.html">Membership</a></li><li><a href="coaching-packages.html">Coaching</a></li><li><a href="services.html">Services</a></li><li><a href="bca-online.html">BCAOnline</a></li></ul>
-  <div class="nav-right"><a class="btn" href="membership.html">Join BCA</a></div>
+  <ul class="nav-links"><li><a href="index.html" data-t="nav.home">Home</a></li><li><a href="why-bca.html" data-t="nav.why">Why BCA</a></li><li><a href="the-bench.html" data-t="nav.coaches">The Bench</a></li><li><a href="membership.html" data-t="nav.membership">Membership</a></li><li><a href="coaching-packages.html" data-t="nav.coaching">Coaching</a></li><li><a href="services.html" data-t="nav.services">Services</a></li><li><a href="bca-online.html" data-t="nav.online">BCAOnline</a></li></ul>
+  <div class="nav-right"><div class="lang"><button data-lang="en" class="on">EN</button><button data-lang="fr">FR</button><button data-lang="es">ES</button><button data-lang="pt">PT</button></div><a class="btn" href="membership.html" data-t="priv.nav.cta">Join BCA</a></div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="eyebrow">Legal</div>
-  <h1>Privacy Policy</h1>
-  <p>This policy explains what personal data BCA Leadership collects, why we collect it, who we share it with, and the rights you have over it.</p>
+  <div class="eyebrow" data-t="priv.hero.eyebrow">Legal</div>
+  <h1 data-t="priv.hero.h1">Privacy Policy</h1>
+  <p data-t="priv.hero.p">This policy explains what personal data BCA Leadership collects, why we collect it, who we share it with, and the rights you have over it.</p>
 </div></header>
 
 <section class="legal"><div class="wrap">
-  <div class="updated">Last updated: 12 July 2026</div>
-  <div class="review-note">This page is a working draft prepared for BCA Leadership. It should be confirmed by qualified Mauritian legal counsel, and reviewed against the Mauritius Data Protection Act 2017 and the EU GDPR where members are in Europe, before final publication.</div>
+  <p class="legal-note" data-t="legal.binding">This document is available in French, Spanish and Portuguese for convenience. In the event of any discrepancy, the English version governs.</p>
+  <div class="updated" data-t="priv.updated">Last updated: 12 July 2026</div>
+  <div class="review-note" data-t="priv.reviewnote">This page is a working draft prepared for BCA Leadership. It should be confirmed by qualified Mauritian legal counsel, and reviewed against the Mauritius Data Protection Act 2017 and the EU GDPR where members are in Europe, before final publication.</div>
 
   <div class="toc">
-    <h4>Contents</h4>
+    <h4 data-t="priv.toc.h">Contents</h4>
     <ol>
-      <li><a href="#who">Who we are</a></li>
-      <li><a href="#collect">Data we collect</a></li>
-      <li><a href="#use">How we use it</a></li>
-      <li><a href="#basis">Our legal basis</a></li>
-      <li><a href="#share">Who we share it with</a></li>
-      <li><a href="#cookies">Cookies and tracking</a></li>
-      <li><a href="#transfers">International transfers</a></li>
-      <li><a href="#retention">How long we keep it</a></li>
-      <li><a href="#security">How we protect it</a></li>
-      <li><a href="#rights">Your rights</a></li>
-      <li><a href="#children">Children</a></li>
-      <li><a href="#changes">Changes</a></li>
-      <li><a href="#contact">Contact us</a></li>
+      <li><a href="#who" data-t="priv.toc.1">Who we are</a></li>
+      <li><a href="#collect" data-t="priv.toc.2">Data we collect</a></li>
+      <li><a href="#use" data-t="priv.toc.3">How we use it</a></li>
+      <li><a href="#basis" data-t="priv.toc.4">Our legal basis</a></li>
+      <li><a href="#share" data-t="priv.toc.5">Who we share it with</a></li>
+      <li><a href="#cookies" data-t="priv.toc.6">Cookies and tracking</a></li>
+      <li><a href="#transfers" data-t="priv.toc.7">International transfers</a></li>
+      <li><a href="#retention" data-t="priv.toc.8">How long we keep it</a></li>
+      <li><a href="#security" data-t="priv.toc.9">How we protect it</a></li>
+      <li><a href="#rights" data-t="priv.toc.10">Your rights</a></li>
+      <li><a href="#children" data-t="priv.toc.11">Children</a></li>
+      <li><a href="#changes" data-t="priv.toc.12">Changes</a></li>
+      <li><a href="#contact" data-t="priv.toc.13">Contact us</a></li>
     </ol>
   </div>
 
-  <h2 id="who">1. Who we are</h2>
-  <p>BCA Leadership, care of FFG (Mauritius) Ltd, Grand Baie, Mauritius, is the controller of the personal data described here. We decide why and how your data is used. You can reach us at <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.</p>
+  <h2 data-t="priv.s1.h" id="who">1. Who we are</h2>
+  <p data-t="priv.s1.p1">BCA Leadership, care of FFG (Mauritius) Ltd, Grand Baie, Mauritius, is the controller of the personal data described here. We decide why and how your data is used. You can reach us at <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.</p>
 
-  <h2 id="collect">2. Data we collect</h2>
-  <p>We collect only what we need to run the membership network and provide coaching.</p>
+  <h2 data-t="priv.s2.h" id="collect">2. Data we collect</h2>
+  <p data-t="priv.s2.p1">We collect only what we need to run the membership network and provide coaching.</p>
   <table class="data">
-    <tr><th>What</th><th>When</th></tr>
-    <tr><td>Name, email, company, country</td><td>When you apply for membership or coaching, or contact us.</td></tr>
-    <tr><td>Your agreement record: the tier or package chosen, the version of the agreement, and the date and time you signed</td><td>When you sign a membership or coaching agreement on the site.</td></tr>
-    <tr><td>Payment details</td><td>Handled directly by Stripe when you are invoiced. We receive confirmation of payment, not your full card number.</td></tr>
-    <tr><td>Basic technical data, such as browser type and approximate location from your IP address</td><td>Automatically, to keep the site secure and working.</td></tr>
+    <tr><th data-t="priv.s2.th1">What</th><th data-t="priv.s2.th2">When</th></tr>
+    <tr><td data-t="priv.s2.r1c1">Name, email, company, country</td><td data-t="priv.s2.r1c2">When you apply for membership or coaching, or contact us.</td></tr>
+    <tr><td data-t="priv.s2.r2c1">Your agreement record: the tier or package chosen, the version of the agreement, and the date and time you signed</td><td data-t="priv.s2.r2c2">When you sign a membership or coaching agreement on the site.</td></tr>
+    <tr><td data-t="priv.s2.r3c1">Payment details</td><td data-t="priv.s2.r3c2">Handled directly by Stripe when you are invoiced. We receive confirmation of payment, not your full card number.</td></tr>
+    <tr><td data-t="priv.s2.r4c1">Basic technical data, such as browser type and approximate location from your IP address</td><td data-t="priv.s2.r4c2">Automatically, to keep the site secure and working.</td></tr>
   </table>
 
-  <h2 id="use">3. How we use it</h2>
+  <h2 data-t="priv.s3.h" id="use">3. How we use it</h2>
   <ul>
-    <li>to set up and manage your membership or coaching;</li>
-    <li>to record the agreement you signed and to raise your invoice;</li>
-    <li>to contact you about your membership, events, and the programs you join;</li>
-    <li>to keep the site secure and to improve how it works;</li>
-    <li>to meet our legal and accounting obligations.</li>
+    <li data-t="priv.s3.li1">to set up and manage your membership or coaching;</li>
+    <li data-t="priv.s3.li2">to record the agreement you signed and to raise your invoice;</li>
+    <li data-t="priv.s3.li3">to contact you about your membership, events, and the programs you join;</li>
+    <li data-t="priv.s3.li4">to keep the site secure and to improve how it works;</li>
+    <li data-t="priv.s3.li5">to meet our legal and accounting obligations.</li>
   </ul>
 
-  <h2 id="basis">4. Our legal basis</h2>
-  <p>Where the law requires a legal basis, we rely on: performing the agreement you signed with us, our legitimate interest in running and improving the network, your consent for optional communications, and compliance with legal duties such as record-keeping.</p>
+  <h2 data-t="priv.s4.h" id="basis">4. Our legal basis</h2>
+  <p data-t="priv.s4.p1">Where the law requires a legal basis, we rely on: performing the agreement you signed with us, our legitimate interest in running and improving the network, your consent for optional communications, and compliance with legal duties such as record-keeping.</p>
 
-  <h2 id="share">5. Who we share it with</h2>
-  <p>We do not sell your personal data. We share it only with the providers that help us operate, and only as needed:</p>
+  <h2 data-t="priv.s5.h" id="share">5. Who we share it with</h2>
+  <p data-t="priv.s5.p1">We do not sell your personal data. We share it only with the providers that help us operate, and only as needed:</p>
   <ul>
-    <li><strong>Stripe</strong> processes payments and invoicing.</li>
-    <li><strong>Supabase</strong> hosts the secure database where your details and agreement record are stored.</li>
-    <li><strong>Google Fonts</strong> serves the site's typography, which may involve your browser requesting font files from Google.</li>
-    <li><strong>YouTube (Google)</strong> serves the testimonial videos embedded on the site. When you play a video, YouTube may set its own cookies.</li>
-    <li><strong>TechFides</strong> builds and maintains the site on our behalf, under confidentiality.</li>
+    <li data-t="priv.s5.li1"><strong>Stripe</strong> processes payments and invoicing.</li>
+    <li data-t="priv.s5.li2"><strong>Supabase</strong> hosts the secure database where your details and agreement record are stored.</li>
+    <li data-t="priv.s5.li3"><strong>Google Fonts</strong> serves the site's typography, which may involve your browser requesting font files from Google.</li>
+    <li data-t="priv.s5.li4"><strong>YouTube (Google)</strong> serves the testimonial videos embedded on the site. When you play a video, YouTube may set its own cookies.</li>
+    <li data-t="priv.s5.li5"><strong>TechFides</strong> builds and maintains the site on our behalf, under confidentiality.</li>
   </ul>
-  <p>We may also disclose data if the law requires it, or to protect our rights and the safety of our members.</p>
+  <p data-t="priv.s5.p2">We may also disclose data if the law requires it, or to protect our rights and the safety of our members.</p>
 
-  <h2 id="cookies">6. Cookies and tracking</h2>
-  <p>The site uses only the cookies it needs to function and stay secure. We do not use advertising cookies. Some third-party features, such as embedded YouTube videos, may set their own cookies when you interact with them. You can control cookies through your browser settings.</p>
+  <h2 data-t="priv.s6.h" id="cookies">6. Cookies and tracking</h2>
+  <p data-t="priv.s6.p1">The site uses only the cookies it needs to function and stay secure. We do not use advertising cookies. Some third-party features, such as embedded YouTube videos, may set their own cookies when you interact with them. You can control cookies through your browser settings.</p>
 
-  <h2 id="transfers">7. International transfers</h2>
-  <p>BCA serves members across Africa and beyond, and our providers operate in different countries. This means your data may be processed outside your own country, including in regions with different data protection laws. Where we transfer data internationally, we take steps to protect it consistent with applicable law.</p>
+  <h2 data-t="priv.s7.h" id="transfers">7. International transfers</h2>
+  <p data-t="priv.s7.p1">BCA serves members across Africa and beyond, and our providers operate in different countries. This means your data may be processed outside your own country, including in regions with different data protection laws. Where we transfer data internationally, we take steps to protect it consistent with applicable law.</p>
 
-  <h2 id="retention">8. How long we keep it</h2>
-  <p>We keep your membership and agreement records for as long as you are a member, and afterward for the period we need to meet legal, tax, and accounting requirements. When we no longer need your data, we delete or anonymize it.</p>
+  <h2 data-t="priv.s8.h" id="retention">8. How long we keep it</h2>
+  <p data-t="priv.s8.p1">We keep your membership and agreement records for as long as you are a member, and afterward for the period we need to meet legal, tax, and accounting requirements. When we no longer need your data, we delete or anonymize it.</p>
 
-  <h2 id="security">9. How we protect it</h2>
-  <p>Your data is stored in a secured database with access controls, so that only authorized systems and people can reach it. Payment details are handled by Stripe and are not stored on our own servers. No system is perfectly secure, but we work to protect your data and to respond quickly if a problem arises.</p>
+  <h2 data-t="priv.s9.h" id="security">9. How we protect it</h2>
+  <p data-t="priv.s9.p1">Your data is stored in a secured database with access controls, so that only authorized systems and people can reach it. Payment details are handled by Stripe and are not stored on our own servers. No system is perfectly secure, but we work to protect your data and to respond quickly if a problem arises.</p>
 
-  <h2 id="rights">10. Your rights</h2>
-  <p>Depending on where you live, you may have the right to:</p>
+  <h2 data-t="priv.s10.h" id="rights">10. Your rights</h2>
+  <p data-t="priv.s10.p1">Depending on where you live, you may have the right to:</p>
   <ul>
-    <li>ask for a copy of the data we hold about you;</li>
-    <li>correct data that is wrong or out of date;</li>
-    <li>ask us to delete your data, where the law allows;</li>
-    <li>object to or restrict certain uses of your data;</li>
-    <li>withdraw consent for optional communications at any time;</li>
-    <li>ask for your data in a portable format.</li>
+    <li data-t="priv.s10.li1">ask for a copy of the data we hold about you;</li>
+    <li data-t="priv.s10.li2">correct data that is wrong or out of date;</li>
+    <li data-t="priv.s10.li3">ask us to delete your data, where the law allows;</li>
+    <li data-t="priv.s10.li4">object to or restrict certain uses of your data;</li>
+    <li data-t="priv.s10.li5">withdraw consent for optional communications at any time;</li>
+    <li data-t="priv.s10.li6">ask for your data in a portable format.</li>
   </ul>
-  <p>To exercise any of these, email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>. If you are in the European Union or another region with a data protection authority, you also have the right to complain to that authority.</p>
+  <p data-t="priv.s10.p2">To exercise any of these, email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>. If you are in the European Union or another region with a data protection authority, you also have the right to complain to that authority.</p>
 
-  <h2 id="children">11. Children</h2>
-  <p>Our services are for professionals aged 18 and over. We do not knowingly collect data from children. If you believe a child has given us data, please contact us and we will remove it.</p>
+  <h2 data-t="priv.s11.h" id="children">11. Children</h2>
+  <p data-t="priv.s11.p1">Our services are for professionals aged 18 and over. We do not knowingly collect data from children. If you believe a child has given us data, please contact us and we will remove it.</p>
 
-  <h2 id="changes">12. Changes</h2>
-  <p>We may update this policy from time to time. The "last updated" date at the top shows when it last changed. We encourage you to review it periodically.</p>
+  <h2 data-t="priv.s12.h" id="changes">12. Changes</h2>
+  <p data-t="priv.s12.p1">We may update this policy from time to time. The "last updated" date at the top shows when it last changed. We encourage you to review it periodically.</p>
 
-  <h2 id="contact">13. Contact us</h2>
-  <p>For any question about your data or this policy, email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>, or write to BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius.</p>
+  <h2 data-t="priv.s13.h" id="contact">13. Contact us</h2>
+  <p data-t="priv.s13.p1">For any question about your data or this policy, email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>, or write to BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius.</p>
 </div></section>
 
 <div class="brandstrip"></div>
 <footer><div class="wrap">
   <img class="flogo" src="assets/logo-white.png" alt="BCA Leadership">
-  <p>Pan-African leadership enhancement, helping leaders of companies become better leaders since 2017.</p>
+  <p data-t="priv.foot.tag">Pan-African leadership enhancement, helping leaders of companies become better leaders since 2017.</p>
   <div class="flinks">
-    <a href="index.html">Home</a><a href="membership.html">Membership</a><a href="coaching-packages.html">Coaching</a><a href="the-bench.html">The Bench</a><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>
+    <a href="index.html" data-t="nav.home">Home</a><a href="membership.html" data-t="nav.membership">Membership</a><a href="coaching-packages.html" data-t="nav.coaching">Coaching</a><a href="the-bench.html" data-t="nav.coaches">The Bench</a><a href="terms.html" data-t="foot.terms">Terms of Use</a><a href="privacy.html" data-t="foot.privacy">Privacy Policy</a><a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>
   </div>
-  <div class="foot-bottom"><span>© 2026 BCA Leadership. All rights reserved. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius</span><span><a href="https://www.techfides.com" target="_blank" rel="noopener" style="color:#0EA5E9;text-decoration:none;font-weight:500">Powered by TechFides</a></span></div>
+  <div class="foot-bottom"><span data-t="priv.foot.bottom">© 2026 BCA Leadership. All rights reserved. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius</span><span><a href="https://www.techfides.com" target="_blank" rel="noopener" style="color:#0EA5E9;text-decoration:none;font-weight:500" data-t="foot.powered">Powered by TechFides</a></span></div>
 </div></footer>
 <script src="assets/concierge.js" defer></script>
 <script src="assets/engage.js" defer></script>
 <script src="assets/search.js" defer></script>
 <script src="assets/lux.js" defer></script>
+<script src="assets/i18n-privacy.js"></script>
+<script src="assets/i18n.js"></script>
 </body>
 </html>

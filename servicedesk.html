@@ -138,7 +138,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
   <a href="index.html"><img src="assets/logo-dark.png" alt="BCA Leadership"></a>
   <div class="right">
     <span class="badge-draft" data-t="bar.draft">Draft preview</span>
-    <div class="lang"><button class="on" onclick="setLang('en')">EN</button><button onclick="setLang('fr')">FR</button></div>
+    <div class="lang"><button class="on" onclick="setLang('en')">EN</button><button onclick="setLang('fr')">FR</button><button onclick="setLang('es')">ES</button><button onclick="setLang('pt')">PT</button></div>
   </div>
 </div></nav>
 
@@ -252,13 +252,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--text-mut
 
 </main>
 
-<footer><div class="wrap">BCA Leadership ServiceDesk · <span data-t="f.note">Draft</span> · <a href="https://www.techfides.com" target="_blank" rel="noopener" style="color:#0EA5E9;text-decoration:none;font-weight:500">Powered by TechFides</a></div></footer>
+<footer><div class="wrap">BCA Leadership ServiceDesk · <span data-t="f.note">Draft</span> · <a href="https://www.techfides.com" target="_blank" rel="noopener" style="color:#0EA5E9;text-decoration:none;font-weight:500" data-t="foot.powered">Powered by TechFides</a></div></footer>
 
 <script>
 /* ---------- i18n ---------- */
 const T={
 en:{},
-fr:{
+fr:{"foot.powered":"Propulsé par TechFides",
  "gate.h":"ServiceDesk","gate.p":"Tableau de bord interne. Entrez votre code d'accès pour continuer.","gate.btn":"Entrer","gate.err":"Code non reconnu. Réessayez.","gate.ph":"Code d'accès",
  "bar.draft":"Aperçu provisoire",
  "h.eyebrow":"ServiceDesk · Tableau de bord financier","h.title":"La performance financière, à l'échelle du continent.","h.sub":"Revenus récurrents annuels, composition des revenus et performance par pays pour BCA Leadership. Vue conseil et équipe.","h.note":"Version provisoire. Tous les chiffres de cette page sont des données d'exemple, sauf le panneau « Signés sur le site », qui est en direct. Les données financières réelles seront connectées pendant la construction du ServiceDesk.",
@@ -281,6 +281,54 @@ fr:{
  "m7.b":"Événements & MLC","m7.p":"Conférence, réunions de cohortes et événements continentaux : de l'inscription au suivi.","m.soon6":"Phase 3",
  "m8.b":"Gouvernance","m8.p":"Salle du conseil (protégée), réunions d'équipe, comptes rendus et suivi des actions.","m.soon7":"Phase 3",
  "se.h":"Engagement automatique","se.hint":"En direct · le site invite les visiteurs discrets vers la conciergerie. Ajustez le délai ou désactivez-le ici — sans code, effectif dès la prochaine visite.","se.on":"Engagement activé","se.delay":"Afficher après (secondes sur la page)","se.scroll":"Ou après défilement (% de la page)","se.exit":"Aussi à l'intention de sortie (la souris quitte)","se.save":"Enregistrer","f.note":"Version provisoire préparée par TechFides"
+},
+es:{"foot.powered":"Desarrollado por TechFides",
+ "gate.h":"ServiceDesk","gate.p":"Panel interno. Ingrese su código de acceso para continuar.","gate.btn":"Entrar","gate.err":"Código no reconocido. Intente de nuevo.","gate.ph":"Código de acceso",
+ "bar.draft":"Vista preliminar",
+ "h.eyebrow":"ServiceDesk · Panel financiero","h.title":"Desempeño financiero, en todo el continente.","h.sub":"Ingresos recurrentes anuales, composición de los ingresos y desempeño por país de BCA Leadership. Vista para el consejo y el equipo.","h.note":"Borrador para revisión. Todas las cifras de esta página son datos de ejemplo, salvo el panel « Firmados en el sitio web », que está en vivo. Los datos financieros reales se conectan durante la construcción del ServiceDesk.",
+ "t1.k":"ARR (ejemplo)","t1.d":"vs. trimestre anterior","t2.k":"Miembros (ejemplo)","t2.d":"este trimestre","t3.k":"Países (ejemplo)","t3.d":"en cinco regiones","t4.k":"Firmados en el sitio web","t4.d":"en vivo · cargando…",
+ "c1.h":"Evolución del ARR","c1.hint":"Datos de ejemplo · últimos 12 meses, USD",
+ "c2.h":"Composición de los ingresos","c2.hint":"Datos de ejemplo · participación en el ingreso total, ejercicio 2026",
+ "c3.h":"ARR por país","c3.hint":"Datos de ejemplo · 10 principales mercados, USD",
+ "c4.h":"Contratos de membresía firmados en el sitio web","c4.hint":"En vivo · las alertas de facturación van a admin@bcaleadership.com, autorizadas por Nii Lokko",
+ "tb.name":"Nombre","tb.tier":"Nivel","tb.country":"País","tb.date":"Firmado","tb.inv":"Factura","tb.loading":"Cargando…",
+ "m.h":"Módulos del ServiceDesk","m.hint":"El puesto operativo completo, construido por fases. Los módulos en vivo son clicables.",
+ "c5.h":"Concierge: solicitudes de clientes potenciales","c5.hint":"En vivo · toda solicitud enviada por el concierge del sitio llega aquí; las alertas van a admin@bcaleadership.com",
+ "tr.name":"Nombre","tr.topic":"Tema","tr.msg":"Solicitud","tr.date":"Recibida","tr.status":"Estado","tr.loading":"Cargando…",
+ "m0.b":"Concierge","m0.p":"Cualquier solicitud de clientes potenciales, captada en todo el sitio y seguida hasta la respuesta. Las respuestas asistidas por IA vienen después.","m.live0":"En vivo · ver solicitudes ↑",
+ "m1.b":"Contratos","m1.p":"Contratos de membresía y de coaching, firmados en el sitio y seguidos hasta la factura.","m.live":"En vivo · ver contratos firmados ↑",
+ "m2.b":"Miembros e incorporación","m2.p":"Un registro por persona: miembros, coaches, personal, consultores, proveedores y socios. Renovaciones señaladas con 60 días de anticipación.","m.soon":"Fase 2",
+ "m3.b":"Operaciones del bench","m3.p":"Asignación de coaches, utilización, registro de sesiones y pagos para los 44 coaches del bench.","m.soon2":"Fase 2",
+ "m4.b":"Generación de prospectos","m4.p":"Agente de prospección, contacto personalizado y seguimiento de respuestas hacia el pipeline.","m.soon3":"Fase 3",
+ "m5.b":"Marketing y redes sociales","m5.p":"Creación de contenidos, programación y desempeño en un solo calendario.","m.soon4":"Fase 3",
+ "m6.b":"Tickets de soporte","m6.p":"Incidencias de coaches y miembros, clasificadas por IA y seguidas hasta el cierre.","m.soon5":"Fase 2",
+ "m7.b":"Eventos y MLC","m7.p":"Conferencia, reuniones de cohortes y eventos continentales: del registro al seguimiento.","m.soon6":"Fase 3",
+ "m8.b":"Gobernanza","m8.p":"Sala del consejo (protegida con contraseña), reuniones del equipo, actas y seguimiento de acciones.","m.soon7":"Fase 3",
+ "se.h":"Interacción automática","se.hint":"En vivo · el sitio invita a los visitantes inactivos a usar el concierge. Ajuste el tiempo o desactívelo aquí — sin cambios de código, se aplica en la próxima visita.","se.on":"Interacción automática activada","se.delay":"Mostrar después de (segundos en la página)","se.scroll":"O tras desplazarse (% de la página)","se.exit":"También al intentar salir (el cursor sale)","se.save":"Guardar cambios","f.note":"Borrador"
+},
+pt:{"foot.powered":"Desenvolvido pela TechFides",
+ "gate.h":"ServiceDesk","gate.p":"Painel interno. Introduza o seu código de acesso para continuar.","gate.btn":"Entrar","gate.err":"Código não reconhecido. Tente novamente.","gate.ph":"Código de acesso",
+ "bar.draft":"Pré-visualização",
+ "h.eyebrow":"ServiceDesk · Painel financeiro","h.title":"Desempenho financeiro, em todo o continente.","h.sub":"Receita recorrente anual, composição da receita e desempenho por país da BCA Leadership. Vista para a direção e a equipa.","h.note":"Rascunho para revisão. Todos os valores desta página são dados de exemplo, exceto o painel « Assinados no site », que está em direto. Os dados financeiros reais são ligados durante a construção do ServiceDesk.",
+ "t1.k":"ARR (exemplo)","t1.d":"vs. trimestre anterior","t2.k":"Membros (exemplo)","t2.d":"neste trimestre","t3.k":"Países (exemplo)","t3.d":"em cinco regiões","t4.k":"Assinados no site","t4.d":"em direto · a carregar…",
+ "c1.h":"Evolução do ARR","c1.hint":"Dados de exemplo · últimos 12 meses, USD",
+ "c2.h":"Composição da receita","c2.hint":"Dados de exemplo · quota da receita total, exercício 2026",
+ "c3.h":"ARR por país","c3.hint":"Dados de exemplo · 10 principais mercados, USD",
+ "c4.h":"Contratos de adesão assinados no site","c4.hint":"Em direto · os alertas de faturação vão para admin@bcaleadership.com, autorizados por Nii Lokko",
+ "tb.name":"Nome","tb.tier":"Nível","tb.country":"País","tb.date":"Assinado","tb.inv":"Fatura","tb.loading":"A carregar…",
+ "m.h":"Módulos do ServiceDesk","m.hint":"O posto operacional completo, construído por fases. Os módulos em direto são clicáveis.",
+ "c5.h":"Concierge: pedidos de clientes potenciais","c5.hint":"Em direto · todos os pedidos enviados através do concierge do site chegam aqui; os alertas vão para admin@bcaleadership.com",
+ "tr.name":"Nome","tr.topic":"Assunto","tr.msg":"Pedido","tr.date":"Recebido","tr.status":"Estado","tr.loading":"A carregar…",
+ "m0.b":"Concierge","m0.p":"Qualquer pedido de clientes potenciais, captado em todo o site e acompanhado até à resposta. As respostas assistidas por IA vêm a seguir.","m.live0":"Em direto · ver pedidos ↑",
+ "m1.b":"Contratos","m1.p":"Contratos de adesão e de coaching, assinados no site e acompanhados até à fatura.","m.live":"Em direto · ver contratos assinados ↑",
+ "m2.b":"Membros e integração","m2.p":"Um registo por pessoa: membros, coaches, equipa, consultores, fornecedores e parceiros. Renovações assinaladas com 60 dias de antecedência.","m.soon":"Fase 2",
+ "m3.b":"Operações do bench","m3.p":"Atribuição de coaches, utilização, registo de sessões e pagamentos para os 44 coaches do bench.","m.soon2":"Fase 2",
+ "m4.b":"Geração de contactos","m4.p":"Agente de prospeção, contacto personalizado e acompanhamento das respostas para o pipeline.","m.soon3":"Fase 3",
+ "m5.b":"Marketing e redes sociais","m5.p":"Criação de conteúdos, agendamento e desempenho num único calendário.","m.soon4":"Fase 3",
+ "m6.b":"Tickets de apoio","m6.p":"Questões de coaches e membros, triadas por IA e acompanhadas até ao fecho.","m.soon5":"Fase 2",
+ "m7.b":"Eventos e MLC","m7.p":"Conferência, reuniões de coortes e eventos continentais: da inscrição ao seguimento.","m.soon6":"Fase 3",
+ "m8.b":"Governação","m8.p":"Sala do conselho (protegida por palavra-passe), reuniões de equipa, atas e acompanhamento de ações.","m.soon7":"Fase 3",
+ "se.h":"Interação automática","se.hint":"Em direto · o site convida os visitantes inativos para o concierge. Ajuste o tempo ou desative aqui — sem alterações de código, aplica-se na próxima visita.","se.on":"Interação automática ativa","se.delay":"Mostrar após (segundos na página)","se.scroll":"Ou após deslocamento (% da página)","se.exit":"Também na intenção de saída (o rato sai)","se.save":"Guardar alterações","f.note":"Rascunho"
 }};
 function setLang(l){
   document.documentElement.lang=l;
@@ -291,7 +339,7 @@ function setLang(l){
     else if(T[l][k]!==undefined) el.innerHTML=T[l][k];
   });
   const inp=document.getElementById('code');
-  if(inp) inp.placeholder = l==='fr' ? "Code d'accès" : "Access code";
+  if(inp) inp.placeholder = (T[l] && T[l]["gate.ph"]) || "Access code";
 }
 const EN={};
 document.querySelectorAll('[data-t]').forEach(el=>{EN[el.getAttribute('data-t')]=el.innerHTML});
