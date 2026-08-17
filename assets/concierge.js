@@ -3,8 +3,8 @@
    deterministic catalog engine otherwise). Actions deep-link into the signing flows.
    Unresolved needs are recorded via bca-concierge and appear on the ServiceDesk. */
 (function () {
-  var CHAT = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge-chat";
-  var LOG = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge";
+  var CHAT = "https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-chat";
+  var LOG = "https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-intake";
 
   var STR = {
     en: { btn: "Concierge", h: "BCA Concierge", sub: "Ask anything: membership, coaching, consulting, MLC, sponsorship. I can set you up right here.", ph: "Type your question…", send: "Send", chips: ["Become a member", "Start coaching", "Consulting for my company", "Attend or sponsor MLC"], greet: "Welcome to BCA Leadership. I can help you join as a member, start executive coaching, engage our consultants, sponsor, or attend the Made in Africa Leadership Conference. What do you need?", hoIntro: "Leave your details and the full conversation goes to our team.", hoName: "Full name", hoEmail: "Email", hoSend: "Send to the team", hoOk: "Done. Your request and this conversation are with our team.", hoErr: "That did not go through. Please try again or email admin@bcaleadership.com.", human: "Talk to the team", err: "I lost the connection for a second. Please try again." },

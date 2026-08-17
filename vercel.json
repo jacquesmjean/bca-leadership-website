@@ -3,8 +3,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/ServiceDesk", "destination": "/servicedesk", "permanent": false },
-    { "source": "/dashboard", "destination": "/servicedesk", "permanent": false }
+    { "source": "/servicedesk", "destination": "https://bca.coachingengine.app", "permanent": false },
+    { "source": "/ServiceDesk", "destination": "https://bca.coachingengine.app", "permanent": false },
+    { "source": "/dashboard", "destination": "https://bca.coachingengine.app", "permanent": false }
   ],
   "headers": [
     {
@@ -14,7 +15,7 @@
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://kdkecrdhjwztrksrgdnr.supabase.co; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri 'self'; form-action 'self'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://uojsxmdnpwskxeueftgp.supabase.co; frame-src https://www.youtube.com https://www.youtube-nocookie.com; base-uri 'self'; form-action 'self'" }
       ]
     }
   ]

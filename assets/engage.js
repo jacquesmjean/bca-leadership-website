@@ -5,8 +5,8 @@
 (function () {
   try { if (sessionStorage.getItem('bca_engaged')) return; } catch (e) {}
   var btn = null, shown = false, done = false;
-  var SETTINGS = "https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-settings";
-  var CFG = { enabled: true, delaySeconds: 25, scrollPct: 55, exitIntent: true }; // fallback; ServiceDesk can override
+  var SETTINGS = "https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-settings";
+  var CFG = { enabled: true, delaySeconds: 25, scrollPct: 55, exitIntent: true }; // fallback
 
   var MSG = {
     en: {
@@ -103,7 +103,7 @@
 
   // Wire the triggers using whatever config we end up with (remote or fallback).
   function arm() {
-    if (!CFG || CFG.enabled === false) return; // ServiceDesk can switch auto-engage off entirely.
+    if (!CFG || CFG.enabled === false) return; // 
 
     var delayMs = Math.max(3, +CFG.delaySeconds || 25) * 1000;
     var scrollAt = Math.min(0.95, Math.max(0.10, (+CFG.scrollPct || 55) / 100));

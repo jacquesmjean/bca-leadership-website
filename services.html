@@ -260,7 +260,7 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
 document.querySelectorAll("select[data-countries]").forEach(function(s){s.innerHTML='<option value=\"\" disabled selected>'+(window.t?window.t("rt.selectcountry","Select country"):"Select country")+'</option>'+COUNTRIES.map(function(c){return "<option>"+c+"</option>";}).join("");});
 var tabs=document.querySelectorAll("#tabs .tab");
 tabs.forEach(function(t){t.onclick=function(){tabs.forEach(function(x){x.classList.remove("on")});t.classList.add("on");document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("on")});document.getElementById("p-"+t.dataset.p).classList.add("on");};});
-var BCA_REQ_ENDPOINT="https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge";
+var BCA_REQ_ENDPOINT="https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-intake";
 var TOPICS={consulting:"Consulting",project:"Project management / event",matching:"Business matching"};
 async function submitForm(k){
   var form=document.getElementById("f-"+k);

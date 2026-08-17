@@ -451,7 +451,11 @@ footer{background:var(--bca-night);color:rgba(250,246,238,.7);padding:50px 0 38p
 
 <script>
 // BCA_CONTRACT_ENDPOINT is set in contract-config.js (wired to Supabase; invoice alerts go to admin@bcaleadership.com, authorized by Nii Lokko).
-async function submitContract(p){try{if(window.BCA_CONTRACT_ENDPOINT){const r=await fetch(window.BCA_CONTRACT_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});return r.ok;}return false;}catch(e){console.error('contract submit',e);return false;}}
+/* BCA backend (coaching-engine). Single intake endpoint for membership applications and corporate enquiries. */
+const BCA_INTAKE_ENDPOINT="https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-intake";
+const BCA_INTAKE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVvanN4bWRucHdza3hldWVmdGdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUyNzEyNjUsImV4cCI6MjEwMDg0NzI2NX0.M7KIqG-ZhI2fsCVMukvaMaAdwj523Rb6b-jl0s7foiE";
+function bcaIntakeHeaders(){return{"Content-Type":"application/json","apikey":BCA_INTAKE_KEY,"Authorization":"Bearer "+BCA_INTAKE_KEY};}
+async function submitContract(p){try{const r=await fetch(BCA_INTAKE_ENDPOINT,{method:'POST',headers:bcaIntakeHeaders(),body:JSON.stringify(p)});const d=await r.json().catch(()=>({}));window.BCA_LAST_REF=d&&d.ref?d.ref:null;return r.ok&&d&&d.ok;}catch(e){console.error('contract submit',e);return false;}}
 const I18N = {
 en:{"foot.terms":"Terms of Use","foot.privacy":"Privacy Policy","foot.powered":"Powered by TechFides",
  "nav.home":"Home","nav.why":"Why BCA","nav.online":"BCAOnline","nav.membership":"Membership","nav.coaches":"The Bench","nav.coaching":"Coaching","nav.services":"Services","nav.join":"Join BCA",
@@ -691,10 +695,9 @@ async function submitCorp(){
   if(!email.value.trim()||email.value.indexOf("@")<1){email.focus();email.style.borderColor="var(--bca-clay)";return;}
   if(org&&!org.value.trim()){org.focus();org.style.borderColor="var(--bca-clay)";return;}
   var msg="Corporate membership proposal. Organization: "+(org?org.value.trim():"-")+". Country: "+(country?country.value:"-")+". Leaders: "+(count?count.value:"-")+". Desired outcome: "+(outcome?outcome.value.trim():"-");
-  var endpoint="https://kdkecrdhjwztrksrgdnr.supabase.co/functions/v1/bca-concierge";
   var btn=f.querySelector('button.btn'); if(btn){btn.disabled=true;btn.style.opacity=.6;}
   var ok=false;
-  try{ var r=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({full_name:name.value.trim(),email:email.value.trim(),company:org?org.value.trim():"",topic:"Corporate proposal",message:msg,page:location.href})}); ok=r.ok; }catch(e){ok=false;}
+  try{ var r=await fetch(BCA_INTAKE_ENDPOINT,{method:"POST",headers:bcaIntakeHeaders(),body:JSON.stringify({full_name:name.value.trim(),email:email.value.trim(),company:org?org.value.trim():"",topic:"Corporate proposal",message:msg,page:location.href})}); var d=await r.json().catch(()=>({})); ok=r.ok&&d&&d.ok; }catch(e){ok=false;}
   if(btn){btn.disabled=false;btn.style.opacity=1;}
   if(!ok){ var e2=document.getElementById("corp-err"); if(!e2){e2=document.createElement("p");e2.id="corp-err";e2.style.cssText="color:var(--bca-clay);font-size:13.5px;margin-top:10px";e2.innerHTML=window.t("rt.senderr",'We could not send that just now. Please try again or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.');btn.insertAdjacentElement("afterend",e2);} e2.style.display="block"; return; }
   document.getElementById("corp-form").style.display="none";
