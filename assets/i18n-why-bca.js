@@ -10,7 +10,7 @@ window.BCA_PAGE_I18N = {
     "why.hero.cta2": "Meet the bench",
 
     "why.diff.eyebrow": "The difference",
-    "why.diff.h2": "Five reasons leaders <span class=\"gild\">choose BCA.</span>",
+    "why.diff.h2": "Six reasons leaders <span class=\"gild\">choose BCA.</span>",
     "why.diff.lead": "A coaching directory can give you a name. BCA gives you a room of people who have already solved the problem on your desk.",
 
     "why.p1.h": "Operators, not just advisors",
@@ -62,7 +62,7 @@ window.BCA_PAGE_I18N = {
     "why.hero.cta2": "Découvrir nos Coachs",
 
     "why.diff.eyebrow": "La différence",
-    "why.diff.h2": "Cinq raisons pour lesquelles les dirigeants <span class=\"gild\">choisissent BCA.</span>",
+    "why.diff.h2": "Six raisons pour lesquelles les dirigeants <span class=\"gild\">choisissent BCA.</span>",
     "why.diff.lead": "Un annuaire de coachs vous donne un nom. BCA vous donne une salle entière de dirigeants qui ont déjà résolu le problème posé sur votre bureau.",
 
     "why.p1.h": "Des praticiens, pas seulement des conseillers",
@@ -114,7 +114,7 @@ window.BCA_PAGE_I18N = {
     "why.hero.cta2": "Conocer el banco",
 
     "why.diff.eyebrow": "La diferencia",
-    "why.diff.h2": "Cinco razones por las que los líderes <span class=\"gild\">eligen BCA.</span>",
+    "why.diff.h2": "Seis razones por las que los líderes <span class=\"gild\">eligen BCA.</span>",
     "why.diff.lead": "Un directorio de coaches le da un nombre. BCA le da una sala llena de personas que ya resolvieron el problema que tiene sobre su mesa.",
 
     "why.p1.h": "Operadores, no solo asesores",
@@ -166,7 +166,7 @@ window.BCA_PAGE_I18N = {
     "why.hero.cta2": "Conhecer o banco",
 
     "why.diff.eyebrow": "A diferença",
-    "why.diff.h2": "Cinco razões pelas quais os líderes <span class=\"gild\">escolhem a BCA.</span>",
+    "why.diff.h2": "Seis razões pelas quais os líderes <span class=\"gild\">escolhem a BCA.</span>",
     "why.diff.lead": "Um diretório de coaches dá-lhe um nome. A BCA dá-lhe uma sala cheia de pessoas que já resolveram o problema que está na sua mesa.",
 
     "why.p1.h": "Operadores, não apenas consultores",
