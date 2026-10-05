@@ -38,7 +38,7 @@ window.BCA_PAGE_I18N = {
     "priv.toc.13": "Contact us",
 
     "priv.s1.h": "1. Who we are",
-    "priv.s1.p1": "BCA Leadership, care of FFG (Mauritius) Ltd, Grand Baie, Mauritius, is the controller of the personal data described here. We decide why and how your data is used. You can reach us at <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "priv.s1.p1": "BCA Leadership, care of FFG (Mauritius) Ltd, Grand Baie, Mauritius, is the controller of the personal data described here. We decide why and how your data is used. You can reach us at <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "priv.s2.h": "2. Data we collect",
     "priv.s2.p1": "We collect only what we need to run the membership network and provide coaching.",
@@ -92,7 +92,7 @@ window.BCA_PAGE_I18N = {
     "priv.s10.li4": "object to or restrict certain uses of your data;",
     "priv.s10.li5": "withdraw consent for optional communications at any time;",
     "priv.s10.li6": "ask for your data in a portable format.",
-    "priv.s10.p2": "To exercise any of these, email <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>. If you are in the European Union or another region with a data protection authority, you also have the right to complain to that authority.",
+    "priv.s10.p2": "To exercise any of these, email <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>. If you are in the European Union or another region with a data protection authority, you also have the right to complain to that authority.",
 
     "priv.s11.h": "11. Children",
     "priv.s11.p1": "Our services are for professionals aged 18 and over. We do not knowingly collect data from children. If you believe a child has given us data, please contact us and we will remove it.",
@@ -101,7 +101,7 @@ window.BCA_PAGE_I18N = {
     "priv.s12.p1": "We may update this policy from time to time. The \"last updated\" date at the top shows when it last changed. We encourage you to review it periodically.",
 
     "priv.s13.h": "13. Contact us",
-    "priv.s13.p1": "For any question about your data or this policy, email <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>, or write to BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius.",
+    "priv.s13.p1": "For any question about your data or this policy, email <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>, or write to BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius.",
 
     "priv.foot.tag": "Pan-African leadership enhancement, helping leaders of companies become better leaders since 2017.",
     "priv.foot.bottom": "© 2026 BCA Leadership. All rights reserved. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius"
@@ -136,7 +136,7 @@ window.BCA_PAGE_I18N = {
     "priv.toc.13": "Nous contacter",
 
     "priv.s1.h": "1. Qui nous sommes",
-    "priv.s1.p1": "BCA Leadership, domiciliée chez FFG (Mauritius) Ltd, Grand Baie, Maurice, est le responsable du traitement des données à caractère personnel décrites aux présentes. Nous déterminons les finalités et les moyens du traitement de vos données. Vous pouvez nous joindre à l'adresse <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "priv.s1.p1": "BCA Leadership, domiciliée chez FFG (Mauritius) Ltd, Grand Baie, Maurice, est le responsable du traitement des données à caractère personnel décrites aux présentes. Nous déterminons les finalités et les moyens du traitement de vos données. Vous pouvez nous joindre à l'adresse <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "priv.s2.h": "2. Données que nous collectons",
     "priv.s2.p1": "Nous ne collectons que les données nécessaires à la gestion du réseau d'adhérents et à la fourniture des prestations de coaching.",
@@ -190,7 +190,7 @@ window.BCA_PAGE_I18N = {
     "priv.s10.li4": "de vous opposer à certains traitements ou d'en demander la limitation ;",
     "priv.s10.li5": "de retirer à tout moment votre consentement aux communications facultatives ;",
     "priv.s10.li6": "de recevoir vos données dans un format portable (droit à la portabilité).",
-    "priv.s10.p2": "Pour exercer l'un de ces droits, écrivez à <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>. Si vous résidez dans l'Union européenne ou dans une autre région dotée d'une autorité de protection des données, vous disposez également du droit d'introduire une réclamation auprès de cette autorité de contrôle.",
+    "priv.s10.p2": "Pour exercer l'un de ces droits, écrivez à <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>. Si vous résidez dans l'Union européenne ou dans une autre région dotée d'une autorité de protection des données, vous disposez également du droit d'introduire une réclamation auprès de cette autorité de contrôle.",
 
     "priv.s11.h": "11. Mineurs",
     "priv.s11.p1": "Nos services s'adressent à des professionnels âgés de 18 ans et plus. Nous ne collectons pas sciemment de données relatives à des mineurs. Si vous estimez qu'un mineur nous a communiqué des données, veuillez nous contacter afin que nous procédions à leur suppression.",
@@ -199,7 +199,7 @@ window.BCA_PAGE_I18N = {
     "priv.s12.p1": "Nous pouvons modifier la présente politique de temps à autre. La date de « dernière mise à jour » figurant en haut de la page indique la date de la dernière modification. Nous vous invitons à la consulter régulièrement.",
 
     "priv.s13.h": "13. Nous contacter",
-    "priv.s13.p1": "Pour toute question relative à vos données ou à la présente politique, écrivez à <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>, ou adressez un courrier à BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurice.",
+    "priv.s13.p1": "Pour toute question relative à vos données ou à la présente politique, écrivez à <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>, ou adressez un courrier à BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurice.",
 
     "priv.foot.tag": "Développement du leadership panafricain, aidant les dirigeants d'entreprise à devenir de meilleurs leaders depuis 2017.",
     "priv.foot.bottom": "© 2026 BCA Leadership. Tous droits réservés. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurice"
@@ -234,7 +234,7 @@ window.BCA_PAGE_I18N = {
     "priv.toc.13": "Contacto",
 
     "priv.s1.h": "1. Quiénes somos",
-    "priv.s1.p1": "BCA Leadership, con domicilio a la atención de FFG (Mauritius) Ltd, Grand Baie, Mauricio, es la responsable del tratamiento de los datos personales aquí descritos. Nosotros determinamos los fines y los medios del tratamiento de sus datos. Puede ponerse en contacto con nosotros en <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "priv.s1.p1": "BCA Leadership, con domicilio a la atención de FFG (Mauritius) Ltd, Grand Baie, Mauricio, es la responsable del tratamiento de los datos personales aquí descritos. Nosotros determinamos los fines y los medios del tratamiento de sus datos. Puede ponerse en contacto con nosotros en <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "priv.s2.h": "2. Datos que recogemos",
     "priv.s2.p1": "Solo recogemos los datos necesarios para gestionar la red de miembros y prestar los servicios de coaching.",
@@ -288,7 +288,7 @@ window.BCA_PAGE_I18N = {
     "priv.s10.li4": "oponerse a determinados tratamientos de sus datos o solicitar su limitación;",
     "priv.s10.li5": "retirar en cualquier momento el consentimiento prestado para las comunicaciones opcionales;",
     "priv.s10.li6": "solicitar sus datos en un formato portable (derecho a la portabilidad).",
-    "priv.s10.p2": "Para ejercer cualquiera de estos derechos, escriba a <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>. Si reside en la Unión Europea o en otra región que cuente con una autoridad de protección de datos, le asiste además el derecho a presentar una reclamación ante dicha autoridad de control.",
+    "priv.s10.p2": "Para ejercer cualquiera de estos derechos, escriba a <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>. Si reside en la Unión Europea o en otra región que cuente con una autoridad de protección de datos, le asiste además el derecho a presentar una reclamación ante dicha autoridad de control.",
 
     "priv.s11.h": "11. Menores",
     "priv.s11.p1": "Nuestros servicios están dirigidos a profesionales mayores de 18 años. No recogemos conscientemente datos de menores. Si considera que un menor nos ha facilitado datos, le rogamos que se ponga en contacto con nosotros y procederemos a su supresión.",
@@ -297,7 +297,7 @@ window.BCA_PAGE_I18N = {
     "priv.s12.p1": "Podremos actualizar la presente política de forma periódica. La fecha de «última actualización» que figura al principio indica cuándo se modificó por última vez. Le recomendamos que la consulte periódicamente.",
 
     "priv.s13.h": "13. Contacto",
-    "priv.s13.p1": "Para cualquier consulta sobre sus datos o sobre esta política, escriba a <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>, o dirija su correspondencia a BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauricio.",
+    "priv.s13.p1": "Para cualquier consulta sobre sus datos o sobre esta política, escriba a <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>, o dirija su correspondencia a BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauricio.",
 
     "priv.foot.tag": "Desarrollo del liderazgo panafricano, ayudando a los líderes de empresas a ser mejores líderes desde 2017.",
     "priv.foot.bottom": "© 2026 BCA Leadership. Todos los derechos reservados. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauricio"
@@ -332,7 +332,7 @@ window.BCA_PAGE_I18N = {
     "priv.toc.13": "Contacte-nos",
 
     "priv.s1.h": "1. Quem somos",
-    "priv.s1.p1": "A BCA Leadership, ao cuidado de FFG (Mauritius) Ltd, Grand Baie, Maurícia, é a responsável pelo tratamento dos dados pessoais aqui descritos. Somos nós que determinamos as finalidades e os meios do tratamento dos seus dados. Pode contactar-nos através de <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "priv.s1.p1": "A BCA Leadership, ao cuidado de FFG (Mauritius) Ltd, Grand Baie, Maurícia, é a responsável pelo tratamento dos dados pessoais aqui descritos. Somos nós que determinamos as finalidades e os meios do tratamento dos seus dados. Pode contactar-nos através de <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "priv.s2.h": "2. Dados que recolhemos",
     "priv.s2.p1": "Recolhemos apenas os dados necessários para gerir a rede de membros e prestar os serviços de coaching.",
@@ -386,7 +386,7 @@ window.BCA_PAGE_I18N = {
     "priv.s10.li4": "opor-se a determinados tratamentos dos seus dados ou solicitar a respetiva limitação;",
     "priv.s10.li5": "retirar a todo o tempo o consentimento dado para as comunicações facultativas;",
     "priv.s10.li6": "solicitar os seus dados num formato portátil (direito à portabilidade).",
-    "priv.s10.p2": "Para exercer qualquer destes direitos, escreva para <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>. Se residir na União Europeia ou noutra região dotada de uma autoridade de proteção de dados, assiste-lhe igualmente o direito de apresentar reclamação junto dessa autoridade de controlo.",
+    "priv.s10.p2": "Para exercer qualquer destes direitos, escreva para <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>. Se residir na União Europeia ou noutra região dotada de uma autoridade de proteção de dados, assiste-lhe igualmente o direito de apresentar reclamação junto dessa autoridade de controlo.",
 
     "priv.s11.h": "11. Menores",
     "priv.s11.p1": "Os nossos serviços destinam-se a profissionais com 18 anos ou mais. Não recolhemos deliberadamente dados de menores. Se considerar que um menor nos facultou dados, contacte-nos e procederemos à sua eliminação.",
@@ -395,7 +395,7 @@ window.BCA_PAGE_I18N = {
     "priv.s12.p1": "Podemos atualizar a presente política periodicamente. A data de «última atualização» indicada no início mostra quando foi alterada pela última vez. Recomendamos que a consulte com regularidade.",
 
     "priv.s13.h": "13. Contacte-nos",
-    "priv.s13.p1": "Para qualquer questão sobre os seus dados ou sobre a presente política, escreva para <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>, ou remeta correspondência para BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurícia.",
+    "priv.s13.p1": "Para qualquer questão sobre os seus dados ou sobre a presente política, escreva para <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>, ou remeta correspondência para BCA Leadership, BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurícia.",
 
     "priv.foot.tag": "Desenvolvimento de liderança pan-africano, ajudando líderes de empresas a tornarem-se melhores líderes desde 2017.",
     "priv.foot.bottom": "© 2026 BCA Leadership. Todos os direitos reservados. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurícia"

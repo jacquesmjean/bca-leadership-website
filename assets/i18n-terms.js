@@ -39,7 +39,7 @@ window.BCA_PAGE_I18N = {
     "terms.toc.16": "Contact",
 
     "terms.s1.h": "1. Who we are",
-    "terms.s1.p1": "This website is operated by BCA Leadership, care of FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Mauritius (\"BCA,\" \"we,\" \"us,\" or \"our\"). BCA Leadership is a pan-African executive coaching and peer-learning network. You can reach us at <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s1.p1": "This website is operated by BCA Leadership, care of FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Mauritius (\"BCA,\" \"we,\" \"us,\" or \"our\"). BCA Leadership is a pan-African executive coaching and peer-learning network. You can reach us at <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.s2.h": "2. Accepting these terms",
     "terms.s2.p1": "By using this website, joining as a member, booking coaching, or signing an agreement through the site, you agree to these Terms of Use and to our <a href=\"privacy.html\">Privacy Policy</a>. If you do not agree, please do not use the site or its services.",
@@ -91,7 +91,7 @@ window.BCA_PAGE_I18N = {
     "terms.s15.p1": "These terms are governed by the laws of the Republic of Mauritius, where BCA's operating entity is based. Any dispute will be handled by the courts of Mauritius, unless a signed agreement between you and BCA states otherwise, or unless applicable law in your own country gives you rights that cannot be waived.",
 
     "terms.s16.h": "16. Contact",
-    "terms.s16.p1": "Questions about these terms can be sent to <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s16.p1": "Questions about these terms can be sent to <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.foot.tag": "Pan-African leadership enhancement, helping leaders of companies become better leaders since 2017.",
     "terms.foot.bottom": "© 2026 BCA Leadership. All rights reserved. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauritius"
@@ -129,7 +129,7 @@ window.BCA_PAGE_I18N = {
     "terms.toc.16": "Contact",
 
     "terms.s1.h": "1. Qui nous sommes",
-    "terms.s1.p1": "Le présent site est exploité par BCA Leadership, domiciliée chez FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Maurice (« BCA », « nous » ou « notre »). BCA Leadership est un réseau panafricain de coaching de dirigeants et d'apprentissage entre pairs. Vous pouvez nous joindre à l'adresse <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s1.p1": "Le présent site est exploité par BCA Leadership, domiciliée chez FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Maurice (« BCA », « nous » ou « notre »). BCA Leadership est un réseau panafricain de coaching de dirigeants et d'apprentissage entre pairs. Vous pouvez nous joindre à l'adresse <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.s2.h": "2. Acceptation des présentes conditions",
     "terms.s2.p1": "En utilisant le présent site, en adhérant en qualité de membre, en réservant une prestation de coaching ou en signant un contrat par l'intermédiaire du site, vous acceptez les présentes Conditions d'utilisation ainsi que notre <a href=\"privacy.html\">Politique de confidentialité</a>. À défaut d'acceptation, nous vous prions de ne pas utiliser le site ni ses services.",
@@ -181,7 +181,7 @@ window.BCA_PAGE_I18N = {
     "terms.s15.p1": "Les présentes conditions sont régies par le droit de la République de Maurice, où est établie l'entité opérationnelle de BCA. Tout litige relèvera de la compétence des juridictions mauriciennes, sauf stipulation contraire d'un contrat signé entre vous et BCA, ou sauf si la loi applicable dans votre pays vous confère des droits auxquels il ne peut être renoncé.",
 
     "terms.s16.h": "16. Contact",
-    "terms.s16.p1": "Toute question relative aux présentes conditions peut être adressée à <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s16.p1": "Toute question relative aux présentes conditions peut être adressée à <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.foot.tag": "Développement du leadership panafricain, aidant les dirigeants d'entreprise à devenir de meilleurs leaders depuis 2017.",
     "terms.foot.bottom": "© 2026 BCA Leadership. Tous droits réservés. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurice"
@@ -219,7 +219,7 @@ window.BCA_PAGE_I18N = {
     "terms.toc.16": "Contacto",
 
     "terms.s1.h": "1. Quiénes somos",
-    "terms.s1.p1": "Este sitio web es explotado por BCA Leadership, con domicilio a la atención de FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Mauricio («BCA», «nosotros» o «nuestro»). BCA Leadership es una red panafricana de coaching ejecutivo y aprendizaje entre pares. Puede ponerse en contacto con nosotros en <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s1.p1": "Este sitio web es explotado por BCA Leadership, con domicilio a la atención de FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Mauricio («BCA», «nosotros» o «nuestro»). BCA Leadership es una red panafricana de coaching ejecutivo y aprendizaje entre pares. Puede ponerse en contacto con nosotros en <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.s2.h": "2. Aceptación de las presentes condiciones",
     "terms.s2.p1": "Al utilizar este sitio web, incorporarse como miembro, contratar servicios de coaching o firmar un contrato a través del sitio, usted acepta las presentes Condiciones de uso y nuestra <a href=\"privacy.html\">Política de privacidad</a>. Si no las acepta, le rogamos que se abstenga de utilizar el sitio y sus servicios.",
@@ -271,7 +271,7 @@ window.BCA_PAGE_I18N = {
     "terms.s15.p1": "Las presentes condiciones se rigen por la legislación de la República de Mauricio, donde radica la entidad operativa de BCA. Cualquier controversia se someterá a los tribunales de Mauricio, salvo que un contrato firmado entre usted y BCA disponga otra cosa, o salvo que la legislación aplicable en su país le reconozca derechos irrenunciables.",
 
     "terms.s16.h": "16. Contacto",
-    "terms.s16.p1": "Las consultas relativas a las presentes condiciones pueden dirigirse a <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s16.p1": "Las consultas relativas a las presentes condiciones pueden dirigirse a <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.foot.tag": "Desarrollo del liderazgo panafricano, ayudando a los líderes de empresas a ser mejores líderes desde 2017.",
     "terms.foot.bottom": "© 2026 BCA Leadership. Todos los derechos reservados. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Mauricio"
@@ -309,7 +309,7 @@ window.BCA_PAGE_I18N = {
     "terms.toc.16": "Contacto",
 
     "terms.s1.h": "1. Quem somos",
-    "terms.s1.p1": "O presente sítio é explorado pela BCA Leadership, ao cuidado de FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Maurícia («BCA», «nós» ou «nosso»). A BCA Leadership é uma rede pan-africana de coaching executivo e de aprendizagem entre pares. Pode contactar-nos através de <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s1.p1": "O presente sítio é explorado pela BCA Leadership, ao cuidado de FFG (Mauritius) Ltd, Lifestyle Boulevard, Sottise Road, Grand Baie, Maurícia («BCA», «nós» ou «nosso»). A BCA Leadership é uma rede pan-africana de coaching executivo e de aprendizagem entre pares. Pode contactar-nos através de <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.s2.h": "2. Aceitação dos presentes Termos",
     "terms.s2.p1": "Ao utilizar o presente sítio, ao aderir na qualidade de membro, ao contratar serviços de coaching ou ao assinar um contrato através do sítio, aceita os presentes Termos de utilização e a nossa <a href=\"privacy.html\">Política de privacidade</a>. Caso não os aceite, solicitamos que não utilize o sítio nem os respetivos serviços.",
@@ -361,7 +361,7 @@ window.BCA_PAGE_I18N = {
     "terms.s15.p1": "Os presentes Termos regem-se pela lei da República da Maurícia, onde se situa a entidade operacional da BCA. Qualquer litígio será submetido aos tribunais da Maurícia, salvo disposição em contrário de contrato assinado entre si e a BCA, ou salvo se a lei aplicável no seu país lhe conferir direitos irrenunciáveis.",
 
     "terms.s16.h": "16. Contacto",
-    "terms.s16.p1": "As questões relativas aos presentes Termos podem ser enviadas para <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+    "terms.s16.p1": "As questões relativas aos presentes Termos podem ser enviadas para <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
 
     "terms.foot.tag": "Desenvolvimento de liderança pan-africano, ajudando líderes de empresas a tornarem-se melhores líderes desde 2017.",
     "terms.foot.bottom": "© 2026 BCA Leadership. Todos os direitos reservados. · BCA Leadership, Suite 113, First Floor, Grand Baie Business Park Phase 1, Grand Baie, Maurícia"

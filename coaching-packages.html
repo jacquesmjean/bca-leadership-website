@@ -284,7 +284,7 @@ async function signContract(){
   });
   if(!ok){
     var err=document.getElementById("c-sign-err");
-    if(!err){err=document.createElement("p");err.id="c-sign-err";err.style.cssText="color:#C14027;font-size:13.5px;margin-top:10px";err.innerHTML='We could not record your signature just now. Please try again, or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a> and we will complete it for you.';document.getElementById("c-s2").appendChild(err);}
+    if(!err){err=document.createElement("p");err.id="c-sign-err";err.style.cssText="color:#C14027;font-size:13.5px;margin-top:10px";err.innerHTML='We could not record your signature just now. Please try again, or email <a href="mailto:info@bcaleadership.com">info@bcaleadership.com</a> and we will complete it for you.';document.getElementById("c-s2").appendChild(err);}
     err.style.display="block";_release();return;
   }
   closeErr();

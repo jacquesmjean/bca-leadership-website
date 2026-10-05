@@ -351,7 +351,7 @@ async function bookCoach(){
   var ok=false;
   try{var r=await fetch("https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-intake",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({full_name:name.value.trim(),email:email.value.trim(),company:"",topic:"Coach booking",message:"Booking request for coach: "+coach+".",page:location.href})});ok=r.ok;}catch(e){ok=false;}
   btn.disabled=false;btn.style.opacity=1;
-  if(!ok){msg.style.color="var(--bca-clay)";msg.innerHTML='Could not send just now. Please email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.';return;}
+  if(!ok){msg.style.color="var(--bca-clay)";msg.innerHTML='Could not send just now. Please email <a href="mailto:info@bcaleadership.com">info@bcaleadership.com</a>.';return;}
   msg.style.color="var(--bca-green)";msg.textContent=window.t("rt.reqsent","Request sent. BCA will be in touch to schedule with ")+coach.split(" ")[0]+".";
   name.value="";email.value="";
 }
@@ -374,7 +374,7 @@ async function finishBooking(){
   var ok=false;
   try{var r=await fetch("https://uojsxmdnpwskxeueftgp.supabase.co/functions/v1/bca-intake",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({full_name:name.value.trim(),email:email.value.trim(),company:company?company.value.trim():"",topic:"Consultation booking",message:msg,page:location.href})});ok=r.ok;}catch(e){ok=false;}
   if(btn){btn.disabled=false;btn.style.opacity=1;}
-  if(!ok){var e2=document.getElementById('b-err');if(!e2){e2=document.createElement('p');e2.id='b-err';e2.style.cssText='color:var(--bca-clay);font-size:13.5px;margin-top:10px';e2.innerHTML=window.t("rt.senderr",'We could not send that just now. Please try again or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.');btn.insertAdjacentElement('afterend',e2);}e2.style.display='block';return;}
+  if(!ok){var e2=document.getElementById('b-err');if(!e2){e2=document.createElement('p');e2.id='b-err';e2.style.cssText='color:var(--bca-clay);font-size:13.5px;margin-top:10px';e2.innerHTML=window.t("rt.senderr",'We could not send that just now. Please try again or email <a href="mailto:info@bcaleadership.com">info@bcaleadership.com</a>.');btn.insertAdjacentElement('afterend',e2);}e2.style.display='block';return;}
   f.style.display="none";document.getElementById("b-done").style.display="block";
 }
 var chips=document.querySelectorAll("#filters .chip"),cards=document.querySelectorAll("#grid .coach");

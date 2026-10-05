@@ -80,11 +80,11 @@
       "form.bademail": "Please enter a valid email address.",
       "form.sending": "Sending…",
       "form.ok": "Request received. Our team will reply within one business day.",
-      "form.err": "That did not go through. Please try again or email admin@bcaleadership.com.",
+      "form.err": "That did not go through. Please try again or email info@bcaleadership.com.",
 
       "rt.selectcountry": "Select country",
-      "rt.senderr": "We could not send that just now. Please try again or email <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
-      "rt.signerr": "We could not record your signature just now. Please try again, or email <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+      "rt.senderr": "We could not send that just now. Please try again or email <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
+      "rt.signerr": "We could not record your signature just now. Please try again, or email <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
       "rt.reqsent": "Request sent. BCA will be in touch to schedule with ",
 
       "ct.h": "BCA Leadership Coaching Agreement",
@@ -140,11 +140,11 @@
       "form.bademail": "Veuillez saisir une adresse e-mail valide.",
       "form.sending": "Envoi en cours…",
       "form.ok": "Demande reçue. Notre équipe vous répondra sous un jour ouvrable.",
-      "form.err": "L'envoi a échoué. Merci de réessayer ou d'écrire à admin@bcaleadership.com.",
+      "form.err": "L'envoi a échoué. Merci de réessayer ou d'écrire à info@bcaleadership.com.",
 
       "rt.selectcountry": "Choisissez un pays",
-      "rt.senderr": "L'envoi a échoué. Merci de réessayer ou d'écrire à <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
-      "rt.signerr": "Nous n'avons pas pu enregistrer votre signature. Merci de réessayer ou d'écrire à <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+      "rt.senderr": "L'envoi a échoué. Merci de réessayer ou d'écrire à <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
+      "rt.signerr": "Nous n'avons pas pu enregistrer votre signature. Merci de réessayer ou d'écrire à <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
       "rt.reqsent": "Demande envoyée. BCA vous contactera pour convenir d'un rendez-vous avec ",
 
       "ct.h": "Contrat de coaching BCA Leadership",
@@ -200,11 +200,11 @@
       "form.bademail": "Introduzca un correo electrónico válido.",
       "form.sending": "Enviando…",
       "form.ok": "Solicitud recibida. Nuestro equipo responderá en un día hábil.",
-      "form.err": "No se pudo enviar. Inténtelo de nuevo o escriba a admin@bcaleadership.com.",
+      "form.err": "No se pudo enviar. Inténtelo de nuevo o escriba a info@bcaleadership.com.",
 
       "rt.selectcountry": "Seleccione un país",
-      "rt.senderr": "No se pudo enviar. Inténtelo de nuevo o escriba a <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
-      "rt.signerr": "No pudimos registrar su firma en este momento. Inténtelo de nuevo o escriba a <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+      "rt.senderr": "No se pudo enviar. Inténtelo de nuevo o escriba a <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
+      "rt.signerr": "No pudimos registrar su firma en este momento. Inténtelo de nuevo o escriba a <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
       "rt.reqsent": "Solicitud enviada. BCA se pondrá en contacto para agendar con ",
 
       "ct.h": "Contrato de coaching de BCA Leadership",
@@ -260,11 +260,11 @@
       "form.bademail": "Introduza um e-mail válido.",
       "form.sending": "A enviar…",
       "form.ok": "Pedido recebido. A nossa equipa responderá num dia útil.",
-      "form.err": "Não foi possível enviar. Tente novamente ou escreva para admin@bcaleadership.com.",
+      "form.err": "Não foi possível enviar. Tente novamente ou escreva para info@bcaleadership.com.",
 
       "rt.selectcountry": "Seleccione o país",
-      "rt.senderr": "Não foi possível enviar. Tente novamente ou escreva para <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
-      "rt.signerr": "Não foi possível registar a sua assinatura neste momento. Tente novamente ou escreva para <a href=\"mailto:admin@bcaleadership.com\">admin@bcaleadership.com</a>.",
+      "rt.senderr": "Não foi possível enviar. Tente novamente ou escreva para <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
+      "rt.signerr": "Não foi possível registar a sua assinatura neste momento. Tente novamente ou escreva para <a href=\"mailto:info@bcaleadership.com\">info@bcaleadership.com</a>.",
       "rt.reqsent": "Pedido enviado. A BCA entrará em contacto para agendar com ",
 
       "ct.h": "Contrato de coaching da BCA Leadership",

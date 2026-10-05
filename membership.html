@@ -671,7 +671,7 @@ async function signContract(){
       err=document.createElement("p");
       err.id="j-sign-err";
       err.style.cssText="color:#C14027;font-size:13.5px;margin-top:10px";
-      err.innerHTML='We could not record your signature just now. Please try again, or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a> and we will complete it for you.';
+      err.innerHTML='We could not record your signature just now. Please try again, or email <a href="mailto:info@bcaleadership.com">info@bcaleadership.com</a> and we will complete it for you.';
       document.getElementById("j-s2").appendChild(err);
     }
     err.style.display="block";
@@ -700,7 +700,7 @@ async function submitCorp(){
   var ok=false;
   try{ var r=await fetch(BCA_INTAKE_ENDPOINT,{method:"POST",headers:bcaIntakeHeaders(),body:JSON.stringify({full_name:name.value.trim(),email:email.value.trim(),company:org?org.value.trim():"",topic:"Corporate proposal",message:msg,page:location.href})}); var d=await r.json().catch(()=>({})); ok=r.ok&&d&&d.ok; }catch(e){ok=false;}
   if(btn){btn.disabled=false;btn.style.opacity=1;}
-  if(!ok){ var e2=document.getElementById("corp-err"); if(!e2){e2=document.createElement("p");e2.id="corp-err";e2.style.cssText="color:var(--bca-clay);font-size:13.5px;margin-top:10px";e2.innerHTML=window.t("rt.senderr",'We could not send that just now. Please try again or email <a href="mailto:admin@bcaleadership.com">admin@bcaleadership.com</a>.');btn.insertAdjacentElement("afterend",e2);} e2.style.display="block"; return; }
+  if(!ok){ var e2=document.getElementById("corp-err"); if(!e2){e2=document.createElement("p");e2.id="corp-err";e2.style.cssText="color:var(--bca-clay);font-size:13.5px;margin-top:10px";e2.innerHTML=window.t("rt.senderr",'We could not send that just now. Please try again or email <a href="mailto:info@bcaleadership.com">info@bcaleadership.com</a>.');btn.insertAdjacentElement("afterend",e2);} e2.style.display="block"; return; }
   document.getElementById("corp-form").style.display="none";
   document.getElementById("corp-done").style.display="block";
 }
