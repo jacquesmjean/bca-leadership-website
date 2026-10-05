@@ -191,6 +191,26 @@ footer a{color:rgba(250,246,238,.7);text-decoration:none;transition:.2s}footer a
   <h1 data-t="ins.hero.h1">Lessons from the bench, <span class="gild">in the open.</span></h1>
   <p data-t="ins.hero.p">Essays on leadership in Africa from Dr. Modupe Taylor-Pearce and the BCA network. Ideas for the leaders deciding whether BCA is their room.</p>
 </div></header>
+<section id="engine-insights" hidden style="padding-bottom:0"><div class="wrap">
+  <div class="sec-eyebrow" data-ei="k">From the BCA desk</div>
+  <div class="bgrid" id="engine-insights-grid"></div>
+</div></section>
+<script>
+(function(){
+  var T={en:{k:"From the BCA desk",r:"Read the article →"},fr:{k:"Du bureau de BCA",r:"Lire l’article →"},es:{k:"Desde el escritorio de BCA",r:"Leer el artículo →"},pt:{k:"Da secretária da BCA",r:"Ler o artigo →"}};
+  var posts=[];
+  function lang(){try{return localStorage.getItem("bca-lang")||"en"}catch(e){return "en"}}
+  function esc(x){return String(x==null?"":x).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function draw(){
+    var l=lang(), t=T[l]||T.en, sec=document.getElementById("engine-insights"), g=document.getElementById("engine-insights-grid");
+    if(!posts.length){sec.hidden=true;return}
+    sec.hidden=false; sec.querySelector("[data-ei=k]").textContent=t.k;
+    g.innerHTML=posts.map(function(p){return '<a class="bcard" href="'+esc(p.href)+'"><div class="img" style="background-image:url(\''+esc(p.cover)+'\')"></div><div class="body"><div class="date">'+esc(p.date[l]||p.date.en)+'</div><h3>'+esc(p.title[l]||p.title.en)+'</h3><p>'+esc(p.excerpt[l]||p.excerpt.en)+'</p><span class="r">'+t.r+'</span></div></a>'}).join("");
+  }
+  fetch("assets/insights.json",{cache:"no-store"}).then(function(r){return r.ok?r.json():[]}).then(function(j){posts=Array.isArray(j)?j:[];draw()}).catch(function(){});
+  document.addEventListener("bca:lang",draw);
+})();
+</script>
 <section><div class="wrap">
   <a class="blog-feat" href="insight-transforming-africa-through-leadership-enhancement-about-bca.html" style="text-decoration:none">
     <div class="img" style="background-image:url('assets/blog/post1.webp')"></div>
